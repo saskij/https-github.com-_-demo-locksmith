@@ -14,7 +14,7 @@ export default function MeridianCityPage() {
                 headline="Locksmith in Meridian, ID"
                 headlineAccent="Rapid Dispatch 24/7"
                 subheadline="Locked out in Meridian? Our local experts are ready to assist you instantly with damage-free unlocking."
-                bgImage="/images/hero-city.png"
+                bgImage="/https-github.com-_-demo-locksmith/images/hero-city.png"
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Emergency Locksmith Meridian</h2>

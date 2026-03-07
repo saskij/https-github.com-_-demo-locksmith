@@ -15,7 +15,7 @@ export default function BrokenKeyExtractionPage() {
                 headlineAccent="Safe Key Removal Service"
                 subheadline="Did your key snap off in the door, ignition, or padlock? We safely extract broken pieces and can cut you a new key immediately."
             
-                bgImage="/images/services-hero.jpg"
+                bgImage="/https-github.com-_-demo-locksmith/images/services-hero.jpg"
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Emergency Key Extraction</h2>

@@ -31,7 +31,7 @@ export default function Header() {
             <div className="header__inner">
                 <Link href="/" className="header__logo">
                     <img
-                        src="/images/logo-transparent.png"
+                        src="/https-github.com-_-demo-locksmith/images/logo-transparent.png"
                         alt="Car Key Masters Logo"
                         className="header__logo-img"
                     />

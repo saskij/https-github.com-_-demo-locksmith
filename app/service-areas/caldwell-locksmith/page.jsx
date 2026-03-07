@@ -14,7 +14,7 @@ export default function CaldwellCityPage() {
                 headline="Locksmith in Caldwell, ID"
                 headlineAccent="24/7 Local Technicians"
                 subheadline="Caldwell's trusted source for emergency lockout services and lock replacements."
-                bgImage="/images/hero-city.png"
+                bgImage="/https-github.com-_-demo-locksmith/images/hero-city.png"
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Caldwell Lock & Key Services</h2>

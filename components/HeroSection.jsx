@@ -5,7 +5,7 @@ export default function HeroSection({
     headline = "Locked Out?",
     headlineAccent = "We're Already On The Way.",
     subheadline = "24/7 Emergency Locksmith\nFast arrival anywhere in Boise.",
-    bgImage = "/images/hero.png",
+    bgImage = "/https-github.com-_-demo-locksmith/images/hero.png",
     showImage = true
 }) {
     return (

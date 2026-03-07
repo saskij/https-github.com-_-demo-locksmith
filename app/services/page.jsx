@@ -15,7 +15,7 @@ export default function ServicesPage() {
                 headlineAccent="24/7 Professional Solutions"
                 subheadline="Fast, reliable, and affordable locksmith services for your home, business, or vehicle."
             
-                bgImage="/images/services-hero.jpg"
+                bgImage="/https-github.com-_-demo-locksmith/images/services-hero.jpg"
             />
             <div style={{ paddingTop: '60px' }}>
                 <ServiceCards />

@@ -15,7 +15,7 @@ export default function LockInstallationPage() {
                 headlineAccent="Hardware Upgrades & Installs"
                 subheadline="Improve your security with professional lock installations. We install deadbolts, smart locks, and high-security systems for homes and businesses."
             
-                bgImage="/images/services-hero.jpg"
+                bgImage="/https-github.com-_-demo-locksmith/images/services-hero.jpg"
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Professional Lock Installation</h2>

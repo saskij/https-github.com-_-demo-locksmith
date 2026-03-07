@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
                         {/* Using a placeholder tech image. You can replace it with a real one later */}
                         <div className="why-image-wrapper">
                             <Image
-                                src="/images/hero.png"
+                                src="/https-github.com-_-demo-locksmith/images/hero.png"
                                 alt="Professional Locksmith working on a lock"
                                 fill
                                 style={{ objectFit: 'cover', borderRadius: '16px' }}
