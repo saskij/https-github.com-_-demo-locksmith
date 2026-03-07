@@ -332,7 +332,11 @@ ul {
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: transparent;
+  background: linear-gradient(90deg,
+      rgba(10, 25, 60, 0.95) 0%,
+      rgba(15, 35, 80, 0.8) 35%,
+      rgba(20, 45, 100, 0.3) 65%,
+      transparent 100%);
   z-index: 1;
 }
 
