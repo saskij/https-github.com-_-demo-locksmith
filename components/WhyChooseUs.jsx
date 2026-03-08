@@ -5,7 +5,7 @@ export default function WhyChooseUs() {
         <section className="why-choose">
             <div className="container">
                 <div className="why-grid">
-                    <div className="why-content fade-up">
+                    <div className="why-content" data-aos="fade-right">
                         <h2 className="section-title" style={{ textAlign: 'left' }}>Why Choose <span style={{ color: 'var(--orange)' }}>Car Key Masters</span></h2>
                         <p className="why-desc">When you're locked out or need critical security upgrades, you need a team you can trust. Here is why Boise relies on us.</p>
 
@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
                         </div>
                     </div>
 
-                    <div className="why-image fade-up">
+                    <div className="why-image" data-aos="fade-left">
                         {/* Using a placeholder tech image. You can replace it with a real one later */}
                         <div className="why-image-wrapper">
                             <Image

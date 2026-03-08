@@ -21,10 +21,15 @@ export default function FAQ() {
     return (
         <section className="faq-section" id="faq">
             <div className="container">
-                <h2 className="section-title">Common <span style={{ color: 'var(--orange)' }}>Questions</span></h2>
+                <h2 className="section-title" data-aos="fade-up">Common <span style={{ color: 'var(--orange)' }}>Questions</span></h2>
                 <div className="faq-grid">
                     {faqs.map((faq, idx) => (
-                        <details key={idx} className="faq-item">
+                        <details
+                            key={idx}
+                            className="faq-item"
+                            data-aos="fade-up"
+                            data-aos-delay={idx * 100}
+                        >
                             <summary className="faq-question">
                                 {faq.q}
                                 <span className="faq-icon">+</span>

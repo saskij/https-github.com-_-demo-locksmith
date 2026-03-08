@@ -2,6 +2,7 @@ import './globals.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import StickyCallBar from '../components/StickyCallBar';
+import AOSInit from '../components/AOSInit';
 
 export const metadata = {
     title: 'Emergency Locksmith Boise | 24/7 Lockout Service',
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
                 <main>{children}</main>
                 <Footer />
                 <StickyCallBar />
+                <AOSInit />
             </body>
         </html>
     );

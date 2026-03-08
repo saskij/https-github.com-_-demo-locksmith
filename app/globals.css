@@ -91,8 +91,8 @@ ul {
 
 .btn--primary:hover {
   background: var(--orange-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px var(--orange-glow);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(255, 106, 0, 0.4);
 }
 
 .btn--glow {
@@ -347,8 +347,22 @@ ul {
   max-width: 640px;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero__title {
   margin-bottom: 16px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .hero__title-line {
@@ -373,17 +387,23 @@ ul {
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 28px;
   line-height: 1.5;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
 }
 
 .hero__cta {
   margin-bottom: 32px;
   font-size: 1rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
 }
 
 .hero__badges {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
 }
 
 .hero__badge {
@@ -560,7 +580,8 @@ ul {
 
 .testimonial:hover {
   border-color: rgba(255, 106, 0, 0.2);
-  box-shadow: var(--shadow-sm);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .testimonial__header {

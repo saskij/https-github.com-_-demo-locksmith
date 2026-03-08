@@ -82,8 +82,14 @@ export default function ServiceCards() {
                 <h2 className="section-title">Locksmith Services</h2>
                 <p className="section-subtitle">Professional solutions for every lockout and lock-related need.</p>
                 <div className="services__grid">
-                    {servicesData.map((service) => (
-                        <Link href={service.path} key={service.id} className="service-card animate-in">
+                    {servicesData.map((service, index) => (
+                        <Link
+                            href={service.path}
+                            key={service.id}
+                            className="service-card animate-in"
+                            data-aos="fade-up"
+                            data-aos-delay={index * 100}
+                        >
                             <div className="service-card__icon">
                                 {service.icon}
                             </div>
