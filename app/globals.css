@@ -174,7 +174,8 @@ ul {
   right: 0;
   z-index: 9999;
   background: var(--charcoal);
-  border-bottom: 2px solid var(--red);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
   overflow: visible !important;
 }
@@ -187,10 +188,10 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
-  max-width: 1240px;
+  height: 90px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 48px;
   overflow: visible;
 }
 
@@ -222,12 +223,12 @@ ul {
   display: none;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
+  padding: 12px 28px;
   background: var(--orange);
   color: #fff;
-  font-weight: 700;
-  font-size: 0.88rem;
-  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 12px;
   transition: all 0.2s ease;
   text-decoration: none;
   white-space: nowrap;
@@ -236,8 +237,8 @@ ul {
 
 .header__cta:hover {
   background: var(--orange-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px var(--orange-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--orange-glow);
 }
 
 .header__menu-btn {
@@ -1061,28 +1062,14 @@ ul {
     font-family: var(--font);
   }
 
-  .header__nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: var(--red);
-    border-radius: 1px;
-    transition: width 0.25s ease;
-  }
+  
 
   .header__nav-link:hover,
   .header__nav-link.active {
     color: var(--orange);
   }
 
-  .header__nav-link:hover::after,
-  .header__nav-link.active::after {
-    width: 100%;
-  }
+  
 
 
   .header__cta {
@@ -1652,15 +1639,15 @@ ul {
 
 .dropdown-menu {
   position: absolute;
-  top: 70px; /* Sits ~10px below the centered text in 100px header */
+  top: 85px; /* Minimal gap below 90px header */
   left: 50%;
-  transform: translateX(-50%) translateY(5px);
+  transform: translateX(-50%) translateY(10px);
   background: #ffffff;
-  width: 220px;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  border: none;
-  padding: 8px 0;
+  width: 240px;
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 12px 0;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -1727,6 +1714,7 @@ ul {
 @media (max-width: 1023px) {
   .header__inner {
     height: 75px;
+    padding: 0 24px;
   }
   .header__logo-img {
     width: 180px;
