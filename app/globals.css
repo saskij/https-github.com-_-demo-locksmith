@@ -187,7 +187,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 100px;
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 24px;
@@ -199,19 +199,19 @@ ul {
   align-items: center;
   flex-shrink: 0;
   position: relative;
-  height: 80px;
-  width: 200px;
+  height: 100%; /* Match inner height */
+  width: auto;
+  min-width: 200px;
 }
 
 .header__logo-img {
-  position: absolute;
-  top: 10px;
-  left: 0;
-  width: 180px;
+  position: relative;
+  width: 260px; /* Increased from 180px (~44% increase) */
   height: auto;
   display: block;
   z-index: 1002;
   border-radius: 6px;
+  transition: width 0.3s ease;
 }
 
 .header__nav {
@@ -1037,7 +1037,7 @@ ul {
     display: flex;
     align-items: center;
     flex: 1;
-    margin: 0 40px;
+    margin: 0 60px; /* Increased side margin */
   }
 
   .header__nav-group {
@@ -1722,5 +1722,14 @@ ul {
 
   .header__cta {
     display: flex;
+  }
+}
+/* Responsive adjustments for header */
+@media (max-width: 1023px) {
+  .header__inner {
+    height: 75px;
+  }
+  .header__logo-img {
+    width: 180px;
   }
 }
