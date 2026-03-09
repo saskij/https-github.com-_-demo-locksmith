@@ -1022,7 +1022,18 @@ ul {
   .header__nav {
     display: flex;
     align-items: center;
+    flex: 1;
+    margin: 0 40px;
+  }
+
+  .header__nav-group {
+    display: flex;
+    align-items: center;
     gap: 32px;
+  }
+
+  .header__nav-spacer {
+    flex: 1;
   }
 
   .header__nav-link {
@@ -1625,18 +1636,20 @@ ul {
 
 .dropdown-menu {
   position: absolute;
-  top: 80px;
-  /* Starts exactly at the bottom border of the header */
-  left: 50%;
-  transform: translateX(-50%);
+  top: 100%;
+  left: 0;
   background: #ffffff;
   min-width: 240px;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   border: 1px solid #e8ecf0;
   padding: 8px 0;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   z-index: 99999;
+  transition: all 0.2s ease;
+  transform: translateY(10px);
 }
 
 /* Invisible bridge so mouse doesn't lose hover */
@@ -1649,22 +1662,22 @@ ul {
   height: 20px;
 }
 
-.header__nav-dropdown:hover>.dropdown-menu {
-  display: block;
+.header__nav-dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
-  animation: fadeIn 0.2s ease forwards;
+  pointer-events: all;
+  transform: translateY(0);
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(10px);
+    transform: translateY(10px);
   }
 
   to {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -1689,12 +1702,6 @@ ul {
 @media (min-width: 992px) {
   .header__menu-btn {
     display: none;
-  }
-
-  .header__nav {
-    display: flex;
-    align-items: center;
-    gap: 32px;
   }
 
   .header__cta {

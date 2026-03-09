@@ -38,30 +38,36 @@ export default function Header() {
                 </Link>
 
                 <nav className="header__nav">
-                    <Link href="/" className={`header__nav-link ${pathname === '/' ? 'active' : ''}`}>Home</Link>
+                    <div className="header__nav-group header__nav-group--left">
+                        <Link href="/" className={`header__nav-link ${pathname === '/' ? 'active' : ''}`}>Home</Link>
 
-                    <div className="header__nav-dropdown">
-                        <Link href="/services" className={`header__nav-link ${pathname.startsWith('/services') ? 'active' : ''}`}>
-                            Services
-                            <svg className="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </Link>
+                        <div className="header__nav-dropdown">
+                            <Link href="/services" className={`header__nav-link ${pathname.startsWith('/services') ? 'active' : ''}`}>
+                                Services
+                                <svg className="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </Link>
 
-                        <div className="dropdown-menu">
-                            {servicesData.map((service) => (
-                                <Link
-                                    key={service.id}
-                                    href={service.path}
-                                    className={`dropdown-link ${pathname === service.path ? 'active' : ''}`}
-                                >
-                                    {service.title}
-                                </Link>
-                            ))}
+                            <div className="dropdown-menu">
+                                {servicesData.map((service) => (
+                                    <Link
+                                        key={service.id}
+                                        href={service.path}
+                                        className={`dropdown-link ${pathname === service.path ? 'active' : ''}`}
+                                    >
+                                        {service.title}
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
-                    <Link href="/service-areas" className={`header__nav-link ${pathname.startsWith('/service-areas') ? 'active' : ''}`}>Service Areas</Link>
-                    <Link href="/reviews" className={`header__nav-link ${pathname === '/reviews' ? 'active' : ''}`}>Reviews</Link>
-                    <Link href="/contact" className={`header__nav-link ${pathname === '/contact' ? 'active' : ''}`}>Contact</Link>
+                    <div className="header__nav-spacer"></div>
+
+                    <div className="header__nav-group header__nav-group--right">
+                        <Link href="/service-areas" className={`header__nav-link ${pathname.startsWith('/service-areas') ? 'active' : ''}`}>Service Areas</Link>
+                        <Link href="/reviews" className={`header__nav-link ${pathname === '/reviews' ? 'active' : ''}`}>Reviews</Link>
+                        <Link href="/contact" className={`header__nav-link ${pathname === '/contact' ? 'active' : ''}`}>Contact</Link>
+                    </div>
                 </nav>
 
                 <a href="tel:+12085551234" className="header__cta">
