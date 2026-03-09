@@ -1631,7 +1631,7 @@ ul {
   position: relative;
   display: flex;
   align-items: center;
-  height: 80px;
+  height: 100%;
   /* Match full header height for a solid hover target */
 }
 
@@ -1652,20 +1652,20 @@ ul {
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 70px; /* Sits ~10px below the centered text in 100px header */
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
   background: #ffffff;
-  min-width: 240px;
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  border: 1px solid #e8ecf0;
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: none;
   padding: 8px 0;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   z-index: 99999;
-  transition: all 0.2s ease;
-  transform: translateY(10px);
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Invisible bridge so mouse doesn't lose hover */
@@ -1675,14 +1675,14 @@ ul {
   top: 100%;
   left: 0;
   width: 100%;
-  height: 20px;
+  height: 15px;
 }
 
 .header__nav-dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 
 @keyframes fadeIn {
@@ -1699,19 +1699,18 @@ ul {
 
 .dropdown-link {
   display: block;
-  padding: 12px 24px;
-  color: var(--navy-dark);
-  font-size: 0.95rem;
+  padding: 12px 20px;
+  color: var(--text-dark);
+  font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: 0.25s ease;
 }
 
 .dropdown-link:hover,
 .dropdown-link.active {
-  background-color: rgba(255, 106, 0, 0.05);
-  color: var(--orange);
-  padding-left: 28px;
+  background-color: #f8fafc;
+  color: var(--red);
 }
 
 /* Desktop Header Navigation Visibility */
