@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { img } from '../lib/basePath';
 
 export default function Footer() {
     return (
@@ -9,7 +10,7 @@ export default function Footer() {
                     <div className="footer__brand-col">
                         <Link href="/" className="footer__logo-link">
                             <img
-                                src="/https-github.com-_-demo-locksmith/images/logo1.png"
+                                src={img("/images/logo1.png")}
                                 alt="Car Key Masters Logo"
                                 className="footer__logo-img"
                             />

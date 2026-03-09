@@ -14,7 +14,7 @@ export default function KunaCityPage() {
                 headline="Locksmith in Kuna, ID"
                 headlineAccent="Your Local Security Experts"
                 subheadline="Fast and friendly locksmith services available 24/7 for the growing Kuna community."
-                bgImage="/https-github.com-_-demo-locksmith/images/hero-city.png"
+                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/hero-city.png' : '/images/hero-city.png'}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Kuna Emergency Locksmith</h2>

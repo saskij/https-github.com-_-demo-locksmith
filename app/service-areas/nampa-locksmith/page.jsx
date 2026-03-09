@@ -14,7 +14,7 @@ export default function NampaCityPage() {
                 headline="Locksmith in Nampa, ID"
                 headlineAccent="Trusted Canyon County Service"
                 subheadline="Providing affordable and fast emergency locksmith services to all of Nampa and Canyon County."
-                bgImage="/https-github.com-_-demo-locksmith/images/hero-city.png"
+                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/hero-city.png' : '/images/hero-city.png'}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Reliable Nampa Locksmith</h2>

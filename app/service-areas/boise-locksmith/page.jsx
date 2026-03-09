@@ -15,7 +15,7 @@ export default function BoiseCityPage() {
                 headline="Locksmith in Boise, ID"
                 headlineAccent="Local & Fast Response"
                 subheadline="Your trusted local locksmith in Boise. Available 24/7 for car lockouts, house unlocking, and lock rekeying."
-                bgImage="/https-github.com-_-demo-locksmith/images/hero-city.png"
+                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/hero-city.png' : '/images/hero-city.png'}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">24/7 Locksmith Services in Boise</h2>

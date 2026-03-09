@@ -14,7 +14,7 @@ export default function ReviewsPage() {
                 headline="Customer Reviews"
                 headlineAccent="Trusted Across Boise"
                 subheadline="See why we are the top-rated emergency locksmith in the Treasure Valley."
-                bgImage="/https-github.com-_-demo-locksmith/images/reviews-hero.jpg"
+                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/reviews-hero.jpg' : '/images/reviews-hero.jpg'}
             />
             <div style={{ paddingTop: '60px' }}>
                 <TrustSection />

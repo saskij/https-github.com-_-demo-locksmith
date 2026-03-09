@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import TopBar from './TopBar';
+import { img } from '../lib/basePath';
 
 export default function HeroSection({
     headline = "Locked Out?",
     headlineAccent = "We're Already On The Way.",
     subheadline = "24/7 Emergency Locksmith\nFast arrival anywhere in Boise.",
-    bgImage = "/https-github.com-_-demo-locksmith/images/hero.png",
+    bgImage = img("/images/hero.png"),
     showImage = true
 }) {
     return (

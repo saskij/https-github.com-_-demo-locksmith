@@ -99,9 +99,9 @@ ul {
 }
 
 .btn--primary:hover {
-  background: var(--red-hover);
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 8px 24px var(--red-glow);
+  background: #FF8533;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
 }
 
 .btn--glow {
@@ -200,14 +200,16 @@ ul {
   align-items: center;
   flex-shrink: 0;
   position: relative;
-  height: 100%; /* Match inner height */
+  height: 100%;
+  /* Match inner height */
   width: auto;
   min-width: 200px;
 }
 
 .header__logo-img {
   position: relative;
-  width: 260px; /* Increased from 180px (~44% increase) */
+  width: 260px;
+  /* Increased from 180px (~44% increase) */
   height: auto;
   display: block;
   z-index: 1002;
@@ -228,7 +230,7 @@ ul {
   color: #fff;
   font-weight: 600;
   font-size: 1rem;
-  border-radius: 12px;
+  border-radius: 50px;
   transition: all 0.2s ease;
   text-decoration: none;
   white-space: nowrap;
@@ -236,9 +238,9 @@ ul {
 }
 
 .header__cta:hover {
-  background: var(--orange-hover);
+  background: #FF8533;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px var(--orange-glow);
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
 }
 
 .header__menu-btn {
@@ -1038,13 +1040,15 @@ ul {
     display: flex;
     align-items: center;
     flex: 1;
-    margin: 0 60px; /* Increased side margin */
+    margin: 0 60px;
+    /* Increased side margin */
   }
 
   .header__nav-group {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 48px;
+    /* Room for dropdown */
   }
 
   .header__nav-spacer {
@@ -1054,7 +1058,7 @@ ul {
   .header__nav-link {
     font-size: 0.88rem;
     font-weight: 600;
-    color: rgba(255,255,255,0.82);
+    color: rgba(255, 255, 255, 0.82);
     transition: all 0.2s ease;
     position: relative;
     padding: 6px 0;
@@ -1062,14 +1066,14 @@ ul {
     font-family: var(--font);
   }
 
-  
+
 
   .header__nav-link:hover,
   .header__nav-link.active {
     color: var(--orange);
   }
 
-  
+
 
 
   .header__cta {
@@ -1614,12 +1618,22 @@ ul {
 }
 
 /* ===== HEADER DROPDOWN ===== */
+
+/*
+ * KEY DESIGN DECISION:
+ * The dropdown left-aligns with the Services text (left: 0).
+ * This ensures it opens to the RIGHT of Services, never overlapping Home.
+ *
+ * The .header__nav-dropdown uses align-self: stretch so its full height
+ * matches the 90px header — this means top:100% on .dropdown-menu
+ * correctly lands at the bottom edge of the navbar.
+ */
 .header__nav-dropdown {
   position: relative;
   display: flex;
   align-items: center;
-  height: 100%;
-  /* Match full header height for a solid hover target */
+  align-self: stretch;
+  /* Span full header height so top:100% is accurate */
 }
 
 .header__nav-link {
@@ -1639,65 +1653,69 @@ ul {
 
 .dropdown-menu {
   position: absolute;
-  top: 96px; /* Exactly 6px gap below the 90px header */
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
+  top: 100%;
+  /* Attaches right at the bottom of the navbar */
+  left: 0;
+  /* Left-aligns with the Services link — no leftward bleed over Home */
+  transform: translateY(-6px);
   background: #ffffff;
-  width: 230px;
+  min-width: 220px;
+  width: max-content;
   border-radius: 10px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  padding: 8px 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  /* 4px padding-top creates a 4px visual gap while keeping hover seamless */
+  padding: 4px 0 8px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   z-index: 99999;
-  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
 }
 
-/* Invisible bridge so mouse doesn't lose hover */
+/*
+ * Hover bridge: a pseudo-element that covers the space between
+ * the nav link text and the dropdown below, so the menu stays
+ * open when the user moves their cursor down into the menu.
+ */
 .header__nav-dropdown::after {
   content: '';
   position: absolute;
   top: 100%;
-  left: 0;
-  width: 100%;
-  height: 10px;
+  /* Starts at the navbar's bottom edge */
+  left: -8px;
+  right: -8px;
+  height: 12px;
+  /* Bridges the tiny gap so hover doesn't break */
 }
 
-.header__nav-dropdown:hover .dropdown-menu {
+/* Show dropdown on hover */
+.header__nav-dropdown:hover .dropdown-menu,
+.header__nav-dropdown:focus-within .dropdown-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0s;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Each link inside the dropdown */
 .dropdown-link {
   display: block;
-  padding: 12px 18px;
+  padding: 10px 20px;
   color: var(--text-dark);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
-  transition: 0.25s ease;
+  white-space: nowrap;
+  transition: background 0.14s ease, color 0.14s ease, padding-left 0.14s ease;
 }
 
 .dropdown-link:hover,
 .dropdown-link.active {
-  background-color: #f8fafc;
+  background-color: rgba(249, 115, 22, 0.07);
   color: var(--orange);
+  padding-left: 26px;
 }
 
 /* Desktop Header Navigation Visibility */
@@ -1710,12 +1728,14 @@ ul {
     display: flex;
   }
 }
+
 /* Responsive adjustments for header */
 @media (max-width: 1023px) {
   .header__inner {
     height: 75px;
     padding: 0 24px;
   }
+
   .header__logo-img {
     width: 180px;
   }

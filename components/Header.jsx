@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { servicesData } from './ServiceCards';
+import { img } from '../lib/basePath';
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -31,7 +32,7 @@ export default function Header() {
             <div className="header__inner">
                 <Link href="/" className="header__logo">
                     <img
-                        src="/https-github.com-_-demo-locksmith/images/logo1.png"
+                        src={img("/images/logo1.png")}
                         alt="Car Key Masters Logo"
                         className="header__logo-img"
                     />

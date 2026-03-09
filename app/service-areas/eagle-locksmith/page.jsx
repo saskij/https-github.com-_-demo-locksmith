@@ -14,7 +14,7 @@ export default function EagleCityPage() {
                 headline="Locksmith in Eagle, ID"
                 headlineAccent="Premium Lock Services"
                 subheadline="Upgrading security for Eagle homes and responding 24/7 to lockout emergencies."
-                bgImage="/https-github.com-_-demo-locksmith/images/hero-city.png"
+                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/hero-city.png' : '/images/hero-city.png'}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Eagle Residential & Auto Locksmith</h2>
