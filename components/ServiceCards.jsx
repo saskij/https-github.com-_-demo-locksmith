@@ -48,7 +48,7 @@ export const servicesData = [
         title: 'Car Key Repair',
         desc: "Broken shell or dead buttons? We refurbish and repair damaged fobs. Instead of paying for a complete replacement, we can often swap the internal electronics into a fresh casing and replace the battery.",
         path: '/services/car-key-repair',
-        image: img('/images/hero-main.jpg'),
+        image: img('/images/10.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
