@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { t } from '../lib/translations';
+import { img } from '../lib/basePath';
 
 function CounterItem({ value, label }) {
     const [count, setCount] = useState(0);
@@ -70,8 +71,11 @@ export default function TrustCounters({ lang = 'en' }) {
     const tr = t(lang).trustCounters;
 
     return (
-        <section className="counters-section">
-            <div className="container">
+        <section
+            className="counters-section parallax"
+            style={{ backgroundImage: `url(${img('/images/block3.jpg')})` }}
+        >
+            <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                 <div className="counters-grid">
                     {tr.items.map((counter, idx) => (
                         <CounterItem key={idx} {...counter} />

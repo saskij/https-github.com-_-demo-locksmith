@@ -1,10 +1,18 @@
 import { t } from '../lib/translations';
+import { img } from '../lib/basePath';
 
 export default function CallToAction({ lang = 'en' }) {
     const tr = t(lang).cta;
 
     return (
-        <section className="emergency-cta" id="contact" style={{ padding: '80px 0' }}>
+        <section
+            className="emergency-cta"
+            id="contact"
+            style={{
+                padding: '80px 0',
+                backgroundImage: `url(${img('/images/block1.jpg')})`
+            }}
+        >
             <div className="emergency-cta__inner container">
                 <div className="emergency-cta__pulse"></div>
                 <h2 className="emergency-cta__title" style={{ fontSize: '2.5rem' }}>{tr.title}</h2>
@@ -15,6 +23,5 @@ export default function CallToAction({ lang = 'en' }) {
                 </a>
             </div>
         </section>
-
     );
 }
