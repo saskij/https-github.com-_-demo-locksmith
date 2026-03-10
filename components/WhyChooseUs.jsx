@@ -48,99 +48,88 @@ export default function WhyChooseUs({ lang = 'en' }) {
                 .features-layout {
                     display: flex;
                     flex-direction: column;
-                    gap: 30px;
+                    gap: 24px;
                 }
                 
                 .features-row {
                     display: flex;
-                    gap: 30px;
+                    gap: 24px;
                     justify-content: center;
-                }
-                
-                .features-row--bottom {
-                    flex-wrap: nowrap;
+                    flex-wrap: wrap;
                 }
 
                 .feature-card {
-                    background: linear-gradient(145deg, #ffffff 0%, #fafcff 100%);
-                    padding: 40px 32px;
-                    border-radius: 20px;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0,0,0,0.02);
+                    background: #ffffff;
+                    padding: 24px 20px;
+                    border-radius: 16px;
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0,0,0,0.02);
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     text-align: center;
-                    border: 1px solid rgba(226, 232, 240, 0.8);
-                    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-                    flex: 1;
-                    max-width: 500px;
+                    border: 1px solid rgba(0, 0, 0, 0.04);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    flex: 1 1 280px;
+                    max-width: 320px;
                     height: 100%;
                 }
 
                 .feature-card:hover {
-                    transform: translateY(-8px);
-                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0,0,0,0.04);
-                    border-color: rgba(255, 106, 0, 0.2);
+                    transform: translateY(-4px);
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06), 0 2px 5px rgba(0,0,0,0.02);
+                    border-color: rgba(255, 106, 0, 0.15);
                 }
 
                 .feature-icon {
-                    width: 72px;
-                    height: 72px;
+                    width: 56px;
+                    height: 56px;
                     border-radius: 50%;
-                    background: linear-gradient(135deg, rgba(255, 106, 0, 0.15) 0%, rgba(255, 106, 0, 0.05) 100%);
+                    background: rgba(255, 106, 0, 0.08);
                     color: var(--orange);
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin-bottom: 24px;
-                    transition: transform 0.3s ease;
+                    margin-bottom: 16px;
+                    transition: transform 0.3s ease, background 0.3s ease;
                 }
                 
                 .feature-icon :global(svg) {
-                    width: 32px;
-                    height: 32px;
+                    width: 24px;
+                    height: 24px;
                 }
 
                 .feature-card:hover .feature-icon {
-                    transform: scale(1.1);
-                    background: linear-gradient(135deg, rgba(255, 106, 0, 0.2) 0%, rgba(255, 106, 0, 0.1) 100%);
+                    transform: scale(1.05);
+                    background: rgba(255, 106, 0, 0.12);
                 }
 
                 .feature-title {
-                    font-size: 1.35rem;
-                    font-weight: 800;
-                    margin-bottom: 12px;
+                    font-size: 1.15rem;
+                    font-weight: 700;
+                    margin-bottom: 8px;
                     color: var(--navy);
                     line-height: 1.3;
                 }
 
                 .feature-desc {
                     color: var(--text-light);
-                    line-height: 1.65;
+                    line-height: 1.5;
                     margin: 0;
-                    font-size: 1.05rem;
-                }
-
-                @media (max-width: 991px) {
-                    .features-row {
-                        flex-wrap: wrap;
-                    }
-                    .feature-card {
-                        min-width: calc(50% - 15px);
-                    }
+                    font-size: 0.95rem;
+                    opacity: 0.9;
                 }
 
                 @media (max-width: 767px) {
                     .features-layout {
-                        gap: 20px;
+                        gap: 16px;
                     }
                     .features-row {
                         flex-direction: column;
-                        gap: 20px;
+                        gap: 16px;
                     }
                     .feature-card {
                         min-width: 100%;
-                        padding: 32px 24px;
+                        max-width: 100%;
                     }
                 }
             `}</style>
