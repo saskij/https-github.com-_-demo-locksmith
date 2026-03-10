@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { servicesData } from './ServiceCards';
-import { img } from '../lib/basePath';
+import { img, BASE_PATH } from '../lib/basePath';
 import LanguageSwitcher from './LanguageSwitcher';
 import { t } from '../lib/translations';
 
@@ -18,12 +18,12 @@ export default function Header() {
     const nav = t(currentLang).header;
     const mob = t(currentLang).mobileMenu;
 
-    // Helper to generate localized paths
+    // Helper to generate localized paths with BASE_PATH
     const getLocalizedPath = (path) => {
         // If path is exactly '/', just return the prefix or '/' if no prefix
-        if (path === '/') return langPrefix || '/';
+        if (path === '/') return `${BASE_PATH}${langPrefix || '/'}`;
         // Otherwise append the path to the prefix
-        return `${langPrefix}${path}`;
+        return `${BASE_PATH}${langPrefix}${path}`;
     };
 
     useEffect(() => {

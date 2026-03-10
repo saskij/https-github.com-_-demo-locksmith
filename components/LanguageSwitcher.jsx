@@ -51,7 +51,14 @@ export default function LanguageSwitcher() {
             newPath = `/${newLang}${pathname === "/" ? "" : pathname}`;
         }
 
-        router.push(newPath);
+        // Import BASE_PATH dynamically or from static if available
+        // Since we are inside the component, let's just require it to avoid adding top level imports that might conflict
+        const { BASE_PATH } = require('../lib/basePath');
+
+        // Ensure we don't double up BASE_PATH if it's somehow already there, though unlikely
+        const finalPath = newPath.startsWith(BASE_PATH) ? newPath : `${BASE_PATH}${newPath}`;
+
+        router.push(finalPath);
         router.refresh();
     };
 

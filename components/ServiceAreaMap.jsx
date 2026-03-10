@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { t } from '../lib/translations';
+import { BASE_PATH } from '../lib/basePath';
 
 export const serviceAreasData = [
     { id: 'boise', path: '/service-areas/boise-locksmith' },
@@ -13,6 +14,7 @@ export const serviceAreasData = [
 
 export default function ServiceAreaMap({ lang = 'en' }) {
     const tr = t(lang).serviceAreaMap;
+    const langPrefix = `/${lang}`;
 
     return (
         <section className="area" id="service-area">
@@ -36,7 +38,7 @@ export default function ServiceAreaMap({ lang = 'en' }) {
                         <ul className="area__cities">
                             {serviceAreasData.map((city) => (
                                 <li key={city.id}>
-                                    <Link href={city.path} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                    <Link href={`${BASE_PATH}${langPrefix}${city.path}`} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6A00" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
                                         {tr.cities[city.id]}
                                     </Link>

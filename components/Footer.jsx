@@ -1,7 +1,7 @@
 "use client";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { img } from '../lib/basePath';
+import { img, BASE_PATH } from '../lib/basePath';
 import { t } from '../lib/translations';
 
 export default function Footer() {
@@ -12,8 +12,8 @@ export default function Footer() {
     const langPrefix = isLangSupported ? `/${currentLang}` : '';
 
     const getLocalizedPath = (path) => {
-        if (path === '/') return langPrefix || '/';
-        return `${langPrefix}${path}`;
+        if (path === '/') return `${BASE_PATH}${langPrefix || '/'}`;
+        return `${BASE_PATH}${langPrefix}${path}`;
     };
 
     const tr = t(lang).footer;
