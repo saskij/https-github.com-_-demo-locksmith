@@ -17,56 +17,205 @@ export default function WhyChooseUs({ lang = 'en' }) {
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                     <h2 className="section-title">{tr.sectionTitle} <span style={{ color: 'var(--orange)' }}>{tr.sectionTitleAccent}</span></h2>
-                    <p className="section-subtitle">{tr.sectionSubtitle}</p>
+                    <p className="section-subtitle" style={{ maxWidth: '700px', margin: '0 auto' }}>{tr.sectionSubtitle}</p>
                 </div>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                    gap: '24px',
-                    justifyContent: 'center'
-                }}>
-                    {tr.reasons.map((reason, index) => (
-                        <div key={index} data-aos="fade-up" data-aos-delay={index * 100} style={{
-                            backgroundColor: '#fff',
-                            padding: '32px 24px',
-                            borderRadius: '16px',
-                            boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            textAlign: 'center',
-                            border: '1px solid rgba(0,0,0,0.03)',
-                            transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-                        }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'translateY(-5px)';
-                                e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.05)';
-                            }}
-                        >
-                            <div style={{
-                                width: '64px',
-                                height: '64px',
-                                borderRadius: '50%',
-                                backgroundColor: 'rgba(255, 106, 0, 0.1)',
-                                color: 'var(--orange)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                marginBottom: '20px'
-                            }}>
-                                {icons[index]}
+                <div className="bento-grid">
+                    {tr.reasons.map((reason, index) => {
+                        // Highlight definitions based on array index from translations
+                        // 2: Fast Response Time -> Large, accent block
+                        // 4: Serving Boise Metro Area -> Wide block
+                        const isMainHighlight = index === 2;
+                        const isWideHighlight = index === 4;
+
+                        return (
+                            <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className={`bento-card ${isMainHighlight ? 'highlight-main' : ''} ${isWideHighlight ? 'highlight-wide' : ''}`}>
+                                <div className="bento-icon-wrapper">
+                                    {icons[index]}
+                                </div>
+                                <h3 className="bento-title">{reason.title}</h3>
+                                <p className="bento-desc">{reason.desc}</p>
                             </div>
-                            <h3 style={{ fontSize: '1.25rem', marginBottom: '12px', color: 'var(--navy)' }}>{reason.title}</h3>
-                            <p style={{ color: 'var(--text-light)', lineHeight: '1.6', margin: 0 }}>{reason.desc}</p>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
+
+            <style jsx>{`
+                .bento-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-auto-rows: min-content;
+                    gap: 24px;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+
+                .bento-card {
+                    background: #ffffff;
+                    padding: 32px;
+                    border-radius: 24px;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.01);
+                    border: 1px solid rgba(0, 0, 0, 0.03);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+                    height: 100%;
+                }
+
+                .bento-card:hover {
+                    transform: translateY(-6px);
+                    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.02);
+                }
+
+                .bento-icon-wrapper {
+                    width: 56px;
+                    height: 56px;
+                    border-radius: 16px;
+                    background: rgba(255, 106, 0, 0.08);
+                    color: var(--orange);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 24px;
+                    transition: transform 0.3s ease, background 0.3s ease;
+                }
+
+                .bento-icon-wrapper :global(svg) {
+                    width: 28px;
+                    height: 28px;
+                }
+
+                .bento-card:hover .bento-icon-wrapper {
+                    transform: scale(1.05) rotate(-5deg);
+                }
+
+                .bento-title {
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                    margin-bottom: 12px;
+                    color: var(--navy);
+                    line-height: 1.3;
+                }
+
+                .bento-desc {
+                    color: var(--text-light);
+                    line-height: 1.6;
+                    margin: 0;
+                    font-size: 0.95rem;
+                }
+
+                /* Bento Highlight Variants */
+
+                .highlight-main {
+                    grid-column: span 2;
+                    grid-row: span 2;
+                    background: linear-gradient(135deg, rgba(255, 106, 0, 0.08) 0%, rgba(255, 106, 0, 0.02) 100%);
+                    border: 1px solid rgba(255, 106, 0, 0.15);
+                    justify-content: center;
+                    padding: 48px;
+                }
+
+                .highlight-main .bento-icon-wrapper {
+                    width: 80px;
+                    height: 80px;
+                    background: var(--orange);
+                    color: white;
+                    border-radius: 20px;
+                    box-shadow: 0 10px 25px rgba(255, 106, 0, 0.3);
+                }
+
+                .highlight-main .bento-icon-wrapper :global(svg) {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                .highlight-main .bento-title {
+                    font-size: 2rem;
+                    font-weight: 800;
+                    margin-bottom: 16px;
+                }
+
+                .highlight-main .bento-desc {
+                    font-size: 1.15rem;
+                    max-width: 90%;
+                }
+
+                .highlight-wide {
+                    grid-column: span 2;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 32px;
+                    background: var(--navy);
+                    color: white;
+                }
+
+                .highlight-wide .bento-title {
+                    color: white;
+                    margin-bottom: 8px;
+                    font-size: 1.5rem;
+                }
+                
+                .highlight-wide .bento-desc {
+                    color: rgba(255,255,255,0.8);
+                }
+
+                .highlight-wide .bento-icon-wrapper {
+                    margin-bottom: 0;
+                    flex-shrink: 0;
+                    background: rgba(255, 255, 255, 0.1);
+                    color: var(--orange);
+                    width: 72px;
+                    height: 72px;
+                }
+
+                .highlight-wide .bento-icon-wrapper :global(svg) {
+                    width: 32px;
+                    height: 32px;
+                }
+
+                /* Responsive */
+                @media (max-width: 1024px) {
+                    .highlight-main .bento-title { font-size: 1.75rem; }
+                    .highlight-main { padding: 36px; }
+                    .highlight-wide { flex-direction: column; align-items: flex-start; gap: 24px; }
+                }
+
+                @media (max-width: 991px) {
+                    .bento-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    .highlight-wide {
+                        grid-column: span 2;
+                    }
+                }
+
+                @media (max-width: 767px) {
+                    .bento-grid {
+                        grid-template-columns: 1fr;
+                        gap: 16px;
+                    }
+                    .bento-card, .highlight-main, .highlight-wide {
+                        grid-column: span 1 !important;
+                        grid-row: span 1 !important;
+                        padding: 24px;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 0;
+                    }
+                    
+                    .highlight-main .bento-title {
+                        font-size: 1.5rem;
+                    }
+                    .highlight-wide .bento-title {
+                        font-size: 1.35rem;
+                    }
+                    .highlight-wide .bento-icon-wrapper {
+                        margin-bottom: 20px;
+                    }
+                }
+            `}</style>
         </section>
     );
 }
