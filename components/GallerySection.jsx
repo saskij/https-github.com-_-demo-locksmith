@@ -1,72 +1,115 @@
 "use client";
+import React from 'react';
 import Image from 'next/image';
 import { t } from '../lib/translations';
 
 export default function GallerySection({ lang = 'en' }) {
     const tr = t(lang).gallery;
 
-    // These are the requested placeholder categories for real work photos
-    const galleryItems = tr.items.map((item, index) => {
-        const icons = [
-            <svg key="0" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-1.1 0-2 .9-2 2v9c0 .6.4 1 1 1h2" /><circle cx="7" cy="17" r="2" /><path d="M9 17h6" /><circle cx="17" cy="17" r="2" /></svg>,
-            <svg key="1" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>,
-            <svg key="2" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>,
-            <svg key="3" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="8" width="18" height="12" rx="2" ry="2" /><path d="M16 8V6a4 4 0 0 0-8 0v2" /><circle cx="12" cy="14" r="1.5" /><path d="M12 15.5V17" /></svg>
-        ];
-        return {
-            ...item,
-            id: `gallery-item-${index}`,
-            icon: icons[index]
-        };
-    });
-
+    // Array of high-quality Unsplash placeholders suitable for locksmith/automotive
+    const placeholderImages = [
+        "https://images.unsplash.com/photo-1563290670-3d758c0df1b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Car keys/remote
+        "https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Close up car door lock
+        "https://images.unsplash.com/photo-1621252178220-4bfda42da493?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Mechanic/Technician working
+        "https://images.unsplash.com/photo-1549317661-bd32c8ce0be2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Dashboard/Ignition area
+        "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Driving/Steering wheel focus
+        "https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"  // Professional working with tools
+    ];
 
     return (
-        <section className="gallery" style={{ padding: '80px 0', backgroundColor: 'var(--bg-light)' }}>
-            <div className="container">
-                <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+        <section className="photo-gallery" style={{ padding: '80px 0', backgroundColor: 'var(--bg-light)' }}>
+            <div className="container" style={{ maxWidth: '1200px' }}>
+                <div style={{ textAlign: 'center', marginBottom: '50px' }}>
                     <h2 className="section-title">{tr.sectionTitle}</h2>
-                    <p className="section-subtitle" style={{ maxWidth: '600px', margin: '0 auto' }}>
+                    <p className="section-subtitle" style={{ maxWidth: '700px', margin: '0 auto' }}>
                         {tr.sectionSubtitle}
                     </p>
                 </div>
 
-                <div className="gallery-grid" style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-                    gap: '24px'
-                }}>
-                    {galleryItems.map((item, index) => (
+                <div className="gallery-grid">
+                    {placeholderImages.map((src, index) => (
                         <div
-                            key={item.id}
-                            className="gallery-card"
+                            key={index}
+                            className="gallery-item"
                             data-aos="fade-up"
                             data-aos-delay={index * 100}
                         >
-                            <div className="gallery-card__img-wrap">
-                                {/* Future <Image> element goes here */}
-                                <div className="gallery-card__placeholder-icon">
-                                    {item.icon}
-                                </div>
-                                <div className="gallery-card__placeholder-text">
-                                    Image Placeholder
-                                </div>
-                            </div>
-
-                            <div className="gallery-card__content">
-                                <h3 className="gallery-card__title">{item.title}</h3>
-                                <p className="gallery-card__desc">{item.desc}</p>
-                            </div>
+                            <Image
+                                src={src}
+                                alt={`Locksmith Work Example ${index + 1}`}
+                                fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                style={{ objectFit: 'cover' }}
+                                className="gallery-img"
+                                unoptimized={true} // Since we use external unsplash URLs for placeholder
+                            />
                         </div>
                     ))}
                 </div>
             </div>
 
             <style jsx>{`
-                @media (max-width: 767px) {
-                    .gallery {
-                        display: none !important;
+                .gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                }
+
+                .gallery-item {
+                    position: relative;
+                    width: 100%;
+                    aspect-ratio: 4 / 3;
+                    border-radius: 16px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+                    background-color: #e5e7eb; /* Fallback placeholder color */
+                    cursor: pointer;
+                }
+
+                .gallery-item :global(.gallery-img) {
+                    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                }
+
+                .gallery-item:hover :global(.gallery-img) {
+                    transform: scale(1.08);
+                }
+
+                /* Tablet Layout */
+                @media (max-width: 991px) {
+                    .gallery-grid {
+                        grid-template-columns: repeat(2, 1fr);
                     }
+                }
+
+                /* Mobile Layout - Fully visible now, single column stack */
+                @media (max-width: 767px) {
+                    .photo-gallery {
+                        padding: 60px 0 !important;
+                    }
+                    .gallery-grid {
+                        grid-template-columns: 1fr;
+                        gap: 16px;
+                    }
+                    /* Optional: If we want horizontal scroll instead of stack on mobile */
+                    /*
+                    .gallery-grid {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        overflow-x: auto;
+                        scroll-snap-type: x mandatory;
+                        padding-bottom: 20px;
+                        -webkit-overflow-scrolling: touch;
+                        scrollbar-width: none; // Firefox
+                    }
+                    .gallery-grid::-webkit-scrollbar {
+                        display: none; // Chrome/Safari
+                    }
+                    .gallery-item {
+                        flex: 0 0 85%;
+                        scroll-snap-align: center;
+                        aspect-ratio: 16 / 9;
+                    }
+                    */
                 }
             `}</style>
         </section>

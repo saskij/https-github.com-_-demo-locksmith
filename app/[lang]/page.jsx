@@ -24,9 +24,9 @@ export default async function Home({ params }) {
             <EmergencyBanner lang={lang} />
             <ServiceCards lang={lang} isHomepage={true} />
             <HowItWorks lang={lang} />
+            <BrandsCarousel lang={lang} />
             <TrustCounters lang={lang} />
             <GallerySection lang={lang} />
-            <BrandsCarousel lang={lang} />
             <TrustSection lang={lang} />
             <ServiceAreaMap lang={lang} />
             <FAQ lang={lang} />
