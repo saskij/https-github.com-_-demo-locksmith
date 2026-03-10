@@ -32,104 +32,102 @@ export default function WhyChooseUs({ lang = 'en' }) {
                 </div>
 
                 <div className="features-layout">
-                    {/* Top Row: 2 cards centered */}
-                    <div className="features-row features-row--top">
-                        {tr.reasons.slice(0, 2).map((reason, index) => renderCard(reason, index))}
-                    </div>
-
-                    {/* Bottom Row: 3 cards evenly spaced */}
-                    <div className="features-row features-row--bottom">
-                        {tr.reasons.slice(2, 5).map((reason, index) => renderCard(reason, index + 2))}
-                    </div>
+                    {tr.reasons.map((reason, index) => renderCard(reason, index))}
                 </div>
             </div>
 
             <style jsx>{`
                 .features-layout {
                     display: flex;
-                    flex-direction: column;
-                    gap: 24px;
-                }
-                
-                .features-row {
-                    display: flex;
-                    gap: 24px;
-                    justify-content: center;
                     flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 32px;
+                    max-width: 1100px;
+                    margin: 0 auto;
                 }
 
                 .feature-card {
                     background: #ffffff;
-                    padding: 24px 20px;
-                    border-radius: 16px;
-                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0,0,0,0.02);
+                    padding: 36px 32px;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.01);
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     text-align: center;
-                    border: 1px solid rgba(0, 0, 0, 0.04);
+                    border: 1px solid rgba(0, 0, 0, 0.03);
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    flex: 1 1 280px;
-                    max-width: 320px;
+                    flex: 1 1 calc(33.333% - 22px); 
+                    max-width: 350px;
+                    min-width: 280px;
                     height: 100%;
                 }
 
                 .feature-card:hover {
-                    transform: translateY(-4px);
-                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06), 0 2px 5px rgba(0,0,0,0.02);
-                    border-color: rgba(255, 106, 0, 0.15);
+                    transform: translateY(-6px);
+                    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.03);
                 }
 
                 .feature-icon {
-                    width: 56px;
-                    height: 56px;
+                    width: 64px;
+                    height: 64px;
                     border-radius: 50%;
-                    background: rgba(255, 106, 0, 0.08);
+                    background: rgba(255, 106, 0, 0.1);
                     color: var(--orange);
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin-bottom: 16px;
+                    margin-bottom: 24px;
                     transition: transform 0.3s ease, background 0.3s ease;
                 }
                 
                 .feature-icon :global(svg) {
-                    width: 24px;
-                    height: 24px;
+                    width: 32px;
+                    height: 32px;
                 }
 
                 .feature-card:hover .feature-icon {
-                    transform: scale(1.05);
-                    background: rgba(255, 106, 0, 0.12);
+                    background: rgba(255, 106, 0, 0.15);
                 }
 
                 .feature-title {
-                    font-size: 1.15rem;
-                    font-weight: 700;
-                    margin-bottom: 8px;
+                    font-size: 1.25rem;
+                    font-weight: 700; /* Bold */
+                    margin-bottom: 12px;
                     color: var(--navy);
                     line-height: 1.3;
                 }
 
                 .feature-desc {
                     color: var(--text-light);
-                    line-height: 1.5;
+                    line-height: 1.6;
                     margin: 0;
                     font-size: 0.95rem;
-                    opacity: 0.9;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2; /* Max 2 lines */
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+
+                @media (max-width: 991px) {
+                    .feature-card {
+                        flex: 1 1 calc(50% - 16px);
+                    }
                 }
 
                 @media (max-width: 767px) {
                     .features-layout {
-                        gap: 16px;
-                    }
-                    .features-row {
                         flex-direction: column;
-                        gap: 16px;
+                        gap: 24px;
+                        align-items: center;
                     }
                     .feature-card {
-                        min-width: 100%;
-                        max-width: 100%;
+                        flex: 1 1 100%;
+                        width: 100%;
+                        max-width: 400px;
+                    }
+                    .feature-desc {
+                        -webkit-line-clamp: 3; /* Allow slightly more text on mobile if needed */
                     }
                 }
             `}</style>
