@@ -22,7 +22,8 @@ export default function ContactPage() {
 
                 <div style={{ maxWidth: '400px', margin: '0 auto', background: 'var(--gray-bg)', padding: '40px', borderRadius: 'var(--radius)' }}>
                     <h3 style={{ fontSize: '1.2rem', marginBottom: '16px', color: 'var(--navy)' }}>24/7 Dispatch Center</h3>
-                    <p style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--orange)', marginBottom: '8px' }}>(208) 555-1234</p>
+                    <p style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--orange)', marginBottom: '8px' }}>(208) 686-8099</p>
+                    <p style={{ fontSize: '1rem', fontWeight: '600', color: 'var(--navy)', marginBottom: '8px' }}>CarKeyMastersBoise@Gmail.com</p>
                     <p style={{ color: 'var(--gray-text)' }}>Serving Boise, Meridian, Nampa, Caldwell, Eagle, and Kuna.</p>
                 </div>
             </section>
