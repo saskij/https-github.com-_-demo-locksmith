@@ -35,7 +35,7 @@ export const servicesData = [
         title: 'Car Key Programming',
         desc: "We program chip keys, key fobs, and push-to-start smart keys. If you purchased an aftermarket key online, our diagnostic computers can safely pair it with your vehicle's immobilizer system.",
         path: '/services/car-key-programming',
-        image: img('/images/hero-residential.png'),
+        image: img('/images/9.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
