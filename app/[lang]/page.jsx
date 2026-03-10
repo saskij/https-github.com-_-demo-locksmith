@@ -22,7 +22,7 @@ export default async function Home({ params }) {
             <HeroSection lang={lang} />
             <WhyChooseUs lang={lang} />
             <EmergencyBanner lang={lang} />
-            <ServiceCards lang={lang} />
+            <ServiceCards lang={lang} isHomepage={true} />
             <HowItWorks lang={lang} />
             <TrustCounters lang={lang} />
             <GallerySection lang={lang} />

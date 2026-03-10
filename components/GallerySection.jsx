@@ -61,6 +61,14 @@ export default function GallerySection({ lang = 'en' }) {
                     ))}
                 </div>
             </div>
+
+            <style jsx>{`
+                @media (max-width: 767px) {
+                    .gallery {
+                        display: none !important;
+                    }
+                }
+            `}</style>
         </section>
     );
 }
