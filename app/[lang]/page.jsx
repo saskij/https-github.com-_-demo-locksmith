@@ -1,3 +1,4 @@
+import { img } from '../../lib/basePath';
 import HeroSection from '../../components/HeroSection';
 import HowItWorks from '../../components/HowItWorks';
 import TrustCounters from '../../components/TrustCounters';
@@ -19,7 +20,7 @@ export default async function Home({ params }) {
     const { lang } = await params;
     return (
         <>
-            <HeroSection lang={lang} bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/hero-test.jpg' : '/images/hero-test.jpg'} />
+            <HeroSection lang={lang} bgImage={img('/images/1.jpg')} />
             <WhyChooseUs lang={lang} />
             <EmergencyBanner lang={lang} />
             <ServiceCards lang={lang} isHomepage={true} />

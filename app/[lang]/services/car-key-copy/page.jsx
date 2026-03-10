@@ -1,10 +1,11 @@
+import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
 
 export const metadata = {
     title: 'Car Key Duplication Boise | Spare Auto Keys Made',
-    description: 'Need a spare car key in Boise? We offer fast and affordable car key cloning, transponder key duplication, and fob cloning for all major vehicle brands.',
+    description: 'Need a spare car key in Boise? We offer fast and affordable car key cloning, transponder key duplication, and fobs cloning for all major vehicle brands.',
 };
 
 export default function CarKeyCopyPage() {
@@ -15,7 +16,7 @@ export default function CarKeyCopyPage() {
                 headlineAccent="Get a Spare Before You Need It"
                 subheadline="Protect yourself against lockouts by getting a duplicate car key. We clone and duplicate transponder keys, fobs, and standard mechanical keys for all vehicles."
 
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/services-hero.jpeg' : '/images/services-hero.jpeg'}
+                bgImage={img('/images/2.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Professional Car Key Duplication</h2>

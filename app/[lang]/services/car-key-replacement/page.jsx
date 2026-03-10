@@ -1,3 +1,4 @@
+import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
@@ -15,7 +16,7 @@ export default function CarKeyReplacementPage() {
                 headlineAccent="Lost Keys? No Problem."
                 subheadline="We cut and program new car keys on location. Avoid the dealership tow and save money with our mobile auto locksmith service."
 
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/services-hero.jpeg' : '/images/services-hero.jpeg'}
+                bgImage={img('/images/2.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Mobile Car Key Making Service</h2>

@@ -1,10 +1,11 @@
+import { img } from '../../../lib/basePath';
 import HeroSection from '../../../components/HeroSection';
 import ServiceCards from '../../../components/ServiceCards';
 import CallToAction from '../../../components/CallToAction';
 
 export const metadata = {
-    title: 'Automotive Locksmith Services | Car Key Masters Boise',
-    description: 'Our professional automotive locksmith services include car lockouts, key replacement, fob programming, and ignition repair across the Boise Metro Area.',
+    title: 'Professional Locksmith Services | Car Key Masters Boise',
+    description: 'Expert locksmith services in Boise including car key replacement, house lockouts, lock rekeying, and commercial security solutions across the Treasure Valley.',
 };
 
 export default function ServicesPage() {
@@ -15,7 +16,7 @@ export default function ServicesPage() {
                 headlineAccent="Specialized Auto Locksmith"
                 subheadline="Fast, reliable, and affordable automotive locksmith services for any vehicle."
 
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/services-hero.jpeg' : '/images/services-hero.jpeg'}
+                bgImage={img('/images/2.jpg')}
             />
             <div style={{ paddingTop: '60px' }}>
                 <ServiceCards />

@@ -1,3 +1,4 @@
+import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
@@ -15,7 +16,7 @@ export default function IgnitionRekeyPage() {
                 headlineAccent="One Key For Everything"
                 subheadline="If your ignition was replaced, we can rekey the new cylinder to match your original door keys so you don't have to carry two keys."
 
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/services-hero.jpeg' : '/images/services-hero.jpeg'}
+                bgImage={img('/images/2.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Automotive Cylinder Rekeying</h2>

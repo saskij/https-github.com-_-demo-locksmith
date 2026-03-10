@@ -1,4 +1,5 @@
 import HeroSection from '../../components/HeroSection';
+import { img } from '../../lib/basePath';
 import TrustSection from '../../components/TrustSection';
 import CallToAction from '../../components/CallToAction';
 
@@ -14,7 +15,7 @@ export default function ReviewsPage() {
                 headline="Customer Reviews"
                 headlineAccent="Trusted Across Boise"
                 subheadline="See why we are the top-rated emergency locksmith in the Treasure Valley."
-                bgImage="/https-github.com-_-demo-locksmith/images/reviews-hero.jpg"
+                bgImage={img('/images/4.jpg')}
             />
             <div style={{ paddingTop: '60px' }}>
                 <TrustSection />

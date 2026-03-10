@@ -1,3 +1,4 @@
+import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
@@ -15,7 +16,7 @@ export default function IgnitionRepairPage() {
                 headlineAccent="Key Won't Turn?"
                 subheadline="If your key is stuck, hard to turn, or completely jammed, our experts can rebuild or replace your vehicle's ignition cylinder on-site."
 
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/services-hero.jpeg' : '/images/services-hero.jpeg'}
+                bgImage={img('/images/2.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Mobile Automotive Ignition Solutions</h2>

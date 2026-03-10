@@ -1,21 +1,22 @@
+import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
 
 export const metadata = {
-    title: 'Car Key Repair Boise | Fob & Shell Fixes',
-    description: 'Broken car key or damaged fob? We repair cracked shells, replace dead batteries, and fix unresponsive buttons for all vehicle remotes in Boise.',
+    title: 'Car Key Repair Boise | Broken Fobs & Shells Fixed',
+    description: 'Why buy new when you can repair? We fix broken car key fobs, replace worn buttons, and swap damaged key shells in Boise for a fraction of the cost.',
 };
 
 export default function CarKeyRepairPage() {
     return (
         <>
             <HeroSection
-                headline="Car Key Repair"
-                headlineAccent="Fob & Shell Restoration"
-                subheadline="Don't spend hundreds on a new key if your current one can be fixed. We repair cracked shells, broken blades, and unresponsive remote buttons."
+                headline="Car Key & Fob Repair"
+                headlineAccent="Don't Replace, Repair and Save"
+                subheadline="Is your key shell cracked or are the buttons non-responsive? We specialize in repairing damaged fobs, replacing internal switches, and shell replacement for all car keys."
 
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/services-hero.jpeg' : '/images/services-hero.jpeg'}
+                bgImage={img('/images/2.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Professional Key Refurbishing</h2>

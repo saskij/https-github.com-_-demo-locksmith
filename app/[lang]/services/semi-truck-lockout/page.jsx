@@ -1,3 +1,4 @@
+import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
@@ -15,7 +16,7 @@ export default function SemiTruckLockoutPage() {
                 headlineAccent="Fast Service For Big Rigs"
                 subheadline="Time is money. When you're locked out of your semi-truck or commercial vehicle, we provide rapid, damage-free entry to get you moving again."
 
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/services-hero.jpeg' : '/images/services-hero.jpeg'}
+                bgImage={img('/images/2.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Commercial Truck Unlocking</h2>

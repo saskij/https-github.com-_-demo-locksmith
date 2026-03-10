@@ -1,4 +1,5 @@
 import HeroSection from '../../components/HeroSection';
+import { img } from '../../lib/basePath';
 import CallToAction from '../../components/CallToAction';
 
 export const metadata = {
@@ -13,7 +14,7 @@ export default function ContactPage() {
                 headline="Contact Us"
                 headlineAccent="Available 24/7"
                 subheadline="Need immediate assistance? We are always on call and ready to dispatch a technician to your location."
-                bgImage="/https-github.com-_-demo-locksmith/images/hero-city.png"
+                bgImage={img('/images/6.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', textAlign: 'center' }}>
                 <h2 className="section-title">Get In Touch</h2>

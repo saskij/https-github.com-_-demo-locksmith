@@ -1,3 +1,4 @@
+import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
@@ -15,7 +16,7 @@ export default function CarKeyProgrammingPage() {
                 headlineAccent="Fobs & Transponders Synced"
                 subheadline="Purchased a key online or need a new fob synced to your car? We offer dealer-level key programming directly at your vehicle's location."
 
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/services-hero.jpeg' : '/images/services-hero.jpeg'}
+                bgImage={img('/images/2.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Advanced Auto Key Programming</h2>
