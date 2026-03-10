@@ -19,7 +19,7 @@ export default async function Home({ params }) {
     const { lang } = await params;
     return (
         <>
-            <HeroSection lang={lang} />
+            <HeroSection lang={lang} bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/hero-test.jpg' : '/images/hero-test.jpg'} />
             <WhyChooseUs lang={lang} />
             <EmergencyBanner lang={lang} />
             <ServiceCards lang={lang} isHomepage={true} />
