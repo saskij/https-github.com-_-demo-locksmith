@@ -13,7 +13,7 @@ export default function ContactPage() {
                 headline="Contact Us"
                 headlineAccent="Available 24/7"
                 subheadline="Need immediate assistance? We are always on call and ready to dispatch a technician to your location."
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/hero-city.png' : '/images/hero-city.png'}
+                bgImage="/https-github.com-_-demo-locksmith/images/hero-city.png"
             />
             <section className="container" style={{ padding: '80px 20px', textAlign: 'center' }}>
                 <h2 className="section-title">Get In Touch</h2>

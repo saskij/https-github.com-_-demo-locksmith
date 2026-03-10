@@ -1,20 +1,24 @@
 import Link from 'next/link';
+import { t } from '../lib/translations';
 
 export const serviceAreasData = [
-    { id: 'boise', name: 'Boise', path: '/service-areas/boise-locksmith' },
-    { id: 'meridian', name: 'Meridian', path: '/service-areas/meridian-locksmith' },
-    { id: 'nampa', name: 'Nampa', path: '/service-areas/nampa-locksmith' },
-    { id: 'caldwell', name: 'Caldwell', path: '/service-areas/caldwell-locksmith' },
-    { id: 'eagle', name: 'Eagle', path: '/service-areas/eagle-locksmith' },
-    { id: 'kuna', name: 'Kuna', path: '/service-areas/kuna-locksmith' },
+    { id: 'boise', path: '/service-areas/boise-locksmith' },
+    { id: 'meridian', path: '/service-areas/meridian-locksmith' },
+    { id: 'nampa', path: '/service-areas/nampa-locksmith' },
+    { id: 'eagle', path: '/service-areas/eagle-locksmith' },
+    { id: 'caldwell', path: '/service-areas/caldwell-locksmith' },
+    { id: 'garden-city', path: '/service-areas/garden-city-locksmith' },
+    { id: 'kuna', path: '/service-areas/kuna-locksmith' },
 ];
 
-export default function ServiceAreaMap() {
+export default function ServiceAreaMap({ lang = 'en' }) {
+    const tr = t(lang).serviceAreaMap;
+
     return (
         <section className="area" id="service-area">
             <div className="container">
-                <h2 className="section-title">Service Area</h2>
-                <p className="section-subtitle">Fast emergency locksmith service across the Treasure Valley.</p>
+                <h2 className="section-title">{tr.sectionTitle}</h2>
+                <p className="section-subtitle">{tr.sectionSubtitle}</p>
 
                 <div className="area__content animate-in">
                     <div className="area__map" style={{ overflow: 'hidden', borderRadius: '12px', height: '100%', minHeight: '350px' }}>
@@ -29,20 +33,22 @@ export default function ServiceAreaMap() {
                         ></iframe>
                     </div>
                     <div className="area__info">
-                        <h3>Serving the Entire Treasure Valley</h3>
                         <ul className="area__cities">
                             {serviceAreasData.map((city) => (
                                 <li key={city.id}>
                                     <Link href={city.path} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6A00" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                                        {city.name}
+                                        {tr.cities[city.id]}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
+                        <p style={{ marginTop: '16px', marginBottom: '24px', fontSize: '1.05rem', color: 'var(--text-dark)', lineHeight: '1.6' }}>
+                            {tr.arrivalText}
+                        </p>
                         <a href="tel:+12085551234" className="btn btn--primary btn--md">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                            Call Now
+                            {tr.callNow}
                         </a>
                     </div>
                 </div>

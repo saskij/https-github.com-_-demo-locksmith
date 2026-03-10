@@ -1,0 +1,10 @@
+{
+    "navigation": {
+        "home": "Inicio",
+        "services": "Servicios",
+        "serviceAreas": "Áreas de Servicio",
+        "reviews": "Reseñas",
+        "contact": "Contacto",
+        "callNow": "Llamar Ahora"
+    }
+}

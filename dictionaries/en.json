@@ -1,0 +1,10 @@
+{
+    "navigation": {
+        "home": "Home",
+        "services": "Services",
+        "serviceAreas": "Service Areas",
+        "reviews": "Reviews",
+        "contact": "Contact",
+        "callNow": "Call Now"
+    }
+}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
+import { t } from '../lib/translations';
 
 function CounterItem({ value, label }) {
     const [count, setCount] = useState(0);
@@ -65,19 +66,14 @@ function CounterItem({ value, label }) {
     );
 }
 
-export default function TrustCounters() {
-    const counters = [
-        { value: "15+", label: "Min Response Time" },
-        { value: "10k+", label: "Happy Customers" },
-        { value: "24/7", label: "Emergency Service" },
-        { value: "100%", label: "Licensed & Bonded" }
-    ];
+export default function TrustCounters({ lang = 'en' }) {
+    const tr = t(lang).trustCounters;
 
     return (
         <section className="counters-section">
             <div className="container">
                 <div className="counters-grid">
-                    {counters.map((counter, idx) => (
+                    {tr.items.map((counter, idx) => (
                         <CounterItem key={idx} {...counter} />
                     ))}
                 </div>

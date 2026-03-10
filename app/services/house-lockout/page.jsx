@@ -14,8 +14,7 @@ export default function HouseLockoutPage() {
                 headline="House Lockout Service"
                 headlineAccent="We'll Get You Back Inside"
                 subheadline="Locked out of your home? Our residential technicians provide fast, damage-free entry to get you safely back inside your house."
-            
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/services-hero.jpeg' : '/images/services-hero.jpeg'}
+                bgImage="/images/hero-residential.png"
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Emergency Residential Unlocking</h2>

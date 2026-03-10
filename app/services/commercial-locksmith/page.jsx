@@ -14,8 +14,7 @@ export default function CommercialLocksmithPage() {
                 headline="Commercial Locksmith"
                 headlineAccent="Business Security Solutions"
                 subheadline="Comprehensive locksmith services for offices, retail stores, and commercial properties. Secure your business with our expert local technicians."
-            
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/services-hero.jpeg' : '/images/services-hero.jpeg'}
+                bgImage="/images/hero-commercial.png"
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Commercial Hardware & Security</h2>

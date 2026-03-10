@@ -14,8 +14,7 @@ export default function CarLockoutPage() {
                 headline="Car Lockout Service"
                 headlineAccent="Fast Auto Unlocking"
                 subheadline="Locked your keys in the car? We offer damage-free auto lockout services with a 15-minute response time in Boise."
-            
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/services-hero.jpeg' : '/images/services-hero.jpeg'}
+                bgImage="/images/hero-auto.png"
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Emergency Auto Locksmith</h2>

@@ -14,8 +14,7 @@ export default function LockRekeyPage() {
                 headline="Lock Rekey Service"
                 headlineAccent="New Keys, Same Locks"
                 subheadline="Moved into a new home or lost a key? We rekey your existing locks so old keys no longer work, saving you money on full lock replacements."
-            
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/services-hero.jpeg' : '/images/services-hero.jpeg'}
+                bgImage="/images/hero-residential.png"
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Professional Lock Rekeying</h2>

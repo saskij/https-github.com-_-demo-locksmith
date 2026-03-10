@@ -1,4 +1,7 @@
-export default function BrandsCarousel() {
+import { t } from '../lib/translations';
+
+export default function BrandsCarousel({ lang = 'en' }) {
+    const tr = t(lang).brandsCarousel;
     const brands = [
         "Toyota", "Ford", "Honda", "Chevrolet", "Nissan", "Jeep", "Subaru",
         "Hyundai", "Kia", "Dodge", "Lexus", "BMW", "Audi", "Schlage", "Kwikset", "Yale"
@@ -6,8 +9,9 @@ export default function BrandsCarousel() {
 
     return (
         <section className="brands-carousel">
-            <div className="container">
-                <p className="brands-title">We Service All Major Vehicle & Lock Brands</p>
+            <div className="container" style={{ textAlign: 'center', marginBottom: '40px' }}>
+                <h2 className="section-title">{tr.title}</h2>
+                <p className="section-subtitle">{tr.subtitle}</p>
             </div>
             <div className="marquee">
                 <div className="marquee-content">
