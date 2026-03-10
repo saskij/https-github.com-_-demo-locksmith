@@ -6,7 +6,7 @@ export default function CallToAction({ lang = 'en' }) {
 
     return (
         <section
-            className="emergency-cta"
+            className="emergency-cta parallax"
             id="contact"
             style={{
                 padding: '80px 0',
