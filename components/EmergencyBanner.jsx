@@ -1,10 +1,11 @@
 import { t } from '../lib/translations';
+import { img } from '../lib/basePath';
 
 export default function EmergencyBanner({ lang = 'en' }) {
     const tr = t(lang).emergencyBanner;
 
     return (
-        <section className="emergency-cta" style={{ padding: '60px 0' }}>
+        <section className="emergency-cta" style={{ padding: '60px 0', backgroundImage: `url(${img('/images/block2.jpg')})` }}>
             <div className="emergency-cta__inner container">
                 <div className="emergency-cta__pulse"></div>
                 <h2 className="emergency-cta__title" style={{ fontSize: '2.2rem' }}>{tr.title}</h2>
