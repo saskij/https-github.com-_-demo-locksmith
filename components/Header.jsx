@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { servicesData } from './ServiceCards';
 import { img } from '../lib/basePath';
@@ -47,33 +46,33 @@ export default function Header() {
     return (
         <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
             <div className="header__inner">
-                <Link href={getLocalizedPath('/')} className="header__logo">
+                <a href={getLocalizedPath('/')} className="header__logo">
                     <img
                         src={img("/images/logo1.png")}
                         alt="Car Key Masters Logo"
                         className="header__logo-img"
                     />
-                </Link>
+                </a>
 
                 <nav className="header__nav">
                     <div className="header__nav-group header__nav-group--left">
-                        <Link href={getLocalizedPath('/')} className={`header__nav-link ${pathname === getLocalizedPath('/') ? 'active' : ''}`}>{nav.home}</Link>
+                        <a href={getLocalizedPath('/')} className={`header__nav-link ${pathname === getLocalizedPath('/') ? 'active' : ''}`}>{nav.home}</a>
 
                         <div className="header__nav-dropdown">
-                            <Link href={getLocalizedPath('/services')} className={`header__nav-link ${pathname.includes('/services') ? 'active' : ''}`}>
+                            <a href={getLocalizedPath('/services')} className={`header__nav-link ${pathname.includes('/services') ? 'active' : ''}`}>
                                 {nav.services}
                                 <svg className="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                            </Link>
+                            </a>
 
                             <div className="dropdown-menu">
                                 {servicesData.map((service, idx) => (
-                                    <Link
+                                    <a
                                         key={service.id}
                                         href={getLocalizedPath(service.path)}
                                         className={`dropdown-link ${pathname === getLocalizedPath(service.path) ? 'active' : ''}`}
                                     >
                                         {t(currentLang).serviceCards.cards[idx].title}
-                                    </Link>
+                                    </a>
                                 ))}
                             </div>
                         </div>
@@ -82,9 +81,9 @@ export default function Header() {
                     <div className="header__nav-spacer"></div>
 
                     <div className="header__nav-group header__nav-group--right">
-                        <Link href={getLocalizedPath('/service-areas')} className={`header__nav-link ${pathname.includes('/service-areas') ? 'active' : ''}`}>{nav.serviceAreas}</Link>
-                        <Link href={getLocalizedPath('/reviews')} className={`header__nav-link ${pathname === getLocalizedPath('/reviews') ? 'active' : ''}`}>{nav.reviews}</Link>
-                        <Link href={getLocalizedPath('/contact')} className={`header__nav-link ${pathname === getLocalizedPath('/contact') ? 'active' : ''}`}>{nav.contact}</Link>
+                        <a href={getLocalizedPath('/service-areas')} className={`header__nav-link ${pathname.includes('/service-areas') ? 'active' : ''}`}>{nav.serviceAreas}</a>
+                        <a href={getLocalizedPath('/reviews')} className={`header__nav-link ${pathname === getLocalizedPath('/reviews') ? 'active' : ''}`}>{nav.reviews}</a>
+                        <a href={getLocalizedPath('/contact')} className={`header__nav-link ${pathname === getLocalizedPath('/contact') ? 'active' : ''}`}>{nav.contact}</a>
                     </div>
                 </nav>
 
@@ -107,11 +106,11 @@ export default function Header() {
             </div>
 
             <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
-                <Link href={getLocalizedPath('/')} className="mobile-menu__link">{mob.home}</Link>
-                <Link href={getLocalizedPath('/services')} className="mobile-menu__link">{mob.services}</Link>
-                <Link href={getLocalizedPath('/service-areas')} className="mobile-menu__link">{mob.serviceAreas}</Link>
-                <Link href={getLocalizedPath('/reviews')} className="mobile-menu__link">{mob.reviews}</Link>
-                <Link href={getLocalizedPath('/contact')} className="mobile-menu__link">{mob.contact}</Link>
+                <a href={getLocalizedPath('/')} className="mobile-menu__link">{mob.home}</a>
+                <a href={getLocalizedPath('/services')} className="mobile-menu__link">{mob.services}</a>
+                <a href={getLocalizedPath('/service-areas')} className="mobile-menu__link">{mob.serviceAreas}</a>
+                <a href={getLocalizedPath('/reviews')} className="mobile-menu__link">{mob.reviews}</a>
+                <a href={getLocalizedPath('/contact')} className="mobile-menu__link">{mob.contact}</a>
                 <a href="tel:+12085551234" className="mobile-menu__call btn btn--primary">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
                     {mob.call}

@@ -4,9 +4,9 @@ export const servicesData = [
     {
         id: 'car-key-replacement',
         title: 'Car Key Replacement',
-        desc: "Lost your exclusively only key? We cut and program new keys on the spot.",
+        desc: "Lost your exclusively only key? We cut and program new keys on the spot. Modern vehicles use specialized transponder systems, and our technicians carry the exact equipment needed to generate a brand new key for you.",
         path: '/services/car-key-replacement',
-        backgroundImage: '/images/hero-residential.png',
+        image: '/images/hero-residential.png',
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -17,8 +17,9 @@ export const servicesData = [
     {
         id: 'car-key-copy',
         title: 'Car Key Copy',
-        desc: "Need a spare? We duplicate all types of transponder and smart keys.",
+        desc: "Need a spare? We duplicate all types of transponder and smart keys. Getting a copy before you lose your only key is the smartest and most affordable way to prevent emergency lockout situations.",
         path: '/services/car-key-copy',
+        image: '/images/hero-main.jpg',
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -29,8 +30,9 @@ export const servicesData = [
     {
         id: 'car-key-programming',
         title: 'Car Key Programming',
-        desc: "We program chip keys, key fobs, and push-to-start smart keys.",
+        desc: "We program chip keys, key fobs, and push-to-start smart keys. If you purchased an aftermarket key online, our diagnostic computers can safely pair it with your vehicle's immobilizer system.",
         path: '/services/car-key-programming',
+        image: '/images/hero-residential.png',
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -41,8 +43,9 @@ export const servicesData = [
     {
         id: 'car-key-repair',
         title: 'Car Key Repair',
-        desc: "Broken shell or dead buttons? We refurbish and repair damaged fobs.",
+        desc: "Broken shell or dead buttons? We refurbish and repair damaged fobs. Instead of paying for a complete replacement, we can often swap the internal electronics into a fresh casing and replace the battery.",
         path: '/services/car-key-repair',
+        image: '/images/hero-main.jpg',
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -53,8 +56,9 @@ export const servicesData = [
     {
         id: 'ignition-repair',
         title: 'Ignition Repair',
-        desc: "Key won't turn? We repair damaged ignitions directly at your location.",
+        desc: "Key won't turn? We repair damaged ignitions directly at your location. Over time, the internal wafers wear down, preventing the key from turning. We rebuild ignitions so they work like new.",
         path: '/services/ignition-repair',
+        image: '/images/hero-residential.png',
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -65,8 +69,9 @@ export const servicesData = [
     {
         id: 'ignition-rekey',
         title: 'Ignition Rekey',
-        desc: "Match a new ignition cylinder to your existing door keys for convenience.",
+        desc: "Match a new ignition cylinder to your existing door keys for convenience. If your ignition lock is completely unrepairable, we replace it and rekey the new lock so you don't have to carry two separate keys.",
         path: '/services/ignition-rekey',
+        image: '/images/hero-main.jpg',
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -77,8 +82,9 @@ export const servicesData = [
     {
         id: 'car-lockout',
         title: 'Car Lockout Service',
-        desc: "Keys locked inside? We safely open all vehicle makes and models.",
+        desc: "Keys locked inside? We safely open all vehicle makes and models. Fast, damage-free unlocking techniques used to retrieve items from the passenger cabin or trunk without scratching your paint or bending the doors.",
         path: '/services/car-lockout',
+        image: '/images/hero-residential.png',
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -89,8 +95,9 @@ export const servicesData = [
     {
         id: 'semi-truck-lockout',
         title: 'Semi Truck Lockout',
-        desc: "Heavy-duty truck lockouts. We get big rigs back on the road fast.",
+        desc: "Heavy-duty truck lockouts. We get big rigs back on the road fast. Commercial drivers rely on our prompt response specifically tailored for Freightliner, Peterbilt, Kenworth, Volvo, and Mack trucks.",
         path: '/services/semi-truck-lockout',
+        image: '/images/hero-main.jpg',
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -106,32 +113,39 @@ export default function ServiceCards({ lang = 'en' }) {
 
     return (
         <section className="services" id="services">
-            <div className="container">
+            <div className="container" style={{ maxWidth: '1200px' }}>
                 <h2 className="section-title">{tr.sectionTitle}</h2>
                 <p className="section-subtitle">{tr.sectionSubtitle}</p>
-                <div className="services__grid">
+
+                <div className="services-zig-zag">
                     {servicesData.map((service, index) => (
-                        <Link
-                            href={`${langPrefix}${service.path}`}
-                            key={service.id}
-                            className={`service-card animate-in ${service.backgroundImage ? 'service-card--has-bg' : ''}`}
-                            data-aos="fade-up"
-                            data-aos-delay={index * 100}
-                            style={service.backgroundImage ? {
-                                backgroundImage: `linear-gradient(rgba(10, 14, 23, 0.75), rgba(10, 14, 23, 0.85)), url(${service.backgroundImage})`,
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center'
-                            } : {}}
-                        >
-                            <div className="service-card__icon">
-                                {service.icon}
+                        <div key={service.id} className="service-row" data-aos="fade-up" data-aos-delay="100">
+                            <div className="service-row__image-col">
+                                <div
+                                    className="service-row__image"
+                                    style={{ backgroundImage: `url(${service.image})` }}
+                                ></div>
                             </div>
-                            <h3 className="service-card__title">{tr.cards[index].title}</h3>
-                            <p className="service-card__desc">{tr.cards[index].desc}</p>
-                            <div className="service-card__arrow">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+
+                            <div className="service-row__content-col">
+                                <div className="service-row__icon">
+                                    {service.icon}
+                                </div>
+                                <h3 className="service-row__title">{tr.cards[index].title}</h3>
+                                <p className="service-row__desc">{service.desc}</p>
+
+                                <div className="service-row__actions">
+                                    <a href="tel:+12085551234" className="btn btn--primary" style={{ padding: '12px 24px', fontSize: '0.95rem' }}>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px' }}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                                        Call Now
+                                    </a>
+                                    <Link href={`${langPrefix}${service.path}`} className="service-row__link">
+                                        Learn More
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    </Link>
+                                </div>
                             </div>
-                        </Link>
+                        </div>
                     ))}
                 </div>
             </div>
