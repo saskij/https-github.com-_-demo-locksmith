@@ -438,132 +438,134 @@ ul {
   font-weight: 500;
 }
 
-/* ===== ZIG-ZAG SERVICES LAYOUT ===== */
+/* ===== SERVICES CARD GRID ===== */
 .services {
   padding: 100px 0;
   background: var(--white);
-  /* Убираем серый фон для чистоты */
 }
 
-.services-zig-zag {
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 50px;
+}
+
+@media (min-width: 640px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
   display: flex;
   flex-direction: column;
-  gap: 80px;
-  /* Generous spacing between rows */
-  margin-top: 60px;
 }
 
-.service-row {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: center;
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* На планшетах и десктопах: ряды (зигзаг) */
-@media (min-width: 900px) {
-  .service-row {
-    flex-direction: row;
-    gap: 80px;
-    /* Много воздуха между фото и текстом */
-    justify-content: space-between;
-  }
-
-  /* Чередование: четные элементы (картинка справа, текст слева) */
-  .service-row:nth-child(even) {
-    flex-direction: row-reverse;
-  }
-
-  .service-row__image-col,
-  .service-row__content-col {
-    flex: 1;
-    /* Половина ширины экрана */
-    width: 50%;
-  }
-}
-
-.service-row__image-col {
+.service-card__image {
   width: 100%;
-}
-
-.service-row__image {
-  width: 100%;
-  padding-bottom: 75%;
-  /* Пропорция 4:3 */
+  padding-bottom: 65%;
   background-size: cover;
   background-position: center;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(15, 42, 68, 0.1);
   transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.service-row:hover .service-row__image {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(15, 42, 68, 0.15);
+.service-card:hover .service-card__image {
+  transform: scale(1.05);
 }
 
-.service-row__content-col {
+.service-card__body {
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 100%;
+  flex-grow: 1;
 }
 
-.service-row__icon {
-  width: 56px;
-  height: 56px;
-  margin-bottom: 24px;
+.service-card__icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 12px;
 }
 
-.service-row__icon svg {
+.service-card__icon svg {
   width: 100%;
   height: 100%;
 }
 
-.service-row__title {
-  font-size: 2rem;
+.service-card__title {
+  font-size: 1.1rem;
   font-weight: 800;
   color: var(--navy);
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   font-family: var(--font-heading);
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
 }
 
-.service-row__desc {
-  font-size: 1.1rem;
+.service-card__desc {
+  font-size: 0.88rem;
   color: var(--text-light);
-  line-height: 1.7;
-  margin-bottom: 32px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
 }
 
-.service-row__actions {
+.service-card__actions {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 
-.service-row__link {
+.service-card__call-btn {
+  padding: 8px 16px !important;
+  font-size: 0.85rem !important;
+  gap: 6px;
+  display: inline-flex !important;
+  align-items: center;
+}
+
+.service-card__link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-weight: 700;
   color: var(--navy);
-  font-size: 1.05rem;
+  font-size: 0.88rem;
   transition: color 0.3s ease;
 }
 
-.service-row__link:hover {
+.service-card__link:hover {
   color: var(--orange);
 }
 
-.service-row__link svg {
+.service-card__link svg {
   transition: transform 0.3s ease;
 }
 
-.service-row__link:hover svg {
+.service-card__link:hover svg {
   transform: translateX(4px);
 }
+
 
 /* ===== TRUST & REVIEWS (GOOGLE STYLE) ===== */
 .trust {

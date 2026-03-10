@@ -117,9 +117,9 @@ export default function ServiceCards({ lang = 'en', isHomepage = false }) {
     // State to toggle showing all services on the homepage
     const [isExpanded, setIsExpanded] = useState(false);
 
-    // If on homepage and not expanded, show only 3. Otherwise show all.
+    // If on homepage and not expanded, show only 4. Otherwise show all.
     const visibleServices = (isHomepage && !isExpanded)
-        ? servicesData.slice(0, 3)
+        ? servicesData.slice(0, 4)
         : servicesData;
 
     return (
@@ -128,31 +128,27 @@ export default function ServiceCards({ lang = 'en', isHomepage = false }) {
                 <h2 className="section-title">{tr.sectionTitle}</h2>
                 <p className="section-subtitle">{tr.sectionSubtitle}</p>
 
-                <div className="services-zig-zag">
+                <div className="services-grid">
                     {visibleServices.map((service, index) => (
-                        <div key={service.id} className="service-row" data-aos="fade-up" data-aos-delay="100">
-                            <div className="service-row__image-col">
-                                <div
-                                    className="service-row__image"
-                                    style={{ backgroundImage: `url(${service.image})` }}
-                                ></div>
-                            </div>
-
-                            <div className="service-row__content-col">
-                                <div className="service-row__icon">
+                        <div key={service.id} className="service-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                            <div
+                                className="service-card__image"
+                                style={{ backgroundImage: `url(${service.image})` }}
+                            ></div>
+                            <div className="service-card__body">
+                                <div className="service-card__icon">
                                     {service.icon}
                                 </div>
-                                <h3 className="service-row__title">{tr.cards[index].title}</h3>
-                                <p className="service-row__desc">{service.desc}</p>
-
-                                <div className="service-row__actions">
-                                    <a href="tel:+12085551234" className="btn btn--primary" style={{ padding: '12px 24px', fontSize: '0.95rem' }}>
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px' }}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                                <h3 className="service-card__title">{tr.cards[index].title}</h3>
+                                <p className="service-card__desc">{tr.cards[index].desc}</p>
+                                <div className="service-card__actions">
+                                    <a href="tel:+12085551234" className="btn btn--primary service-card__call-btn">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
                                         Call Now
                                     </a>
-                                    <Link href={`${langPrefix}${service.path}`} className="service-row__link">
+                                    <Link href={`${langPrefix}${service.path}`} className="service-card__link">
                                         Learn More
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                                     </Link>
                                 </div>
                             </div>
@@ -201,3 +197,4 @@ export default function ServiceCards({ lang = 'en', isHomepage = false }) {
         </section>
     );
 }
+
