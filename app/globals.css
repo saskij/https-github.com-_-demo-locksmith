@@ -184,6 +184,7 @@ ul {
   left: 0;
   transform: translateY(-50%);
   width: 878px;
+  max-width: none;
   height: auto;
   display: block;
   z-index: 1002;
