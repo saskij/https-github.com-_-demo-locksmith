@@ -108,11 +108,11 @@ export default function Footer() {
                 <div className="footer__bottom-inner">
                     <p className="footer__copyright">&copy; {new Date().getFullYear()} Car Key Masters Boise. All rights reserved.</p>
                     <nav className="footer__legal">
-                        <Link href={getLocalizedPath('/privacy-policy')} className="footer__legal-link">{tr.footer.privacyPolicy}</Link>
+                        <Link href={getLocalizedPath('/privacy-policy')} className="footer__legal-link">{tr.privacyPolicy}</Link>
                         <span className="footer__legal-sep">·</span>
-                        <Link href={getLocalizedPath('/terms-and-conditions')} className="footer__legal-link">{tr.footer.terms}</Link>
+                        <Link href={getLocalizedPath('/terms-and-conditions')} className="footer__legal-link">{tr.terms}</Link>
                         <span className="footer__legal-sep">·</span>
-                        <Link href={getLocalizedPath('/sitemap')} className="footer__legal-link">{tr.footer.sitemap}</Link>
+                        <Link href={getLocalizedPath('/sitemap')} className="footer__legal-link">{tr.sitemap}</Link>
                     </nav>
                 </div>
             </div>
