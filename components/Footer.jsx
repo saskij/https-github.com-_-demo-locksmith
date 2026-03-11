@@ -28,7 +28,7 @@ export default function Footer() {
                     <div className="footer__brand-col">
                         <Link href={getLocalizedPath('/')} className="footer__logo-link">
                             <img
-                                src={img("/images/logo1.png")}
+                                src={img("/images/new-logo1.jpeg")}
                                 alt="Car Key Masters Logo"
                                 className="footer__logo-img"
                             />

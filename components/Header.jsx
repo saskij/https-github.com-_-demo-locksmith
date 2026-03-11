@@ -48,7 +48,7 @@ export default function Header() {
             <div className="header__inner">
                 <a href={getLocalizedPath('/')} className="header__logo">
                     <img
-                        src={img("/images/logo1.png")}
+                        src={img("/images/new-logo1.jpeg")}
                         alt="Car Key Masters Logo"
                         className="header__logo-img"
                     />
