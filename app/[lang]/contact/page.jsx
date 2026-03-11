@@ -18,7 +18,7 @@ export default async function ContactPage({ params }) {
                 headlineAccent={tr.headlineAccent}
                 subheadline={tr.subtitle}
 
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/hero-services.jpg' : '/images/hero-services.jpg'}
+                bgImage={img('/images/hero-contact.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">{tr.sectionTitle}</h2>
