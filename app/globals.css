@@ -1312,9 +1312,8 @@ ul {
   .header__nav {
     display: flex;
     align-items: center;
-    flex: 1;
-    margin: 0 60px;
-    /* Increased side margin */
+    margin-left: auto;
+    margin-right: 48px;
   }
 
   .header__nav-group {
