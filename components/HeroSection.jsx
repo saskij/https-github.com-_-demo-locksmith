@@ -26,6 +26,7 @@ export default function HeroSection({
                             fill
                             sizes="100vw"
                             priority
+                            fetchPriority="high"
                             style={{ objectFit: 'cover', objectPosition: 'center right' }}
                         />
                     </div>
