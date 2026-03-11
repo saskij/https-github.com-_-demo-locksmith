@@ -3,6 +3,7 @@ import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
+import Image from 'next/image';
 
 export const metadata = {
     title: 'Semi Truck Lockout Boise | Heavy Duty Towing Alternative',
@@ -12,16 +13,26 @@ export const metadata = {
 export default async function SemiTruckLockoutPage({ params }) {
     const { lang } = await params;
     const tr = t(lang).pages.semiTruckLockout;
+    const serviceImage = img('/images/service-semi-truck-lockout.jpg');
+
     return (
         <>
             <HeroSection lang={lang}
                 headline={tr.title}
                 headlineAccent={tr.headlineAccent}
                 subheadline={tr.subtitle}
-
-                bgImage={img('/images/hero-services.jpg')}
+                bgImage={serviceImage}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
+                <div style={{ marginBottom: '40px', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}>
+                    <Image 
+                        src={serviceImage} 
+                        alt={tr.title} 
+                        width={800} 
+                        height={450} 
+                        style={{ width: '100%', height: 'auto', display: 'block' }}
+                    />
+                </div>
                 <h2 className="section-title">{tr.sectionTitle}</h2>
                 <div style={{ fontSize: '1.1rem', color: 'var(--text-dark)', marginTop: '24px', lineHeight: '1.8' }}>
                     {tr.paragraphs.map((p, i) => (
