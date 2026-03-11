@@ -61,7 +61,7 @@ export const servicesData = [
         title: 'Ignition Repair',
         desc: "Key won't turn? We repair damaged ignitions directly at your location. Over time, the internal wafers wear down, preventing the key from turning. We rebuild ignitions so they work like new.",
         path: '/services/ignition-repair',
-        image: img('/images/hero-residential.png'),
+        image: img('/images/1.5.jpeg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
