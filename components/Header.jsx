@@ -104,15 +104,65 @@ export default function Header() {
 
             <div
                 className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}
-                onClick={() => { setIsMenuOpen(false); document.body.style.overflow = ''; }}
+                style={{ overflowY: 'auto', paddingBottom: '40px' }}
             >
-                <a href={getLocalizedPath('/')} className="mobile-menu__link" onClick={e => e.stopPropagation()}>{mob.home}</a>
-                <a href={getLocalizedPath('/services')} className="mobile-menu__link" onClick={e => e.stopPropagation()}>{mob.services}</a>
-                <a href={getLocalizedPath('/service-areas')} className="mobile-menu__link" onClick={e => e.stopPropagation()}>{mob.serviceAreas}</a>
-                <a href={getLocalizedPath('/contact')} className="mobile-menu__link" onClick={e => e.stopPropagation()}>{mob.contact}</a>
+                <a href={getLocalizedPath('/')} className="mobile-menu__link" onClick={() => setIsMenuOpen(false)}>{mob.home}</a>
+                
+                <div className="mobile-menu__dropdown-container" style={{ width: '100%' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingRight: '12px' }}>
+                        <a href={getLocalizedPath('/services')} className="mobile-menu__link" style={{ flexGrow: 1 }} onClick={() => setIsMenuOpen(false)}>
+                            {mob.services}
+                        </a>
+                        <button 
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                const subMenu = document.getElementById('mobile-services-submenu');
+                                const icon = document.getElementById('mobile-services-icon');
+                                if (subMenu.style.maxHeight === '0px' || !subMenu.style.maxHeight) {
+                                    subMenu.style.maxHeight = '500px';
+                                    subMenu.style.opacity = '1';
+                                    subMenu.style.marginTop = '10px';
+                                    icon.style.transform = 'rotate(180deg)';
+                                } else {
+                                    subMenu.style.maxHeight = '0px';
+                                    subMenu.style.opacity = '0';
+                                    subMenu.style.marginTop = '0px';
+                                    icon.style.transform = 'rotate(0deg)';
+                                }
+                            }}
+                            style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', padding: '10px' }}
+                        >
+                            <svg id="mobile-services-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s ease' }}><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                    </div>
+                    
+                    <div id="mobile-services-submenu" style={{ maxHeight: '0px', opacity: '0', overflow: 'hidden', transition: 'all 0.4s ease', paddingLeft: '20px', borderLeft: '2px solid var(--orange)', marginLeft: '12px' }}>
+                        {servicesData.map((service, idx) => (
+                            <a
+                                key={service.id}
+                                href={getLocalizedPath(service.path)}
+                                className="mobile-menu__link"
+                                style={{ fontSize: '0.95rem', padding: '12px 16px', border: 'none', background: 'transparent' }}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                {t(currentLang).serviceCards.cards[idx].title}
+                            </a>
+                        ))}
+                    </div>
+                </div>
 
-                <div onClick={e => e.stopPropagation()}>
+                <a href={getLocalizedPath('/service-areas')} className="mobile-menu__link" onClick={() => setIsMenuOpen(false)}>{mob.serviceAreas}</a>
+                <a href={getLocalizedPath('/contact')} className="mobile-menu__link" onClick={() => setIsMenuOpen(false)}>{mob.contact}</a>
+
+                <div style={{ padding: '0 20px', marginTop: '10px' }}>
                     <LanguageSwitcher variant="mobile" />
+                </div>
+                
+                <div style={{ marginTop: '24px', padding: '0 20px' }}>
+                    <a href="tel:+12086868099" className="btn btn--primary" style={{ width: '100%', padding: '16px', borderRadius: '12px', fontSize: '1.1rem' }}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px' }}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                        (208) 686-8099
+                    </a>
                 </div>
             </div>
         </header>
