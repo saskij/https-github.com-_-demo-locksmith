@@ -2109,6 +2109,13 @@ ul {
     padding: 0 24px;
   }
 
+  /* Sync mobile menu with the 75px header height (not the default 90px) */
+  .mobile-menu {
+    top: 75px;
+    height: calc(100vh - 75px);
+    border-top: none;
+  }
+
   .header__logo {
     flex: 1;
     height: 75px;
