@@ -1612,11 +1612,12 @@ ul {
   transition: all 0.4s ease;
 }
 
-.hiw-step:hover .hiw-step__icon-wrapper {
+.hiw-step__icon-wrapper:hover {
   background: var(--navy);
   color: var(--white);
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(15, 42, 68, 0.15);
+  cursor: pointer;
 }
 
 .hiw-step__icon {
