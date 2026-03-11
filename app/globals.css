@@ -439,6 +439,12 @@ ul {
 }
 
 /* ===== SERVICES CARD GRID ===== */
+.service-card-link {
+  display: contents;
+  text-decoration: none;
+  color: inherit;
+}
+
 .services {
   padding: 100px 0;
   background: var(--white);
@@ -639,6 +645,17 @@ ul {
   /* Hide "View All Services" button on mobile */
   .btn--secondary {
     display: none !important;
+  }
+
+  /* Tap feedback on mobile tiles */
+  .service-card {
+    cursor: pointer;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+
+  .service-card:active {
+    opacity: 0.8;
+    transform: scale(0.97);
   }
 }
 
