@@ -41,9 +41,22 @@ export default function HeroSection({
                         <p style={{ fontSize: '1.25rem', fontWeight: '600', color: '#ffffff', marginBottom: '12px' }}>
                             {resolvedSubheadline}
                         </p>
-                        <p className="hero__serving-line" style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.9)', marginBottom: '8px' }}>
-                            {tr.servingLine}
-                        </p>
+                        {tr.servingLine.split('\n\n').map((line, idx) => (
+                            <p 
+                                key={idx} 
+                                className="hero__serving-line" 
+                                style={{ 
+                                    fontSize: idx === 0 ? '1.1rem' : '1.5rem', 
+                                    fontWeight: idx === 1 ? '700' : '500', 
+                                    color: idx === 1 ? 'var(--orange)' : 'rgba(255,255,255,0.95)', 
+                                    marginBottom: idx === 0 ? '4px' : '12px',
+                                    textTransform: idx === 1 ? 'uppercase' : 'none',
+                                    letterSpacing: idx === 1 ? '0.5px' : 'normal'
+                                }}
+                            >
+                                {line}
+                            </p>
+                        ))}
                         <p style={{ fontSize: '1.05rem', color: 'var(--orange)', fontWeight: '700', letterSpacing: '0.5px' }}>
                             {tr.arrivalLine}
                         </p>

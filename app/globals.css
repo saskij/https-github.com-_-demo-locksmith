@@ -226,7 +226,7 @@ ul {
 }
 
 .hero__serving-line {
-  display: none;
+  display: block;
 }
 
 @media (min-width: 1024px) {
@@ -234,9 +234,6 @@ ul {
     display: block;
   }
 
-  .hero__serving-line {
-    display: block;
-  }
 }
 
 .header__menu-btn {
