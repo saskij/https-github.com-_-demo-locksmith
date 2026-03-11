@@ -9,7 +9,7 @@ export const servicesData = [
         title: 'Car Key Replacement',
         desc: "Lost your exclusively only key? We cut and program new keys on the spot. Modern vehicles use specialized transponder systems, and our technicians carry the exact equipment needed to generate a brand new key for you.",
         path: '/services/car-key-replacement',
-        image: img('/images/7.jpg'),
+        image: img('/images/1.1.JPG'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
