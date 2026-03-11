@@ -19,7 +19,7 @@ export default async function BoiseCityPage({ params }) {
                 headline={tr.title}
                 headlineAccent={tr.headlineAccent}
                 subheadline={tr.subtitle}
-                bgImage={img('/images/hero-city.png')}
+                bgImage={img('/images/hero-homepage.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">{tr.sectionTitle}</h2>
