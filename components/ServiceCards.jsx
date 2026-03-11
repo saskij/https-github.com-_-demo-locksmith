@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { img } from '../lib/basePath';
 
@@ -114,14 +114,6 @@ export default function ServiceCards({ lang = 'en', isHomepage = false }) {
     const langPrefix = `/${lang}`;
     const tr = require('../lib/translations').t(lang).serviceCards;
 
-    // State to toggle showing all services on the homepage
-    const [isExpanded, setIsExpanded] = useState(false);
-
-    // If on homepage and not expanded, show only 4. Otherwise show all.
-    const visibleServices = (isHomepage && !isExpanded)
-        ? servicesData.slice(0, 4)
-        : servicesData;
-
     return (
         <section className="services" id="services">
             <div className="container" style={{ maxWidth: '1200px' }}>
@@ -129,7 +121,7 @@ export default function ServiceCards({ lang = 'en', isHomepage = false }) {
                 <p className="section-subtitle">{tr.sectionSubtitle}</p>
 
                 <div className="services-grid">
-                    {visibleServices.map((service, index) => (
+                    {servicesData.map((service, index) => (
                         <div key={service.id} className="service-card" data-aos="fade-up" data-aos-delay={index * 50}>
                             <div
                                 className="service-card__image"
@@ -155,44 +147,6 @@ export default function ServiceCards({ lang = 'en', isHomepage = false }) {
                         </div>
                     ))}
                 </div>
-
-                {/* Load More Button - Only shows on homepage when collapsed */}
-                {isHomepage && !isExpanded && (
-                    <div style={{ textAlign: 'center', marginTop: '40px' }} data-aos="fade-up">
-                        <button
-                            className="btn btn--secondary"
-                            onClick={() => setIsExpanded(true)}
-                            style={{
-                                padding: '16px 40px',
-                                fontSize: '1.1rem',
-                                backgroundColor: 'var(--navy)',
-                                color: 'white',
-                                border: 'none',
-                                borderRadius: '12px',
-                                cursor: 'pointer',
-                                boxShadow: '0 4px 15px rgba(10, 14, 23, 0.2)',
-                                transition: 'all 0.3s ease',
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '8px',
-                                fontWeight: '600'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'translateY(-2px)';
-                                e.currentTarget.style.boxShadow = '0 8px 25px rgba(10, 14, 23, 0.3)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = '0 4px 15px rgba(10, 14, 23, 0.2)';
-                            }}
-                        >
-                            View All Services
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                    </div>
-                )}
             </div>
         </section>
     );

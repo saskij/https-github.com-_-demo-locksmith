@@ -567,7 +567,7 @@ ul {
 }
 
 
-/* ===== MOBILE BLUE TILES (< 768px) ===== */
+/* ===== MOBILE SERVICE TILES (< 768px) ===== */
 @media (max-width: 767px) {
   .services {
     padding: 60px 0 48px;
@@ -580,16 +580,16 @@ ul {
   }
 
   .service-card {
-    background: #1b58b8;
-    border-radius: 10px;
-    border: none;
-    box-shadow: none;
+    background: var(--charcoal);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
   }
 
   .service-card:hover {
     transform: none;
-    box-shadow: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
 
   /* Hide image, description, and action buttons */
@@ -607,32 +607,38 @@ ul {
 
   /* Restyle the body as a centered tile */
   .service-card__body {
-    padding: 16px;
+    padding: 16px 12px;
     align-items: center;
     text-align: center;
     justify-content: center;
+    min-height: 100px;
   }
 
-  /* White icon, smaller, centered */
+  /* Orange accent icon */
   .service-card__icon {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 8px;
-    color: #fff;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 10px;
   }
 
   .service-card__icon svg {
-    color: #fff;
-    stroke: #fff;
+    color: var(--orange);
+    stroke: var(--orange);
   }
 
-  /* White title, medium weight */
+  /* White title */
   .service-card__title {
     color: #fff;
-    font-size: 0.85rem;
-    font-weight: 500;
+    font-size: 0.82rem;
+    font-weight: 600;
     letter-spacing: 0;
     margin-bottom: 0;
+    line-height: 1.3;
+  }
+
+  /* Hide "View All Services" button on mobile */
+  .btn--secondary {
+    display: none !important;
   }
 }
 
