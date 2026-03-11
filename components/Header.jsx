@@ -55,7 +55,7 @@ export default function Header() {
                 </a>
 
                 <nav className="header__nav">
-                    <div className="header__nav-group header__nav-group--left">
+                    <div className="header__nav-group header__nav-group--right">
                         <a href={getLocalizedPath('/')} className={`header__nav-link ${pathname === getLocalizedPath('/') ? 'active' : ''}`}>{nav.home}</a>
 
                         <div className="header__nav-dropdown">
@@ -76,11 +76,7 @@ export default function Header() {
                                 ))}
                             </div>
                         </div>
-                    </div>
 
-                    <div className="header__nav-spacer"></div>
-
-                    <div className="header__nav-group header__nav-group--right">
                         <a href={getLocalizedPath('/service-areas')} className={`header__nav-link ${pathname.includes('/service-areas') ? 'active' : ''}`}>{nav.serviceAreas}</a>
                         <a href={getLocalizedPath('/reviews')} className={`header__nav-link ${pathname === getLocalizedPath('/reviews') ? 'active' : ''}`}>{nav.reviews}</a>
                         <a href={getLocalizedPath('/contact')} className={`header__nav-link ${pathname === getLocalizedPath('/contact') ? 'active' : ''}`}>{nav.contact}</a>
