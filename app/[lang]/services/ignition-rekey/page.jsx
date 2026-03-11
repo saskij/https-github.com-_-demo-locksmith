@@ -31,7 +31,9 @@ export default async function IgnitionRekeyPage({ params }) {
                     overflow: 'hidden', 
                     boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
                     border: '4px solid white',
-                    backgroundColor: 'white'
+                    backgroundColor: 'white',
+                    maxWidth: '266px',
+                    margin: '-120px auto 40px'
                 }}>
                     <Image 
                         src={serviceImage} 
