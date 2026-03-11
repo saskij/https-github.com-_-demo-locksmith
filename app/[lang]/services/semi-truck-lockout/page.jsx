@@ -21,10 +21,18 @@ export default async function SemiTruckLockoutPage({ params }) {
                 headline={tr.title}
                 headlineAccent={tr.headlineAccent}
                 subheadline={tr.subtitle}
-                bgImage={serviceImage}
+                bgImage={img('/images/hero-services.jpg')}
             />
-            <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
-                <div style={{ marginBottom: '40px', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}>
+            <section className="container" style={{ position: 'relative', zIndex: '10', maxWidth: '800px' }}>
+                <div style={{ 
+                    marginTop: '-120px', 
+                    marginBottom: '40px', 
+                    borderRadius: '16px', 
+                    overflow: 'hidden', 
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+                    border: '4px solid white',
+                    backgroundColor: 'white'
+                }}>
                     <Image 
                         src={serviceImage} 
                         alt={tr.title} 
