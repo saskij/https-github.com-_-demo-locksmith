@@ -20,13 +20,25 @@ export default function Footer() {
     const navTr = t(lang).header;
     const mapTr = t(lang).serviceAreaMap;
 
+    const handleLogoClick = (e) => {
+        const homePath = langPrefix || '/';
+        if (pathname === homePath) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
+
     return (
         <footer className="footer">
             <div className="footer__main">
                 <div className="footer__container">
                     {/* Column 1: Brand */}
                     <div className="footer__brand-col">
-                        <Link href={getLocalizedPath('/')} className="footer__logo-link">
+                        <Link 
+                            href={getLocalizedPath('/')} 
+                            className="footer__logo-link"
+                            onClick={handleLogoClick}
+                        >
                             <img
                                 src={img("/images/logo-carkeymasters.png")}
                                 alt="Car Key Masters Logo"
