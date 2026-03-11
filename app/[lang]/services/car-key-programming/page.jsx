@@ -4,6 +4,7 @@ import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
 import Image from 'next/image';
+import ServicePageLayout from '../../../../components/ServicePageLayout';
 
 export const metadata = {
     title: 'Car Key Programming Boise | Transponder & Fob Syncing',
@@ -23,35 +24,11 @@ export default async function CarKeyProgrammingPage({ params }) {
                 subheadline={tr.subtitle}
                 bgImage={img('/images/hero-services.jpg')}
             />
-            <section className="container" style={{ padding: '60px 20px', maxWidth: '800px' }}>
-                <div style={{ 
-                    marginBottom: '40px', 
-                    borderRadius: '16px', 
-                    overflow: 'hidden', 
-                    boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
-                    maxWidth: '266px',
-                    margin: '0 auto 40px'
-                }}>
-                    <Image 
-                        src={serviceImage} 
-                        alt={tr.title} 
-                        width={800} 
-                        height={450} 
-                        style={{ width: '100%', height: 'auto', display: 'block' }}
-                    />
-                </div>
-                <h2 className="section-title">{tr.sectionTitle}</h2>
-                <div style={{ fontSize: '1.1rem', color: 'var(--text-dark)', marginTop: '24px', lineHeight: '1.8' }}>
-                    {tr.paragraphs.map((p, i) => (
-                        <p key={i} style={{ marginBottom: '16px' }}>{p}</p>
-                    ))}
-                    <ul style={{ listStyle: 'disc', paddingLeft: '24px', margin: '24px 0', color: 'var(--navy)', fontWeight: '600' }}>
-                        {tr.list.map((item, i) => (
-                            <li key={i}>{item}</li>
-                        ))}
-                    </ul>
-                </div>
-            </section>
+            <ServicePageLayout 
+                tr={tr} 
+                serviceImage={serviceImage} 
+                lang={lang} 
+            />
             <TrustSection lang={lang} />
             <CallToAction lang={lang} />
         </>
