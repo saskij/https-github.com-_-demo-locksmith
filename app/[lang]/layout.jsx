@@ -13,6 +13,16 @@ export async function generateMetadata({ params }) {
     return {
         title: 'Emergency Locksmith Boise | 24/7 Lockout Service',
         description: '24/7 Emergency Locksmith in Boise, Idaho. Car lockouts, house lockouts, lock rekey & installation. Licensed & insured. 15-minute response time. Call now!',
+        icons: {
+            icon: [
+                { url: `${process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith' : ''}/favicon-16.png`, sizes: '16x16', type: 'image/png' },
+                { url: `${process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith' : ''}/favicon-32.png`, sizes: '32x32', type: 'image/png' },
+                { url: `${process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith' : ''}/favicon.ico` },
+            ],
+            apple: [
+                { url: `${process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith' : ''}/apple-touch-icon.png`, sizes: '180x180', type: 'image/png' },
+            ],
+        },
         openGraph: {
             title: 'Emergency Locksmith Boise | 24/7 Lockout Service',
             description: 'Locked out? We\'re already on the way. 24/7 emergency locksmith service across the Treasure Valley. Call now for fast response.',
