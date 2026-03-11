@@ -2096,14 +2096,13 @@ ul {
 
   .header__logo {
     flex: 1;
-    max-width: calc(100% - 150px);
     height: 75px;
   }
 
   .header__logo-img {
-    width: min(320px, 100%);
-    left: -10px;
-    top: 60%;
+    width: min(400px, 100%);
+    left: -15px;
+    top: 70%;
   }
 }
 
@@ -2114,12 +2113,11 @@ ul {
 
   .header__logo {
     flex: 1;
-    max-width: calc(100% - 140px);
   }
 
   .header__logo-img {
-    width: min(280px, 100%);
-    left: -10px;
-    top: 60%;
+    width: min(360px, 100%);
+    left: -15px;
+    top: 70%;
   }
 }
