@@ -1,6 +1,7 @@
 import HeroSection from '../../components/HeroSection';
 import ServiceAreaMap from '../../components/ServiceAreaMap';
 import CallToAction from '../../components/CallToAction';
+import { img } from '../../lib/basePath';
 
 export const metadata = {
     title: 'Service Areas | Emergency Locksmith Treasure Valley',
