@@ -27,8 +27,8 @@ export default async function ContactPage({ params }) {
                 <div style={{ marginTop: '48px', padding: '40px', background: 'var(--white)', borderRadius: '16px', boxShadow: '0 4px 20px rgba(0,0,0,0.08)', textAlign: 'center' }}>
                     <h3 style={{ color: 'var(--navy)', fontSize: '1.5rem', marginBottom: '16px' }}>{tr.cardTitle}</h3>
                     <p style={{ color: 'var(--text-dark)', marginBottom: '24px' }}>{tr.serving}</p>
-                    <a href="tel:2085461141" className="btn btn--primary btn--large" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}>
-                        📞 (208) 546-1141
+                    <a href="tel:2086868099" className="btn btn--primary btn--large" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}>
+                        📞 (208) 686-8099
                     </a>
                 </div>
             </section>

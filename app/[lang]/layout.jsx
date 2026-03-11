@@ -2,6 +2,7 @@ import '../../app/globals.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import AOSInit from '../../components/AOSInit';
+import StickyBar from '../../components/StickyBar';
 
 export async function generateStaticParams() {
     return [{ lang: 'en' }, { lang: 'es' }];
@@ -23,8 +24,19 @@ export async function generateMetadata({ params }) {
 export default async function RootLayout({ children, params }) {
     const { lang } = await params;
     return (
-        <div className="scroll-smooth" lang={lang}>
-            <main>{children}</main>
-        </div>
+        <html lang={lang} className="scroll-smooth">
+            <head>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+            </head>
+            <body>
+                <Header />
+                <main>{children}</main>
+                <Footer />
+                <StickyBar lang={lang} />
+                <AOSInit />
+            </body>
+        </html>
     );
 }

@@ -2100,8 +2100,8 @@ ul {
   }
 
   .header__logo-img {
-    width: 280px;
-    left: -15px;
+    width: 200px;
+    left: -10px;
     top: 50%;
   }
 }
@@ -2116,7 +2116,7 @@ ul {
   }
 
   .header__logo-img {
-    width: 240px;
+    width: 180px;
     left: -10px;
     top: 50%;
   }
