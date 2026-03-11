@@ -181,7 +181,7 @@ ul {
 .header__logo-img {
   position: absolute;
   top: 80%;
-  left: 12px;
+  left: -30px;
   transform: translateY(-50%);
   width: 390px;
   max-width: none;
