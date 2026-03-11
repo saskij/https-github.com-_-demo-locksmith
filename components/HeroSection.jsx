@@ -57,9 +57,6 @@ export default function HeroSection({
                                 {line}
                             </p>
                         ))}
-                        <p style={{ fontSize: '1.05rem', color: 'var(--orange)', fontWeight: '700', letterSpacing: '0.5px' }}>
-                            {tr.arrivalLine}
-                        </p>
                     </div>
 
                     <a href="tel:+12086868099" className="btn btn--primary btn--lg" style={{ fontSize: '1.15rem', padding: '16px 32px', display: 'inline-flex', alignItems: 'center', gap: '10px', borderRadius: '50px', fontWeight: '700', minHeight: '56px' }}>
