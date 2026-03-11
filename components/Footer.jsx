@@ -87,7 +87,7 @@ export default function Footer() {
                             <div className="footer__contact-item" style={{ marginTop: '-4px', opacity: 0.8, fontSize: '0.9rem' }}>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ opacity: 0 }}><circle cx="12" cy="12" r="10" /></svg>
                                 <div>
-                                    <span style={{ display: 'block', color: 'var(--text-light)' }}>{tr.immediateService}</span>
+                                    <span style={{ display: 'block', color: 'var(--text-light)', whiteSpace: 'nowrap' }}>{tr.immediateService}</span>
                                 </div>
                             </div>
                             <div className="footer__contact-item">
