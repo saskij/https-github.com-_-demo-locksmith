@@ -1,3 +1,5 @@
+"use client";
+import React from 'react';
 import Image from 'next/image';
 import { t } from '../lib/translations';
 import { img } from '../lib/basePath';
