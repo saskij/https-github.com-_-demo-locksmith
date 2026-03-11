@@ -1,3 +1,4 @@
+import { t } from '../../../../lib/translations';
 import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
@@ -8,31 +9,33 @@ export const metadata = {
     description: 'Need a spare car key in Boise? We offer fast and affordable car key cloning, transponder key duplication, and fobs cloning for all major vehicle brands.',
 };
 
-export default function CarKeyCopyPage() {
+export default async function CarKeyCopyPage({ params }) {
+    const { lang } = await params;
+    const tr = t(lang).pages.carKeyCopy;
     return (
         <>
-            <HeroSection
-                headline="Car Key Copying"
-                headlineAccent="Get a Spare Before You Need It"
-                subheadline="Protect yourself against lockouts by getting a duplicate car key. We clone and duplicate transponder keys, fobs, and standard mechanical keys for all vehicles."
+            <HeroSection lang={lang}
+                headline={tr.title}
+                headlineAccent={tr.headlineAccent}
+                subheadline={tr.subtitle}
 
                 bgImage={img('/images/hero-services.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
-                <h2 className="section-title">Professional Car Key Duplication</h2>
+                <h2 className="section-title">{tr.sectionTitle}</h2>
                 <div style={{ fontSize: '1.1rem', color: 'var(--text-dark)', marginTop: '24px', lineHeight: '1.8' }}>
-                    <p style={{ marginBottom: '16px' }}>Having only one key for your vehicle is a huge risk. If it's lost or broken, generating a key from scratch is significantly more expensive than duplicating an existing one. We make getting a spare key quick and affordable.</p>
-                    <p style={{ marginBottom: '16px' }}>Whether you need a basic metal door key cut, a chipped transponder key cloned, or an extra push-to-start proximity fob programmed, our technicians can handle the duplication right at your location or home.</p>
+                    {tr.paragraphs.map((p, i) => (
+                        <p key={i} style={{ marginBottom: '16px' }}>{p}</p>
+                    ))}
                     <ul style={{ listStyle: 'disc', paddingLeft: '24px', margin: '24px 0', color: 'var(--navy)', fontWeight: '600' }}>
-                        <li>Cost-effective spare key creation</li>
-                        <li>Transponder chip cloning</li>
-                        <li>Laser key duplication</li>
-                        <li>Smart key and fob duplication</li>
+                        {tr.list.map((item, i) => (
+                            <li key={i}>{item}</li>
+                        ))}
                     </ul>
                 </div>
             </section>
-            <TrustSection />
-            <CallToAction />
+            <TrustSection lang={lang} />
+            <CallToAction lang={lang} />
         </>
     );
 }

@@ -1,3 +1,5 @@
+import { t } from '../../../../lib/translations';
+import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
@@ -7,24 +9,27 @@ export const metadata = {
     description: 'Fast, affordable locksmith in Caldwell, ID. Emergency auto unlocks, home rekeying, and commercial security.',
 };
 
-export default function CaldwellCityPage() {
+export default async function CaldwellCityPage({ params }) {
+    const { lang } = await params;
+    const tr = t(lang).pages.caldwell;
     return (
         <>
-            <HeroSection
-                headline="Locksmith in Caldwell, ID"
-                headlineAccent="24/7 Local Technicians"
-                subheadline="Caldwell's trusted source for emergency lockout services and lock replacements."
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/hero-city.png' : '/images/hero-city.png'}
+            <HeroSection lang={lang}
+                headline={tr.title}
+                headlineAccent={tr.headlineAccent}
+                subheadline={tr.subtitle}
+                bgImage={img('/images/hero-city.png')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
-                <h2 className="section-title">Caldwell Lock & Key Services</h2>
+                <h2 className="section-title">{tr.sectionTitle}</h2>
                 <div style={{ fontSize: '1.1rem', color: 'var(--text-dark)', marginTop: '24px', lineHeight: '1.8' }}>
-                    <p style={{ marginBottom: '16px' }}>Serving Caldwell and the greater 2C area, we ensure you're never stranded during a lockout. We pride ourselves on transparent pricing and rapid arrival times.</p>
-                    <p>Our services include auto key programming, residential lock installations, and commercial master key systems.</p>
+                    {tr.paragraphs.map((p, i) => (
+                        <p key={i} style={{ marginBottom: i === 0 ? '16px' : '0' }}>{p}</p>
+                    ))}
                 </div>
             </section>
-            <TrustSection />
-            <CallToAction />
+            <TrustSection lang={lang} />
+            <CallToAction lang={lang} />
         </>
     );
 }

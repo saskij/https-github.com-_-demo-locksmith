@@ -1,3 +1,4 @@
+import { t } from '../../../lib/translations';
 import HeroSection from '../../../components/HeroSection';
 import { img } from '../../../lib/basePath';
 import ServiceAreaMap from '../../../components/ServiceAreaMap';
@@ -8,19 +9,19 @@ export const metadata = {
     description: 'We provide fast, 24/7 emergency locksmith services to Boise, Meridian, Nampa, Caldwell, Eagle, and Kuna.',
 };
 
-export default function ServiceAreasPage() {
+export default async function ServiceAreasPage({ params }) {
+    const { lang } = await params;
+    const tr = t(lang).pages.serviceAreas;
     return (
         <>
-            <HeroSection
-                headline="Service Areas"
-                headlineAccent="Treasure Valley Wide"
-                subheadline="Fast emergency locksmith service stationed across Boise and surrounding cities for rapid response times."
+            <HeroSection lang={lang}
+                headline={tr.title}
+                headlineAccent={tr.headlineAccent}
+                subheadline={tr.subtitle}
                 bgImage={img('/images/hero-service-areas.jpg')}
             />
-            <div style={{ paddingTop: '60px' }}>
-                <ServiceAreaMap />
-            </div>
-            <CallToAction />
+            <ServiceAreaMap lang={lang} />
+            <CallToAction lang={lang} />
         </>
     );
 }

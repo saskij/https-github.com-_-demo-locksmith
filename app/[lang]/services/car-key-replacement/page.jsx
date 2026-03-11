@@ -1,3 +1,4 @@
+import { t } from '../../../../lib/translations';
 import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
@@ -8,31 +9,33 @@ export const metadata = {
     description: 'Lost your car keys in Boise? Our mobile auto locksmiths can cut and program a brand new transponder, fob, or smart key on the spot for all vehicle makes.',
 };
 
-export default function CarKeyReplacementPage() {
+export default async function CarKeyReplacementPage({ params }) {
+    const { lang } = await params;
+    const tr = t(lang).pages.carKeyReplacement;
     return (
         <>
-            <HeroSection
-                headline="Car Key Replacement"
-                headlineAccent="Lost Keys? No Problem."
-                subheadline="We cut and program new car keys on location. Avoid the dealership tow and save money with our mobile auto locksmith service."
+            <HeroSection lang={lang}
+                headline={tr.title}
+                headlineAccent={tr.headlineAccent}
+                subheadline={tr.subtitle}
 
                 bgImage={img('/images/hero-services.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
-                <h2 className="section-title">Mobile Car Key Making Service</h2>
+                <h2 className="section-title">{tr.sectionTitle}</h2>
                 <div style={{ fontSize: '1.1rem', color: 'var(--text-dark)', marginTop: '24px', lineHeight: '1.8' }}>
-                    <p style={{ marginBottom: '16px' }}>Losing the only key to your vehicle is stressful, but you don't need to tow your car to a dealership. Our fully equipped mobile locksmith vans come directly to your location in the Boise Metro Area to generate a brand new key from scratch.</p>
-                    <p style={{ marginBottom: '16px' }}>Our licensed automotive technicians have the specialized tools and software required to cut high-security laser keys and program transponder chips directly to your car's computer system (ECU).</p>
+                    {tr.paragraphs.map((p, i) => (
+                        <p key={i} style={{ marginBottom: '16px' }}>{p}</p>
+                    ))}
                     <ul style={{ listStyle: 'disc', paddingLeft: '24px', margin: '24px 0', color: 'var(--navy)', fontWeight: '600' }}>
-                        <li>Transponder chip key programming</li>
-                        <li>High-security laser cut keys</li>
-                        <li>Proximity / Smart Key Fob generation</li>
-                        <li>Key generation from VIN or door lock decoding</li>
+                        {tr.list.map((item, i) => (
+                            <li key={i}>{item}</li>
+                        ))}
                     </ul>
                 </div>
             </section>
-            <TrustSection />
-            <CallToAction />
+            <TrustSection lang={lang} />
+            <CallToAction lang={lang} />
         </>
     );
 }

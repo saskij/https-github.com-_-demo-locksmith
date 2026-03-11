@@ -1,3 +1,5 @@
+import { t } from '../../../../lib/translations';
+import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
@@ -7,24 +9,27 @@ export const metadata = {
     description: 'Top-rated emergency locksmith serving Nampa, ID. Professional auto and home unlocking with local technicians.',
 };
 
-export default function NampaCityPage() {
+export default async function NampaCityPage({ params }) {
+    const { lang } = await params;
+    const tr = t(lang).pages.nampa;
     return (
         <>
-            <HeroSection
-                headline="Locksmith in Nampa, ID"
-                headlineAccent="Trusted Canyon County Service"
-                subheadline="Providing affordable and fast emergency locksmith services to all of Nampa and Canyon County."
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/hero-city.png' : '/images/hero-city.png'}
+            <HeroSection lang={lang}
+                headline={tr.title}
+                headlineAccent={tr.headlineAccent}
+                subheadline={tr.subtitle}
+                bgImage={img('/images/hero-city.png')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
-                <h2 className="section-title">Reliable Nampa Locksmith</h2>
+                <h2 className="section-title">{tr.sectionTitle}</h2>
                 <div style={{ fontSize: '1.1rem', color: 'var(--text-dark)', marginTop: '24px', lineHeight: '1.8' }}>
-                    <p style={{ marginBottom: '16px' }}>Nampa residents deserve a locksmith they can trust. We offer upfront pricing and lightning-fast response times for car lockouts, lost keys, and broken deadbolts.</p>
-                    <p>From downtown Nampa to the rural outskirts, our mobile service vehicles are fully stocked to fix your lock issue on the first visit.</p>
+                    {tr.paragraphs.map((p, i) => (
+                        <p key={i} style={{ marginBottom: i === 0 ? '16px' : '0' }}>{p}</p>
+                    ))}
                 </div>
             </section>
-            <TrustSection />
-            <CallToAction />
+            <TrustSection lang={lang} />
+            <CallToAction lang={lang} />
         </>
     );
 }

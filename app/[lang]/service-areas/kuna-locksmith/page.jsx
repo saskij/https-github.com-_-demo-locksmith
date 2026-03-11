@@ -1,3 +1,5 @@
+import { t } from '../../../../lib/translations';
+import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
@@ -7,24 +9,27 @@ export const metadata = {
     description: 'Emergency locksmith in Kuna, ID. Available 24/7 for house lockouts, car unlocks, and new lock installation.',
 };
 
-export default function KunaCityPage() {
+export default async function KunaCityPage({ params }) {
+    const { lang } = await params;
+    const tr = t(lang).pages.kuna;
     return (
         <>
-            <HeroSection
-                headline="Locksmith in Kuna, ID"
-                headlineAccent="Your Local Security Experts"
-                subheadline="Fast and friendly locksmith services available 24/7 for the growing Kuna community."
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/hero-city.png' : '/images/hero-city.png'}
+            <HeroSection lang={lang}
+                headline={tr.title}
+                headlineAccent={tr.headlineAccent}
+                subheadline={tr.subtitle}
+                bgImage={img('/images/hero-city.png')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
-                <h2 className="section-title">Kuna Emergency Locksmith</h2>
+                <h2 className="section-title">{tr.sectionTitle}</h2>
                 <div style={{ fontSize: '1.1rem', color: 'var(--text-dark)', marginTop: '24px', lineHeight: '1.8' }}>
-                    <p style={{ marginBottom: '16px' }}>As Kuna expands, we’re committed to providing the community with reliable, around-the-clock locksmith services. We dispatch technicians quickly so you aren't left waiting.</p>
-                    <p>We handle everything from simple residential lockouts and rekeys to extracting broken keys from ignitions.</p>
+                    {tr.paragraphs.map((p, i) => (
+                        <p key={i} style={{ marginBottom: i === 0 ? '16px' : '0' }}>{p}</p>
+                    ))}
                 </div>
             </section>
-            <TrustSection />
-            <CallToAction />
+            <TrustSection lang={lang} />
+            <CallToAction lang={lang} />
         </>
     );
 }

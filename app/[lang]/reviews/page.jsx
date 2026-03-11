@@ -1,3 +1,4 @@
+import { t } from '../../../lib/translations';
 import HeroSection from '../../../components/HeroSection';
 import { img } from '../../../lib/basePath';
 import TrustSection from '../../../components/TrustSection';
@@ -8,19 +9,19 @@ export const metadata = {
     description: 'Read what our customers in Boise and the Treasure Valley say about our fast, reliable 24/7 emergency locksmith services.',
 };
 
-export default function ReviewsPage() {
+export default async function ReviewsPage({ params }) {
+    const { lang } = await params;
+    const tr = t(lang).pages.reviews;
     return (
         <>
-            <HeroSection
-                headline="Customer Reviews"
-                headlineAccent="Trusted Across Boise"
-                subheadline="See why we are the top-rated emergency locksmith in the Treasure Valley."
-                bgImage={img('/images/hero-reviews.jpg')}
+            <HeroSection lang={lang}
+                headline={tr.title}
+                headlineAccent={tr.headlineAccent}
+                subheadline={tr.subtitle}
+                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/hero-services.jpg' : '/images/hero-services.jpg'}
             />
-            <div style={{ paddingTop: '60px' }}>
-                <TrustSection />
-            </div>
-            <CallToAction />
+            <TrustSection lang={lang} />
+            <CallToAction lang={lang} />
         </>
     );
 }

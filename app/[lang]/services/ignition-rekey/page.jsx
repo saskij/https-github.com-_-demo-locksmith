@@ -1,3 +1,4 @@
+import { t } from '../../../../lib/translations';
 import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
@@ -8,31 +9,33 @@ export const metadata = {
     description: 'Ignition replaced? We rekey ignition cylinders to match your existing car door keys, saving you the hassle of carrying two different keys.',
 };
 
-export default function IgnitionRekeyPage() {
+export default async function IgnitionRekeyPage({ params }) {
+    const { lang } = await params;
+    const tr = t(lang).pages.ignitionRekey;
     return (
         <>
-            <HeroSection
-                headline="Ignition Rekeying"
-                headlineAccent="One Key For Everything"
-                subheadline="If your ignition was replaced, we can rekey the new cylinder to match your original door keys so you don't have to carry two keys."
+            <HeroSection lang={lang}
+                headline={tr.title}
+                headlineAccent={tr.headlineAccent}
+                subheadline={tr.subtitle}
 
                 bgImage={img('/images/hero-services.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
-                <h2 className="section-title">Automotive Cylinder Rekeying</h2>
+                <h2 className="section-title">{tr.sectionTitle}</h2>
                 <div style={{ fontSize: '1.1rem', color: 'var(--text-dark)', marginTop: '24px', lineHeight: '1.8' }}>
-                    <p style={{ marginBottom: '16px' }}>When an ignition cylinder fails and needs to be replaced, the new part comes with its own unique set of keys. This leaves you in the annoying position of needing one key to unlock the doors and a completely different key to start the engine.</p>
-                    <p style={{ marginBottom: '16px' }}>Our automotive locksmiths solve this problem by rekeying the new ignition cylinder. We disassemble the ignition and swap out the internal wafers to perfectly match the cuts of your original key, restoring a seamless, single-key experience.</p>
+                    {tr.paragraphs.map((p, i) => (
+                        <p key={i} style={{ marginBottom: '16px' }}>{p}</p>
+                    ))}
                     <ul style={{ listStyle: 'disc', paddingLeft: '24px', margin: '24px 0', color: 'var(--navy)', fontWeight: '600' }}>
-                        <li>Ignition cylinder rekeying</li>
-                        <li>Door lock cylinder rekeying</li>
-                        <li>Trunk lock matching</li>
-                        <li>Eliminate the need for two separate keys</li>
+                        {tr.list.map((item, i) => (
+                            <li key={i}>{item}</li>
+                        ))}
                     </ul>
                 </div>
             </section>
-            <TrustSection />
-            <CallToAction />
+            <TrustSection lang={lang} />
+            <CallToAction lang={lang} />
         </>
     );
 }

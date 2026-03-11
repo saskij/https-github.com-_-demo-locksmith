@@ -1,3 +1,5 @@
+import { t } from '../../../../lib/translations';
+import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
@@ -7,24 +9,27 @@ export const metadata = {
     description: 'Top-tier locksmith services for Eagle, ID. High-security locks, smart locks, and fast emergency lockouts.',
 };
 
-export default function EagleCityPage() {
+export default async function EagleCityPage({ params }) {
+    const { lang } = await params;
+    const tr = t(lang).pages.eagle;
     return (
         <>
-            <HeroSection
-                headline="Locksmith in Eagle, ID"
-                headlineAccent="Premium Lock Services"
-                subheadline="Upgrading security for Eagle homes and responding 24/7 to lockout emergencies."
-                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/hero-city.png' : '/images/hero-city.png'}
+            <HeroSection lang={lang}
+                headline={tr.title}
+                headlineAccent={tr.headlineAccent}
+                subheadline={tr.subtitle}
+                bgImage={img('/images/hero-city.png')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
-                <h2 className="section-title">Eagle Residential & Auto Locksmith</h2>
+                <h2 className="section-title">{tr.sectionTitle}</h2>
                 <div style={{ fontSize: '1.1rem', color: 'var(--text-dark)', marginTop: '24px', lineHeight: '1.8' }}>
-                    <p style={{ marginBottom: '16px' }}>For homes and businesses in Eagle, we specialize in high-security lock installations, smart home integrations, and damage-free lockout resolutions.</p>
-                    <p>Whether you need a luxury vehicle unlocked or a commercial building rekeyed, our expert technicians deliver premium service.</p>
+                    {tr.paragraphs.map((p, i) => (
+                        <p key={i} style={{ marginBottom: i === 0 ? '16px' : '0' }}>{p}</p>
+                    ))}
                 </div>
             </section>
-            <TrustSection />
-            <CallToAction />
+            <TrustSection lang={lang} />
+            <CallToAction lang={lang} />
         </>
     );
 }

@@ -1,3 +1,4 @@
+import { t } from '../../../../lib/translations';
 import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
@@ -8,31 +9,33 @@ export const metadata = {
     description: 'Locked out of your semi-truck or big rig in Boise? We provide fast, damage-free emergency lockout services for commercial trucks and fleets.',
 };
 
-export default function SemiTruckLockoutPage() {
+export default async function SemiTruckLockoutPage({ params }) {
+    const { lang } = await params;
+    const tr = t(lang).pages.semiTruckLockout;
     return (
         <>
-            <HeroSection
-                headline="Semi Truck Lockout"
-                headlineAccent="Fast Service For Big Rigs"
-                subheadline="Time is money. When you're locked out of your semi-truck or commercial vehicle, we provide rapid, damage-free entry to get you moving again."
+            <HeroSection lang={lang}
+                headline={tr.title}
+                headlineAccent={tr.headlineAccent}
+                subheadline={tr.subtitle}
 
                 bgImage={img('/images/hero-services.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
-                <h2 className="section-title">Commercial Truck Unlocking</h2>
+                <h2 className="section-title">{tr.sectionTitle}</h2>
                 <div style={{ fontSize: '1.1rem', color: 'var(--text-dark)', marginTop: '24px', lineHeight: '1.8' }}>
-                    <p style={{ marginBottom: '16px' }}>For commercial truck drivers, every minute spent locked out of the cab means lost revenue and delayed shipments. We understand the urgency and provide priority dispatch for semi-trucks, box trucks, and commercial fleets.</p>
-                    <p style={{ marginBottom: '16px' }}>Heavy-duty trucks have different locking mechanisms and significantly sturdier doors than standard passenger vehicles. Our technicians carry specialized long-reach and heavy-duty air wedge tools designed explicitly for commercial cabs like Freightliner, Peterbilt, Kenworth, Volvo, and Mack.</p>
+                    {tr.paragraphs.map((p, i) => (
+                        <p key={i} style={{ marginBottom: '16px' }}>{p}</p>
+                    ))}
                     <ul style={{ listStyle: 'disc', paddingLeft: '24px', margin: '24px 0', color: 'var(--navy)', fontWeight: '600' }}>
-                        <li>Non-destructive cab unlocking</li>
-                        <li>Service for all major commercial truck brands</li>
-                        <li>Trailer lock removal and replacement</li>
-                        <li>Fleet account billing available</li>
+                        {tr.list.map((item, i) => (
+                            <li key={i}>{item}</li>
+                        ))}
                     </ul>
                 </div>
             </section>
-            <TrustSection />
-            <CallToAction />
+            <TrustSection lang={lang} />
+            <CallToAction lang={lang} />
         </>
     );
 }

@@ -1,3 +1,4 @@
+import { t } from '../../../../lib/translations';
 import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
@@ -8,31 +9,33 @@ export const metadata = {
     description: 'Expert car key programming in Boise. We sync transponder chips, smart keys, and remote fobs to your vehicle’s immobilizer system. Dealer quality at lower prices.',
 };
 
-export default function CarKeyProgrammingPage() {
+export default async function CarKeyProgrammingPage({ params }) {
+    const { lang } = await params;
+    const tr = t(lang).pages.carKeyProgramming;
     return (
         <>
-            <HeroSection
-                headline="Car Key Programming"
-                headlineAccent="Fobs & Transponders Synced"
-                subheadline="Purchased a key online or need a new fob synced to your car? We offer dealer-level key programming directly at your vehicle's location."
+            <HeroSection lang={lang}
+                headline={tr.title}
+                headlineAccent={tr.headlineAccent}
+                subheadline={tr.subtitle}
 
                 bgImage={img('/images/hero-services.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
-                <h2 className="section-title">Advanced Auto Key Programming</h2>
+                <h2 className="section-title">{tr.sectionTitle}</h2>
                 <div style={{ fontSize: '1.1rem', color: 'var(--text-dark)', marginTop: '24px', lineHeight: '1.8' }}>
-                    <p style={{ marginBottom: '16px' }}>Modern vehicles use complex immobilizer systems. A physically cut key will turn the ignition, but the engine won't start unless the transponder chip inside the key is electronically programmed to match your car’s Engine Control Unit (ECU).</p>
-                    <p style={{ marginBottom: '16px' }}>Our automotive locksmiths carry advanced OBD2 programming tools to pair new remote fobs, smart proximity keys, and standard transponder keys to over 95% of vehicles on the road today—at a fraction of dealership prices.</p>
+                    {tr.paragraphs.map((p, i) => (
+                        <p key={i} style={{ marginBottom: '16px' }}>{p}</p>
+                    ))}
                     <ul style={{ listStyle: 'disc', paddingLeft: '24px', margin: '24px 0', color: 'var(--navy)', fontWeight: '600' }}>
-                        <li>Push-to-start smart key programming</li>
-                        <li>Transponder immobilizer syncing</li>
-                        <li>Remote keyless entry pairing</li>
-                        <li>Erasing old or stolen keys from memory</li>
+                        {tr.list.map((item, i) => (
+                            <li key={i}>{item}</li>
+                        ))}
                     </ul>
                 </div>
             </section>
-            <TrustSection />
-            <CallToAction />
+            <TrustSection lang={lang} />
+            <CallToAction lang={lang} />
         </>
     );
 }

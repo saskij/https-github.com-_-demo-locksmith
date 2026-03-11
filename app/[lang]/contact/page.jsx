@@ -1,3 +1,4 @@
+import { t } from '../../../lib/translations';
 import HeroSection from '../../../components/HeroSection';
 import { img } from '../../../lib/basePath';
 import CallToAction from '../../../components/CallToAction';
@@ -7,27 +8,31 @@ export const metadata = {
     description: 'Need a locksmith now? Contact our 24/7 emergency team in Boise for immediate assistance with car, home, or commercial lockouts.',
 };
 
-export default function ContactPage() {
+export default async function ContactPage({ params }) {
+    const { lang } = await params;
+    const tr = t(lang).pages.contact;
     return (
         <>
-            <HeroSection
-                headline="Contact Us"
-                headlineAccent="Available 24/7"
-                subheadline="Need immediate assistance? We are always on call and ready to dispatch a technician to your location."
-                bgImage={img('/images/hero-contact.jpg')}
-            />
-            <section className="container" style={{ padding: '80px 20px', textAlign: 'center' }}>
-                <h2 className="section-title">Get In Touch</h2>
-                <p className="section-subtitle">We don't use contact forms for emergencies. For the fastest response, please call us directly.</p>
+            <HeroSection lang={lang}
+                headline={tr.title}
+                headlineAccent={tr.headlineAccent}
+                subheadline={tr.subtitle}
 
-                <div style={{ maxWidth: '400px', margin: '0 auto', background: 'var(--gray-bg)', padding: '40px', borderRadius: 'var(--radius)' }}>
-                    <h3 style={{ fontSize: '1.2rem', marginBottom: '16px', color: 'var(--navy)' }}>24/7 Dispatch Center</h3>
-                    <p style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--orange)', marginBottom: '8px' }}>(208) 686-8099</p>
-                    <p style={{ fontSize: '1rem', fontWeight: '600', color: 'var(--navy)', marginBottom: '8px' }}>CarKeyMastersBoise@Gmail.com</p>
-                    <p style={{ color: 'var(--gray-text)' }}>Serving Boise, Meridian, Nampa, Caldwell, Eagle, and Kuna.</p>
+                bgImage={process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith/images/hero-services.jpg' : '/images/hero-services.jpg'}
+            />
+            <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
+                <h2 className="section-title">{tr.sectionTitle}</h2>
+                <p style={{ textAlign: 'center', fontSize: '1.1rem', color: 'var(--text-dark)', marginTop: '16px' }}>{tr.sectionSubtitle}</p>
+
+                <div style={{ marginTop: '48px', padding: '40px', background: 'var(--white)', borderRadius: '16px', boxShadow: '0 4px 20px rgba(0,0,0,0.08)', textAlign: 'center' }}>
+                    <h3 style={{ color: 'var(--navy)', fontSize: '1.5rem', marginBottom: '16px' }}>{tr.cardTitle}</h3>
+                    <p style={{ color: 'var(--text-dark)', marginBottom: '24px' }}>{tr.serving}</p>
+                    <a href="tel:2085461141" className="btn btn--primary btn--large" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}>
+                        📞 (208) 546-1141
+                    </a>
                 </div>
             </section>
-            <CallToAction />
+            <CallToAction lang={lang} />
         </>
     );
 }
