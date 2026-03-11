@@ -1,19 +1,18 @@
 "use client";
 import React from 'react';
-import Image from 'next/image';
-import { t } from '../lib/translations';
+import { img } from '../lib/basePath';
 
 export default function GallerySection({ lang = 'en' }) {
     const tr = t(lang).gallery;
 
-    // Array of high-quality Unsplash placeholders suitable for locksmith/automotive
-    const placeholderImages = [
-        "https://images.unsplash.com/photo-1563290670-3d758c0df1b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Car keys/remote
-        "https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Close up car door lock
-        "https://images.unsplash.com/photo-1621252178220-4bfda42da493?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Mechanic/Technician working
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0be2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Dashboard/Ignition area
-        "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Driving/Steering wheel focus
-        "https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"  // Professional working with tools
+    // Local images for "Our Work" section
+    const workImages = [
+        img("/images/1.9.jpeg"),
+        img("/images/2.1.jpg"),
+        img("/images/2.2.jpg"),
+        img("/images/2.3.jpg"),
+        img("/images/2.4.jpg"),
+        img("/images/2.6.jpg")
     ];
 
     return (
@@ -27,7 +26,7 @@ export default function GallerySection({ lang = 'en' }) {
                 </div>
 
                 <div className="gallery-grid">
-                    {placeholderImages.map((src, index) => (
+                    {workImages.map((src, index) => (
                         <div
                             key={index}
                             className="gallery-item"
@@ -41,7 +40,6 @@ export default function GallerySection({ lang = 'en' }) {
                                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 style={{ objectFit: 'cover' }}
                                 className="gallery-img"
-                                unoptimized={true} // Since we use external unsplash URLs for placeholder
                             />
                         </div>
                     ))}
