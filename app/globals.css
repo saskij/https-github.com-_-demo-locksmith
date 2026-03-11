@@ -2112,10 +2112,13 @@ ul {
   .header__logo {
     flex: 1;
     height: 75px;
+    min-width: 0;
   }
 
   .header__logo-img {
-    width: min(480px, 120%);
+    /* 48px = 2×24px padding, 56px = hamburger button area */
+    width: calc(100vw - 48px - 56px);
+    max-width: none;
     left: -15px;
     top: 90%;
   }
@@ -2128,10 +2131,12 @@ ul {
 
   .header__logo {
     flex: 1;
+    min-width: 0;
   }
 
   .header__logo-img {
-    width: min(432px, 120%);
+    width: calc(100vw - 32px - 56px);
+    max-width: none;
     left: -15px;
     top: 90%;
   }
