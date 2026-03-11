@@ -74,7 +74,7 @@ export const servicesData = [
         title: 'Ignition Rekey',
         desc: "Match a new ignition cylinder to your existing door keys for convenience. If your ignition lock is completely unrepairable, we replace it and rekey the new lock so you don't have to carry two separate keys.",
         path: '/services/ignition-rekey',
-        image: img('/images/hero-main.jpg'),
+        image: img('/images/1.6.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
