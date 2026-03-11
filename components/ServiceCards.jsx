@@ -9,7 +9,7 @@ export const servicesData = [
         title: 'Car Key Replacement',
         desc: "Lost your exclusively only key? We cut and program new keys on the spot. Modern vehicles use specialized transponder systems, and our technicians carry the exact equipment needed to generate a brand new key for you.",
         path: '/services/car-key-replacement',
-        image: img('/images/service-car-key-replacement.jpg'),
+        image: img('/images/service-car-key-copy.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -22,7 +22,7 @@ export const servicesData = [
         title: 'Car Key Copy',
         desc: "Need a spare? We duplicate all types of transponder and smart keys. Getting a copy before you lose your only key is the smartest and most affordable way to prevent emergency lockout situations.",
         path: '/services/car-key-copy',
-        image: img('/images/service-car-key-copy.jpg'),
+        image: img('/images/service-car-key-replacement.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -35,7 +35,7 @@ export const servicesData = [
         title: 'Car Key Programming',
         desc: "We program chip keys, key fobs, and push-to-start smart keys. If you purchased an aftermarket key online, our diagnostic computers can safely pair it with your vehicle's immobilizer system.",
         path: '/services/car-key-programming',
-        image: img('/images/service-car-key-programming.jpg'),
+        image: img('/images/service-car-key-repair.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -48,7 +48,7 @@ export const servicesData = [
         title: 'Car Key Repair',
         desc: "Broken shell or dead buttons? We refurbish and repair damaged fobs. Instead of paying for a complete replacement, we can often swap the internal electronics into a fresh casing and replace the battery.",
         path: '/services/car-key-repair',
-        image: img('/images/service-car-key-repair.jpg'),
+        image: img('/images/service-car-key-programming.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />

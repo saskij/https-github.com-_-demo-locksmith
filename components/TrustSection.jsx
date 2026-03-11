@@ -1,6 +1,7 @@
 import { t } from '../lib/translations';
 
 export default function TrustSection({ lang = 'en' }) {
+    return null;
     const tr = t(lang).trustSection;
 
     const badges = [

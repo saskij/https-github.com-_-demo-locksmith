@@ -43,7 +43,6 @@ export default function Footer() {
                             <Link href={getLocalizedPath('/')} className="footer__link">{navTr.home}</Link>
                             <Link href={getLocalizedPath('/services')} className="footer__link">{navTr.services}</Link>
                             <Link href={getLocalizedPath('/service-areas')} className="footer__link">{navTr.serviceAreas}</Link>
-                            <Link href={getLocalizedPath('/reviews')} className="footer__link">{navTr.reviews}</Link>
                             <Link href={getLocalizedPath('/contact')} className="footer__link">{navTr.contact}</Link>
                         </nav>
                     </div>

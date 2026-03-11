@@ -15,7 +15,6 @@ export default function SitemapPage() {
         { name: t(lang).nav.home, path: '/' },
         { name: t(lang).nav.services, path: '/services' },
         { name: t(lang).nav.serviceAreas, path: '/service-areas' },
-        { name: t(lang).nav.reviews, path: '/reviews' },
         { name: t(lang).nav.contact, path: '/contact' },
         { name: t(lang).privacyPolicy.title, path: '/privacy-policy' },
         { name: t(lang).terms.title, path: '/terms-and-conditions' },

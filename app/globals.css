@@ -221,6 +221,24 @@ ul {
   box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
 }
 
+.header__switcher-desktop {
+  display: none;
+}
+
+.hero__serving-line {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .header__switcher-desktop {
+    display: block;
+  }
+
+  .hero__serving-line {
+    display: block;
+  }
+}
+
 .header__menu-btn {
   display: flex;
   flex-direction: column;
