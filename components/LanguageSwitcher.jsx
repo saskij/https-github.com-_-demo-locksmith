@@ -52,8 +52,8 @@ export default function LanguageSwitcher() {
             newPath = `/${newLang}${pathname === "/" ? "" : pathname}`;
         }
 
-        // Ensure we don't double up BASE_PATH if it's somehow already there, though unlikely
-        const finalPath = newPath.startsWith(BASE_PATH) ? newPath : `${BASE_PATH}${newPath}`;
+        // Next.js router.push automatically handles basePath from next.config.js
+        const finalPath = newPath;
 
         router.push(finalPath);
         router.refresh();
