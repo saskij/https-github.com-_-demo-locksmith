@@ -171,19 +171,18 @@ ul {
 }
 
 .header__logo {
-  display: flex;
-  align-items: center;
   flex-shrink: 0;
   position: relative;
-  height: 100%;
-  width: 140px;
+  height: 90px;
+  width: 200px;
   overflow: visible;
 }
 
 .header__logo-img {
   position: absolute;
-  top: 5px;
+  top: 50%;
   left: 0;
+  transform: translateY(-50%);
   width: 390px;
   height: auto;
   display: block;
