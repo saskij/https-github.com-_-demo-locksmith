@@ -22,7 +22,7 @@ export const servicesData = [
         title: 'Car Key Copy',
         desc: "Need a spare? We duplicate all types of transponder and smart keys. Getting a copy before you lose your only key is the smartest and most affordable way to prevent emergency lockout situations.",
         path: '/services/car-key-copy',
-        image: img('/images/8.jpg'),
+        image: img('/images/1.2.JPG'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
