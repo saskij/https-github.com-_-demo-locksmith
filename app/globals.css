@@ -962,6 +962,7 @@ ul {
   height: 100%;
   background: linear-gradient(rgba(10, 14, 23, 0.65), rgba(10, 14, 23, 0.55));
   z-index: 1;
+  pointer-events: none;
 }
 
 @media (min-width: 768px) {
@@ -976,7 +977,7 @@ ul {
 
 .emergency-cta__inner {
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
 .emergency-cta__pulse {
@@ -989,6 +990,8 @@ ul {
   background: radial-gradient(circle, rgba(255, 106, 0, 0.12) 0%, transparent 70%);
   border-radius: 50%;
   animation: cta-pulse 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes cta-pulse {
