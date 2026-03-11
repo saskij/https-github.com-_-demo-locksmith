@@ -3,6 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { BASE_PATH } from '../lib/basePath';
 
 export default function LanguageSwitcher() {
     const router = useRouter();
@@ -50,10 +51,6 @@ export default function LanguageSwitcher() {
             // Prepend new language code
             newPath = `/${newLang}${pathname === "/" ? "" : pathname}`;
         }
-
-        // Import BASE_PATH dynamically or from static if available
-        // Since we are inside the component, let's just require it to avoid adding top level imports that might conflict
-        const { BASE_PATH } = require('../lib/basePath');
 
         // Ensure we don't double up BASE_PATH if it's somehow already there, though unlikely
         const finalPath = newPath.startsWith(BASE_PATH) ? newPath : `${BASE_PATH}${newPath}`;
