@@ -13,7 +13,7 @@ export default function EagleCityPage() {
             <HeroSection
                 headline="Locksmith in Eagle, ID"
                 headlineAccent="Premium Lock Services"
-                subheadline="Upgrading security for Eagle homes and responding 24/7 to lockout emergencies."
+                subheadline="Upgrading security for Eagle homes and responding 7 AM – 11 PM to lockout emergencies."
                 showImage={false}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>

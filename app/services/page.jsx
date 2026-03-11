@@ -12,7 +12,7 @@ export default function ServicesPage() {
         <>
             <HeroSection
                 headline="Locksmith Services"
-                headlineAccent="24/7 Professional Solutions"
+                headlineAccent="7 AM – 11 PM Professional Solutions"
                 subheadline="Fast, reliable, and affordable locksmith services for your home, business, or vehicle."
             
                 bgImage="/https-github.com-_-demo-locksmith/images/services-hero.jpeg"

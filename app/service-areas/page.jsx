@@ -4,7 +4,7 @@ import CallToAction from '../../components/CallToAction';
 
 export const metadata = {
     title: 'Service Areas | Emergency Locksmith Treasure Valley',
-    description: 'We provide fast, 24/7 emergency locksmith services to Boise, Meridian, Nampa, Caldwell, Eagle, and Kuna.',
+    description: 'We provide fast, 7 AM – 11 PM emergency locksmith services to Boise, Meridian, Nampa, Caldwell, Eagle, and Kuna.',
 };
 
 export default function ServiceAreasPage() {

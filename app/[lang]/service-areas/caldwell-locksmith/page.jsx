@@ -5,7 +5,7 @@ import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
 
 export const metadata = {
-    title: 'Locksmith Caldwell ID | 24/7 Car & Home Lockouts',
+    title: 'Locksmith Caldwell ID | 7 AM – 11 PM Car & Home Lockouts',
     description: 'Fast, affordable locksmith in Caldwell, ID. Emergency auto unlocks, home rekeying, and commercial security.',
 };
 

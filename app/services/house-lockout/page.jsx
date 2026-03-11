@@ -3,8 +3,8 @@ import TrustSection from '../../../components/TrustSection';
 import CallToAction from '../../../components/CallToAction';
 
 export const metadata = {
-    title: 'House Lockout Service Boise | 24/7 Residential Locksmith',
-    description: 'Locked out of your house in Boise? Our emergency residential locksmiths provide fast, damage-free home unlocking services 24/7.',
+    title: 'House Lockout Service Boise | 7 AM – 11 PM Residential Locksmith',
+    description: 'Locked out of your house in Boise? Our emergency residential locksmiths provide fast, damage-free home unlocking services 7 AM – 11 PM.',
 };
 
 export default function HouseLockoutPage() {

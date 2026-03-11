@@ -5,7 +5,7 @@ import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
 
 export const metadata = {
-    title: 'Locksmith Meridian ID | 24/7 Emergency Service',
+    title: 'Locksmith Meridian ID | 7 AM – 11 PM Emergency Service',
     description: 'Fast locksmith services in Meridian, ID. Specializing in home lockouts, car key programming, and business locks.',
 };
 

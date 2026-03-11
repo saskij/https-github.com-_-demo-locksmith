@@ -5,8 +5,8 @@ import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
 
 export const metadata = {
-    title: 'Car Lockout Service Boise | 24/7 Emergency Auto Locksmith',
-    description: 'Locked out of your car in Boise? Our emergency auto locksmiths provide rapid response car lockout and key replacement services 24/7.',
+    title: 'Car Lockout Service Boise | 7 AM – 11 PM Emergency Auto Locksmith',
+    description: 'Locked out of your car in Boise? Our emergency auto locksmiths provide rapid response car lockout and key replacement services 7 AM – 11 PM.',
 };
 
 export default async function CarLockoutPage({ params }) {

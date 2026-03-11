@@ -4,7 +4,7 @@ import { img } from '../../lib/basePath';
 
 export const metadata = {
     title: 'Contact Us | Emergency Locksmith Boise',
-    description: 'Need a locksmith now? Contact our 24/7 emergency team in Boise for immediate assistance with car, home, or commercial lockouts.',
+    description: 'Need a locksmith now? Contact our 7 AM – 11 PM emergency team in Boise for immediate assistance with car, home, or commercial lockouts.',
 };
 
 export default function ContactPage() {
@@ -12,7 +12,7 @@ export default function ContactPage() {
         <>
             <HeroSection
                 headline="Contact Us"
-                headlineAccent="Available 24/7"
+                headlineAccent="Available 7 AM – 11 PM"
                 subheadline="Need immediate assistance? We are always on call and ready to dispatch a technician to your location."
                 bgImage={img('/images/hero-contact.jpg')}
             />
@@ -21,7 +21,7 @@ export default function ContactPage() {
                 <p className="section-subtitle">We don&apos;t use contact forms for emergencies. For the fastest response, please call us directly.</p>
 
                 <div style={{ maxWidth: '400px', margin: '0 auto', background: 'var(--gray-bg)', padding: '40px', borderRadius: 'var(--radius)' }}>
-                    <h3 style={{ fontSize: '1.2rem', marginBottom: '16px', color: 'var(--navy)' }}>24/7 Dispatch Center</h3>
+                    <h3 style={{ fontSize: '1.2rem', marginBottom: '16px', color: 'var(--navy)' }}>7 AM – 11 PM Dispatch Center</h3>
                     <a href="tel:+12086868099" style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--orange)', marginBottom: '8px', display: 'block', textDecoration: 'none' }}>(208) 686-8099</a>
                     <p style={{ color: 'var(--gray-text)' }}>Serving Boise, Meridian, Nampa, Caldwell, Eagle, and Kuna.</p>
                 </div>

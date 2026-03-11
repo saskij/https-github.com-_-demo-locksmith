@@ -6,8 +6,8 @@ import ServiceCards from '../../../../components/ServiceCards';
 import CallToAction from '../../../../components/CallToAction';
 
 export const metadata = {
-    title: 'Locksmith Boise ID | 24/7 Fast Emergency Service',
-    description: 'Need a locksmith in Boise, ID? We offer 24/7 emergency auto, residential, and commercial locksmith services with rapid dispatch.',
+    title: 'Locksmith Boise ID | 7 AM – 11 PM Fast Emergency Service',
+    description: 'Need a locksmith in Boise, ID? We offer 7 AM – 11 PM emergency auto, residential, and commercial locksmith services with rapid dispatch.',
 };
 
 export default async function BoiseCityPage({ params }) {

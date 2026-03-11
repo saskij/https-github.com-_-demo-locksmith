@@ -3,8 +3,8 @@ import TrustSection from '../../../components/TrustSection';
 import CallToAction from '../../../components/CallToAction';
 
 export const metadata = {
-    title: 'Locksmith Kuna ID | 24/7 Fast Local Service',
-    description: 'Emergency locksmith in Kuna, ID. Available 24/7 for house lockouts, car unlocks, and new lock installation.',
+    title: 'Locksmith Kuna ID | 7 AM – 11 PM Fast Local Service',
+    description: 'Emergency locksmith in Kuna, ID. Available 7 AM – 11 PM for house lockouts, car unlocks, and new lock installation.',
 };
 
 export default function KunaCityPage() {
@@ -13,7 +13,7 @@ export default function KunaCityPage() {
             <HeroSection
                 headline="Locksmith in Kuna, ID"
                 headlineAccent="Your Local Security Experts"
-                subheadline="Fast and friendly locksmith services available 24/7 for the growing Kuna community."
+                subheadline="Fast and friendly locksmith services available 7 AM – 11 PM for the growing Kuna community."
                 showImage={false}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>

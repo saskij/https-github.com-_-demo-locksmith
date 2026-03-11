@@ -5,7 +5,7 @@ import CallToAction from '../../../components/CallToAction';
 
 export const metadata = {
     title: 'Contact Us | Emergency Locksmith Boise',
-    description: 'Need a locksmith now? Contact our 24/7 emergency team in Boise for immediate assistance with car, home, or commercial lockouts.',
+    description: 'Need a locksmith now? Contact our 7 AM – 11 PM emergency team in Boise for immediate assistance with car, home, or commercial lockouts.',
 };
 
 export default async function ContactPage({ params }) {

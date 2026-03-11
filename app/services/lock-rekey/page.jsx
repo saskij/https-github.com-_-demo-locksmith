@@ -4,7 +4,7 @@ import CallToAction from '../../../components/CallToAction';
 
 export const metadata = {
     title: 'Lock Rekeying Service Boise | Affordable Key Replacements',
-    description: 'Fast and affordable lock rekeying services in Boise. Keep your existing hardware while ensuring old keys no longer work. 24/7 service.',
+    description: 'Fast and affordable lock rekeying services in Boise. Keep your existing hardware while ensuring old keys no longer work. 7 AM – 11 PM service.',
 };
 
 export default function LockRekeyPage() {

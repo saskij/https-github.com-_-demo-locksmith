@@ -6,7 +6,7 @@ import CallToAction from '../../../components/CallToAction';
 
 export const metadata = {
     title: 'Customer Reviews | Emergency Locksmith Boise',
-    description: 'Read what our customers in Boise and the Treasure Valley say about our fast, reliable 24/7 emergency locksmith services.',
+    description: 'Read what our customers in Boise and the Treasure Valley say about our fast, reliable 7 AM – 11 PM emergency locksmith services.',
 };
 
 export default async function ReviewsPage({ params }) {
