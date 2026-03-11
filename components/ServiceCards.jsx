@@ -100,7 +100,7 @@ export const servicesData = [
         title: 'Semi Truck Lockout',
         desc: "Heavy-duty truck lockouts. We get big rigs back on the road fast. Commercial drivers rely on our prompt response specifically tailored for Freightliner, Peterbilt, Kenworth, Volvo, and Mack trucks.",
         path: '/services/semi-truck-lockout',
-        image: img('/images/hero-main.jpg'),
+        image: img('/images/1.8.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
