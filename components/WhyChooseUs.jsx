@@ -29,7 +29,7 @@ export default function WhyChooseUs({ lang = 'en' }) {
                         const isWideHighlight = index === 4;
 
                         return (
-                            <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className={`bento-card ${isMainHighlight ? 'highlight-main' : ''} ${isWideHighlight ? 'highlight-wide' : ''}`}>
+                            <div key={index} data-aos="fade-up" data-aos-delay={index * 80} data-aos-duration="800" data-aos-easing="ease-out-cubic" className={`bento-card ${isMainHighlight ? 'highlight-main' : ''} ${isWideHighlight ? 'highlight-wide' : ''}`}>
                                 <div className="bento-icon-wrapper">
                                     {icons[index]}
                                 </div>
@@ -60,12 +60,12 @@ export default function WhyChooseUs({ lang = 'en' }) {
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
-                    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+                    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s ease;
                     height: 100%;
                 }
 
                 .bento-card:hover {
-                    transform: translateY(-6px);
+                    transform: translateY(-4px);
                     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.02);
                 }
 
@@ -79,7 +79,7 @@ export default function WhyChooseUs({ lang = 'en' }) {
                     align-items: center;
                     justify-content: center;
                     margin-bottom: 24px;
-                    transition: transform 0.3s ease, background 0.3s ease;
+                    transition: transform 0.5s ease, background 0.5s ease;
                 }
 
                 .bento-icon-wrapper :global(svg) {
