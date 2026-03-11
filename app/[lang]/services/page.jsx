@@ -16,7 +16,7 @@ export default function ServicesPage() {
                 headlineAccent="Specialized Auto Locksmith"
                 subheadline="Fast, reliable, and affordable automotive locksmith services for any vehicle."
 
-                bgImage={img('/images/2.jpg')}
+                bgImage={img('/images/hero-services.jpg')}
             />
             <div style={{ paddingTop: '60px' }}>
                 <ServiceCards />

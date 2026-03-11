@@ -5,7 +5,7 @@ export default function EmergencyBanner({ lang = 'en' }) {
     const tr = t(lang).emergencyBanner;
 
     return (
-        <section className="emergency-cta parallax" style={{ padding: '60px 0', backgroundImage: `url(${img('/images/block2.jpg')})` }}>
+        <section className="emergency-cta parallax" style={{ padding: '60px 0', backgroundImage: `url(${img('/images/emergency-background.jpg')})` }}>
             <div className="emergency-cta__inner container">
                 <div className="emergency-cta__pulse"></div>
                 <h2 className="emergency-cta__title" style={{ fontSize: '2.2rem' }}>{tr.title}</h2>

@@ -20,7 +20,7 @@ export default async function Home({ params }) {
     const { lang } = await params;
     return (
         <>
-            <HeroSection lang={lang} bgImage={img('/images/1.jpg')} />
+            <HeroSection lang={lang} bgImage={img('/images/hero-homepage.jpg')} />
             <WhyChooseUs lang={lang} />
             <EmergencyBanner lang={lang} />
             <ServiceCards lang={lang} isHomepage={true} />

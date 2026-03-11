@@ -16,7 +16,7 @@ export default function CarKeyProgrammingPage() {
                 headlineAccent="Fobs & Transponders Synced"
                 subheadline="Purchased a key online or need a new fob synced to your car? We offer dealer-level key programming directly at your vehicle's location."
 
-                bgImage={img('/images/2.jpg')}
+                bgImage={img('/images/hero-services.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Advanced Auto Key Programming</h2>

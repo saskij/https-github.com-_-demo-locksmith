@@ -9,12 +9,12 @@ export default function GallerySection({ lang = 'en' }) {
 
     // Local images for "Our Work" section
     const workImages = [
-        img("/images/1.9.jpeg"),
-        img("/images/2.1.jpg"),
-        img("/images/2.2.jpg"),
-        img("/images/2.3.jpg"),
-        img("/images/2.4.jpg"),
-        img("/images/2.6.jpg")
+        img("/images/gallery-work-01.jpg"),
+        img("/images/gallery-work-02.jpg"),
+        img("/images/gallery-work-03.jpg"),
+        img("/images/gallery-work-04.jpg"),
+        img("/images/gallery-work-05.jpg"),
+        img("/images/gallery-work-06.jpg")
     ];
 
     return (

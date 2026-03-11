@@ -16,7 +16,7 @@ export default function SemiTruckLockoutPage() {
                 headlineAccent="Fast Service For Big Rigs"
                 subheadline="Time is money. When you're locked out of your semi-truck or commercial vehicle, we provide rapid, damage-free entry to get you moving again."
 
-                bgImage={img('/images/2.jpg')}
+                bgImage={img('/images/hero-services.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Commercial Truck Unlocking</h2>

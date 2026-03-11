@@ -10,7 +10,7 @@ export default function CallToAction({ lang = 'en' }) {
             id="contact"
             style={{
                 padding: '80px 0',
-                backgroundImage: `url(${img('/images/block1.jpg')})`
+                backgroundImage: `url(${img('/images/cta-background.jpg')})`
             }}
         >
             <div className="emergency-cta__inner container">

@@ -9,7 +9,7 @@ export const servicesData = [
         title: 'Car Key Replacement',
         desc: "Lost your exclusively only key? We cut and program new keys on the spot. Modern vehicles use specialized transponder systems, and our technicians carry the exact equipment needed to generate a brand new key for you.",
         path: '/services/car-key-replacement',
-        image: img('/images/1.1.JPG'),
+        image: img('/images/service-car-key-replacement.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -22,7 +22,7 @@ export const servicesData = [
         title: 'Car Key Copy',
         desc: "Need a spare? We duplicate all types of transponder and smart keys. Getting a copy before you lose your only key is the smartest and most affordable way to prevent emergency lockout situations.",
         path: '/services/car-key-copy',
-        image: img('/images/1.2.JPG'),
+        image: img('/images/service-car-key-copy.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -35,7 +35,7 @@ export const servicesData = [
         title: 'Car Key Programming',
         desc: "We program chip keys, key fobs, and push-to-start smart keys. If you purchased an aftermarket key online, our diagnostic computers can safely pair it with your vehicle's immobilizer system.",
         path: '/services/car-key-programming',
-        image: img('/images/1.3.jpeg'),
+        image: img('/images/service-car-key-programming.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -48,7 +48,7 @@ export const servicesData = [
         title: 'Car Key Repair',
         desc: "Broken shell or dead buttons? We refurbish and repair damaged fobs. Instead of paying for a complete replacement, we can often swap the internal electronics into a fresh casing and replace the battery.",
         path: '/services/car-key-repair',
-        image: img('/images/1.4.jpg'),
+        image: img('/images/service-car-key-repair.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -61,7 +61,7 @@ export const servicesData = [
         title: 'Ignition Repair',
         desc: "Key won't turn? We repair damaged ignitions directly at your location. Over time, the internal wafers wear down, preventing the key from turning. We rebuild ignitions so they work like new.",
         path: '/services/ignition-repair',
-        image: img('/images/1.5.jpeg'),
+        image: img('/images/service-ignition-repair.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -74,7 +74,7 @@ export const servicesData = [
         title: 'Ignition Rekey',
         desc: "Match a new ignition cylinder to your existing door keys for convenience. If your ignition lock is completely unrepairable, we replace it and rekey the new lock so you don't have to carry two separate keys.",
         path: '/services/ignition-rekey',
-        image: img('/images/1.6.jpg'),
+        image: img('/images/service-ignition-rekey.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -87,7 +87,7 @@ export const servicesData = [
         title: 'Car Lockout Service',
         desc: "Keys locked inside? We safely open all vehicle makes and models. Fast, damage-free unlocking techniques used to retrieve items from the passenger cabin or trunk without scratching your paint or bending the doors.",
         path: '/services/car-lockout',
-        image: img('/images/1.7.JPG'),
+        image: img('/images/service-car-lockout.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
@@ -100,7 +100,7 @@ export const servicesData = [
         title: 'Semi Truck Lockout',
         desc: "Heavy-duty truck lockouts. We get big rigs back on the road fast. Commercial drivers rely on our prompt response specifically tailored for Freightliner, Peterbilt, Kenworth, Volvo, and Mack trucks.",
         path: '/services/semi-truck-lockout',
-        image: img('/images/1.8.jpg'),
+        image: img('/images/service-semi-truck-lockout.jpg'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />

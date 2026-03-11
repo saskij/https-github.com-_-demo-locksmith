@@ -16,7 +16,7 @@ export default function CarKeyRepairPage() {
                 headlineAccent="Don't Replace, Repair and Save"
                 subheadline="Is your key shell cracked or are the buttons non-responsive? We specialize in repairing damaged fobs, replacing internal switches, and shell replacement for all car keys."
 
-                bgImage={img('/images/2.jpg')}
+                bgImage={img('/images/hero-services.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Professional Key Refurbishing</h2>

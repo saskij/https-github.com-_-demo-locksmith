@@ -73,7 +73,7 @@ export default function TrustCounters({ lang = 'en' }) {
     return (
         <section
             className="counters-section parallax"
-            style={{ backgroundImage: `url(${img('/images/block3.jpg')})` }}
+            style={{ backgroundImage: `url(${img('/images/stats-background.jpg')})` }}
         >
             <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                 <div className="counters-grid">

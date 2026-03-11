@@ -16,7 +16,7 @@ export default function CarKeyCopyPage() {
                 headlineAccent="Get a Spare Before You Need It"
                 subheadline="Protect yourself against lockouts by getting a duplicate car key. We clone and duplicate transponder keys, fobs, and standard mechanical keys for all vehicles."
 
-                bgImage={img('/images/2.jpg')}
+                bgImage={img('/images/hero-services.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Professional Car Key Duplication</h2>

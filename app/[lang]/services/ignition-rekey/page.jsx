@@ -16,7 +16,7 @@ export default function IgnitionRekeyPage() {
                 headlineAccent="One Key For Everything"
                 subheadline="If your ignition was replaced, we can rekey the new cylinder to match your original door keys so you don't have to carry two keys."
 
-                bgImage={img('/images/2.jpg')}
+                bgImage={img('/images/hero-services.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Automotive Cylinder Rekeying</h2>

@@ -8,7 +8,7 @@ export default function HeroSection({
     headline,
     headlineAccent = "",
     subheadline,
-    bgImage = img("/images/hero.png"),
+    bgImage = img("/images/hero-homepage.jpg"),
     showImage = true
 }) {
     const tr = t(lang).hero;

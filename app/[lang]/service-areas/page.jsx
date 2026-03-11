@@ -15,7 +15,7 @@ export default function ServiceAreasPage() {
                 headline="Service Areas"
                 headlineAccent="Treasure Valley Wide"
                 subheadline="Fast emergency locksmith service stationed across Boise and surrounding cities for rapid response times."
-                bgImage={img('/images/5.jpg')}
+                bgImage={img('/images/hero-service-areas.jpg')}
             />
             <div style={{ paddingTop: '60px' }}>
                 <ServiceAreaMap />

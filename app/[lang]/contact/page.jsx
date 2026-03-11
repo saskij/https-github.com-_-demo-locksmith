@@ -14,7 +14,7 @@ export default function ContactPage() {
                 headline="Contact Us"
                 headlineAccent="Available 24/7"
                 subheadline="Need immediate assistance? We are always on call and ready to dispatch a technician to your location."
-                bgImage={img('/images/6.jpg')}
+                bgImage={img('/images/hero-contact.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', textAlign: 'center' }}>
                 <h2 className="section-title">Get In Touch</h2>

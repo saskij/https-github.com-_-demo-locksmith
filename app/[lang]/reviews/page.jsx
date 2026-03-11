@@ -15,7 +15,7 @@ export default function ReviewsPage() {
                 headline="Customer Reviews"
                 headlineAccent="Trusted Across Boise"
                 subheadline="See why we are the top-rated emergency locksmith in the Treasure Valley."
-                bgImage={img('/images/4.jpg')}
+                bgImage={img('/images/hero-reviews.jpg')}
             />
             <div style={{ paddingTop: '60px' }}>
                 <TrustSection />

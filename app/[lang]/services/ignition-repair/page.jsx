@@ -16,7 +16,7 @@ export default function IgnitionRepairPage() {
                 headlineAccent="Key Won't Turn?"
                 subheadline="If your key is stuck, hard to turn, or completely jammed, our experts can rebuild or replace your vehicle's ignition cylinder on-site."
 
-                bgImage={img('/images/2.jpg')}
+                bgImage={img('/images/hero-services.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Mobile Automotive Ignition Solutions</h2>

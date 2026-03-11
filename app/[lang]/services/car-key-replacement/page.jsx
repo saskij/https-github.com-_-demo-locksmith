@@ -16,7 +16,7 @@ export default function CarKeyReplacementPage() {
                 headlineAccent="Lost Keys? No Problem."
                 subheadline="We cut and program new car keys on location. Avoid the dealership tow and save money with our mobile auto locksmith service."
 
-                bgImage={img('/images/2.jpg')}
+                bgImage={img('/images/hero-services.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '800px' }}>
                 <h2 className="section-title">Mobile Car Key Making Service</h2>
