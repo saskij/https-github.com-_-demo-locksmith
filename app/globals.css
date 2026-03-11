@@ -567,6 +567,75 @@ ul {
 }
 
 
+/* ===== MOBILE BLUE TILES (< 768px) ===== */
+@media (max-width: 767px) {
+  .services {
+    padding: 60px 0 48px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .service-card {
+    background: #1b58b8;
+    border-radius: 10px;
+    border: none;
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  .service-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Hide image, description, and action buttons */
+  .service-card__image {
+    display: none;
+  }
+
+  .service-card__desc {
+    display: none;
+  }
+
+  .service-card__actions {
+    display: none !important;
+  }
+
+  /* Restyle the body as a centered tile */
+  .service-card__body {
+    padding: 16px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* White icon, smaller, centered */
+  .service-card__icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+
+  .service-card__icon svg {
+    color: #fff;
+    stroke: #fff;
+  }
+
+  /* White title, medium weight */
+  .service-card__title {
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin-bottom: 0;
+  }
+}
+
 /* ===== TRUST & REVIEWS (GOOGLE STYLE) ===== */
 .trust {
   padding: 100px 0;
