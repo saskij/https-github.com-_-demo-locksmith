@@ -23,17 +23,14 @@ export default async function CarKeyRepairPage({ params }) {
                 subheadline={tr.subtitle}
                 bgImage={img('/images/hero-services.jpg')}
             />
-            <section className="container" style={{ position: 'relative', zIndex: '10', maxWidth: '800px' }}>
+            <section className="container" style={{ padding: '60px 20px', maxWidth: '800px' }}>
                 <div style={{ 
-                    marginTop: '-120px', 
                     marginBottom: '40px', 
                     borderRadius: '16px', 
                     overflow: 'hidden', 
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-                    border: '4px solid white',
-                    backgroundColor: 'white',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
                     maxWidth: '266px',
-                    margin: '-120px auto 40px'
+                    margin: '0 auto 40px'
                 }}>
                     <Image 
                         src={serviceImage} 
