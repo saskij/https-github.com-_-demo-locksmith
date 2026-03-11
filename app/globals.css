@@ -2102,7 +2102,7 @@ ul {
   .header__logo-img {
     width: min(480px, 120%);
     left: -15px;
-    top: 70%;
+    top: 90%;
   }
 }
 
@@ -2118,6 +2118,6 @@ ul {
   .header__logo-img {
     width: min(432px, 120%);
     left: -15px;
-    top: 70%;
+    top: 90%;
   }
 }
