@@ -87,7 +87,7 @@ export const servicesData = [
         title: 'Car Lockout Service',
         desc: "Keys locked inside? We safely open all vehicle makes and models. Fast, damage-free unlocking techniques used to retrieve items from the passenger cabin or trunk without scratching your paint or bending the doors.",
         path: '/services/car-lockout',
-        image: img('/images/hero-residential.png'),
+        image: img('/images/1.7.JPG'),
         icon: (
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="48" height="48" rx="12" fill="#FFF3E8" />
