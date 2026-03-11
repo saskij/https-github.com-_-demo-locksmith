@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import HeroSection from '../../../components/HeroSection';
 import { t } from '../../../lib/translations';
+import { img } from '../../../lib/basePath';
 
 export default function SitemapPage() {
     const params = useParams();
@@ -66,7 +67,7 @@ export default function SitemapPage() {
                 headline={tr.title}
                 headlineAccent=""
                 subheadline={tr.subtitle}
-                showImage={false}
+                bgImage={img('/images/hero-homepage.jpg')}
             />
             <section className="container" style={{ padding: '80px 20px', maxWidth: '1000px' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px' }}>
