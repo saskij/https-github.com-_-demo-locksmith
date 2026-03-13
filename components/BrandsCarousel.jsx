@@ -9,10 +9,6 @@ export default function BrandsCarousel({ lang = 'en' }) {
 
     return (
         <section className="brands-carousel">
-            <div className="container" style={{ textAlign: 'center', marginBottom: '40px' }}>
-                <h2 className="section-title">{tr.title}</h2>
-                <p className="section-subtitle">{tr.subtitle}</p>
-            </div>
             <div className="marquee">
                 <div className="marquee-content">
                     {brands.map((brand, idx) => (

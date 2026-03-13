@@ -47,9 +47,9 @@ export default async function RootLayout({ children, params }) {
                 />
             </head>
             <body>
-                <Header />
+                <Header lang={lang} />
                 <main>{children}</main>
-                <Footer />
+                <Footer lang={lang} />
                 <StickyBar lang={lang} />
                 <AOSInit />
             </body>

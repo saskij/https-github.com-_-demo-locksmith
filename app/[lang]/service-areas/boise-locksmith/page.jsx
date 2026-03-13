@@ -4,6 +4,7 @@ import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import ServiceCards from '../../../../components/ServiceCards';
 import CallToAction from '../../../../components/CallToAction';
+import LocationSEOLayout from '../../../../components/LocationSEOLayout';
 
 export const metadata = {
     title: 'Locksmith Boise ID | 7 AM – 11 PM Fast Emergency Service',
@@ -29,6 +30,9 @@ export default async function BoiseCityPage({ params }) {
                     ))}
                 </div>
             </section>
+            
+            <LocationSEOLayout tr={tr} lang={lang} />
+
             <ServiceCards lang={lang} />
             <TrustSection lang={lang} />
             <CallToAction lang={lang} />

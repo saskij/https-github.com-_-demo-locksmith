@@ -4,9 +4,9 @@ import { usePathname } from 'next/navigation';
 import { img, BASE_PATH } from '../lib/basePath';
 import { t } from '../lib/translations';
 
-export default function Footer() {
+export default function Footer({ lang: propLang }) {
     const pathname = usePathname();
-    const currentLang = pathname?.split('/')[1] || 'en';
+    const currentLang = propLang || pathname?.split('/')[1] || 'en';
     const isLangSupported = ['en', 'es'].includes(currentLang);
     const lang = isLangSupported ? currentLang : 'en';
     const langPrefix = isLangSupported ? `/${currentLang}` : '';
@@ -55,6 +55,7 @@ export default function Footer() {
                             <Link href={getLocalizedPath('/')} className="footer__link">{navTr.home}</Link>
                             <Link href={getLocalizedPath('/services')} className="footer__link">{navTr.services}</Link>
                             <Link href={getLocalizedPath('/service-areas')} className="footer__link">{navTr.serviceAreas}</Link>
+                            <Link href={getLocalizedPath('/faq')} className="footer__link">{tr.faq}</Link>
                             <Link href={getLocalizedPath('/contact')} className="footer__link">{navTr.contact}</Link>
                         </nav>
                     </div>
@@ -117,7 +118,7 @@ export default function Footer() {
             {/* Bottom Bar */}
             <div className="footer__bottom">
                 <div className="footer__bottom-inner">
-                    <p className="footer__copyright">&copy; {new Date().getFullYear()} Car Key Masters Boise. All rights reserved.</p>
+                    <p className="footer__copyright">{tr.copyright.replace('{year}', new Date().getFullYear())}</p>
                     <nav className="footer__legal">
                         <Link href={getLocalizedPath('/privacy-policy')} className="footer__legal-link">{tr.privacyPolicy}</Link>
                         <span className="footer__legal-sep">·</span>

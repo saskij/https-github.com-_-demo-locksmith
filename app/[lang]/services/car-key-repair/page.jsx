@@ -14,7 +14,7 @@ export const metadata = {
 export default async function CarKeyRepairPage({ params }) {
     const { lang } = await params;
     const tr = t(lang).pages.carKeyRepair;
-    const serviceImage = img('/images/service-car-key-programming.jpg');
+    const serviceImage = img('/images/service-car-key-repair.jpg');
 
     return (
         <>

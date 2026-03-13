@@ -3,6 +3,8 @@ import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
+import ServiceCards from '../../../../components/ServiceCards';
+import LocationSEOLayout from '../../../../components/LocationSEOLayout';
 
 export const metadata = {
     title: 'Locksmith Eagle ID | Premium Security Services',
@@ -28,6 +30,8 @@ export default async function EagleCityPage({ params }) {
                     ))}
                 </div>
             </section>
+            <LocationSEOLayout tr={tr} lang={lang} />
+            <ServiceCards lang={lang} />
             <TrustSection lang={lang} />
             <CallToAction lang={lang} />
         </>

@@ -1,16 +1,13 @@
-import { img } from '../../lib/basePath';
 import HeroSection from '../../components/HeroSection';
+import ServiceCards from '../../components/ServiceCards';
+import EmergencyBanner from '../../components/EmergencyBanner';
 import HowItWorks from '../../components/HowItWorks';
 import TrustCounters from '../../components/TrustCounters';
-import ServiceCards from '../../components/ServiceCards';
 import WhyChooseUs from '../../components/WhyChooseUs';
-import GallerySection from '../../components/GallerySection';
-import BrandsCarousel from '../../components/BrandsCarousel';
 import TrustSection from '../../components/TrustSection';
-import ServiceAreaMap from '../../components/ServiceAreaMap';
-import FAQ from '../../components/FAQ';
 import CallToAction from '../../components/CallToAction';
-import EmergencyBanner from '../../components/EmergencyBanner';
+import ContactSection from '../../components/ContactSection';
+import FAQ from '../../components/FAQ';
 
 export async function generateStaticParams() {
     return [{ lang: 'en' }, { lang: 'es' }];
@@ -19,20 +16,37 @@ export async function generateStaticParams() {
 export default async function Home({ params }) {
     const { lang } = await params;
     return (
-        <>
-            <HeroSection lang={lang} bgImage={img('/images/hero-homepage.jpg')} />
-            <WhyChooseUs lang={lang} />
-            <EmergencyBanner lang={lang} />
+        <main>
+            {/* 1️⃣ HERO SECTION */}
+            <HeroSection lang={lang} />
+
+            {/* 2️⃣ PROFESSIONAL LOCKSMITH SERVICES */}
             <ServiceCards lang={lang} isHomepage={true} />
+
+            {/* ➕ EMERGENCY BANNER DIVIDER */}
+            <EmergencyBanner lang={lang} />
+
+            {/* 3️⃣ HOW IT WORKS */}
             <HowItWorks lang={lang} />
-            <BrandsCarousel lang={lang} />
+
+            {/* ➕ TRUST COUNTERS DIVIDER */}
             <TrustCounters lang={lang} />
-            <GallerySection lang={lang} />
+
+            {/* 4️⃣ WHY CHOOSE CAR KEY MASTERS */}
+            <WhyChooseUs lang={lang} />
+
+            {/* 5️⃣ CUSTOMER STORIES/REVIEWS */}
             <TrustSection lang={lang} />
-            <ServiceAreaMap lang={lang} />
-            <FAQ lang={lang} />
+
+            {/* ➕ CALL TO ACTION DIVIDER */}
             <CallToAction lang={lang} />
-        </>
+
+            {/* 6️⃣ CONTACT FORM */}
+            <ContactSection lang={lang} />
+
+            {/* ❓ FAQ SECTION */}
+            <FAQ lang={lang} />
+        </main>
     );
 }
 

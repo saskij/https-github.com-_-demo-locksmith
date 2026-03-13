@@ -3,6 +3,8 @@ import { img } from '../../../../lib/basePath';
 import HeroSection from '../../../../components/HeroSection';
 import TrustSection from '../../../../components/TrustSection';
 import CallToAction from '../../../../components/CallToAction';
+import ServiceCards from '../../../../components/ServiceCards';
+import LocationSEOLayout from '../../../../components/LocationSEOLayout';
 
 export const metadata = {
     title: 'Locksmith Caldwell ID | 7 AM – 11 PM Car & Home Lockouts',
@@ -28,6 +30,8 @@ export default async function CaldwellCityPage({ params }) {
                     ))}
                 </div>
             </section>
+            <LocationSEOLayout tr={tr} lang={lang} />
+            <ServiceCards lang={lang} />
             <TrustSection lang={lang} />
             <CallToAction lang={lang} />
         </>

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import TopBar from './TopBar';
 import { img } from '../lib/basePath';
 import { t } from '../lib/translations';
+import BrandsCarousel from './BrandsCarousel';
 
 export default function HeroSection({
     lang = 'en',
@@ -42,28 +43,24 @@ export default function HeroSection({
                         <p style={{ fontSize: '1.25rem', fontWeight: '600', color: '#ffffff', marginBottom: '12px' }}>
                             {resolvedSubheadline}
                         </p>
-                        {tr.servingLine.split('\n\n').map((line, idx) => (
-                            <p 
-                                key={idx} 
-                                className="hero__serving-line" 
-                                style={{ 
-                                    fontSize: idx === 0 ? '1.1rem' : '1.5rem', 
-                                    fontWeight: idx === 1 ? '700' : '500', 
-                                    color: idx === 1 ? 'var(--orange)' : 'rgba(255,255,255,0.95)', 
-                                    marginBottom: idx === 0 ? '4px' : '12px',
-                                    textTransform: idx === 1 ? 'uppercase' : 'none',
-                                    letterSpacing: idx === 1 ? '0.5px' : 'normal'
-                                }}
-                            >
-                                {line}
-                            </p>
-                        ))}
+                        <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.9)', marginBottom: '24px', maxWidth: '600px', lineHeight: '1.6' }}>
+                            {tr.description}
+                        </p>
                     </div>
 
-                    <a href="tel:+12086868099" className="btn btn--primary btn--lg" style={{ fontSize: '1.15rem', padding: '16px 32px', display: 'inline-flex', alignItems: 'center', gap: '10px', borderRadius: '50px', fontWeight: '700', minHeight: '56px' }}>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                        {tr.callBtn}
-                    </a>
+                    <div className="hero__actions" style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', marginBottom: '40px' }}>
+                        <a href="tel:+12086868099" className="btn btn--primary btn--lg" style={{ fontSize: '1.1rem', padding: '16px 32px', display: 'inline-flex', alignItems: 'center', gap: '10px', borderRadius: '12px', fontWeight: '700' }}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                            {tr.callBtn}
+                        </a>
+                        <a href="#contact" className="btn btn--outline btn--lg" style={{ fontSize: '1.1rem', padding: '16px 32px', display: 'inline-flex', alignItems: 'center', gap: '10px', borderRadius: '12px', fontWeight: '700', border: '2px solid white', color: 'white' }}>
+                            {tr.getHelpBtn}
+                        </a>
+                    </div>
+                    
+                    <p className="hero__serving-line" style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.8)', fontWeight: '500' }}>
+                        {tr.servingLine}
+                    </p>
 
                     <div className="hero__badges" style={{ marginTop: '32px' }}>
                         <div className="hero__badge">
@@ -85,7 +82,8 @@ export default function HeroSection({
                     </div>
                 </div>
             </section>
-            <TopBar />
+            <TopBar lang={lang} />
+            <BrandsCarousel lang={lang} />
         </>
     );
 }

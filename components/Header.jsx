@@ -6,13 +6,13 @@ import { img, BASE_PATH } from '../lib/basePath';
 import LanguageSwitcher from './LanguageSwitcher';
 import { t } from '../lib/translations';
 
-export default function Header() {
+export default function Header({ lang: propLang }) {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
 
     // Derive current locale from pathname, default to 'en'
-    const currentLang = pathname.split('/')[1] || 'en';
+    const currentLang = propLang || pathname.split('/')[1] || 'en';
     const isLangSupported = ['en', 'es'].includes(currentLang);
     const langPrefix = isLangSupported ? `/${currentLang}` : '';
     const nav = t(currentLang).header;
@@ -77,7 +77,6 @@ export default function Header() {
                             </div>
                         </div>
 
-                        <a href={getLocalizedPath('/service-areas')} className={`header__nav-link ${pathname.includes('/service-areas') ? 'active' : ''}`}>{nav.serviceAreas}</a>
                         <a href={getLocalizedPath('/contact')} className={`header__nav-link ${pathname === getLocalizedPath('/contact') ? 'active' : ''}`}>{nav.contact}</a>
                     </div>
                 </nav>
@@ -151,7 +150,6 @@ export default function Header() {
                     </div>
                 </div>
 
-                <a href={getLocalizedPath('/service-areas')} className="mobile-menu__link" onClick={() => setIsMenuOpen(false)}>{mob.serviceAreas}</a>
                 <a href={getLocalizedPath('/contact')} className="mobile-menu__link" onClick={() => setIsMenuOpen(false)}>{mob.contact}</a>
 
                 <div style={{ padding: '0 20px', marginTop: '10px' }}>
