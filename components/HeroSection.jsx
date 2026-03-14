@@ -15,6 +15,7 @@ export default function HeroSection({
 }) {
     const tr = t(lang).hero;
     const resolvedHeadline = headline || tr.headline;
+    const resolvedHeadlineAccent = headlineAccent || tr.headlineAccent;
     const resolvedSubheadline = subheadline || tr.subheadline;
 
     return (
@@ -39,7 +40,7 @@ export default function HeroSection({
                     <div className="desktop-only">
                         <h1 className="hero__title">
                             <span className="hero__title-line">{resolvedHeadline}</span>
-                            {headlineAccent && <span className="hero__title-line hero__title-line--accent">{headlineAccent}</span>}
+                            {resolvedHeadlineAccent && <span className="hero__title-line hero__title-line--accent">{resolvedHeadlineAccent}</span>}
                         </h1>
 
                         <div className="hero__subtitle-group" style={{ opacity: 0, animation: 'fadeInUp 0.8s ease-out 0.2s forwards', marginBottom: '32px' }}>
