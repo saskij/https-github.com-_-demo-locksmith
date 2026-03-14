@@ -85,8 +85,10 @@ export default function ServiceCards({ lang = 'en', isHomepage = false }) {
     return (
         <section className="services" id="services">
             <div className="container" style={{ maxWidth: '1200px' }}>
-                <h2 className="section-title">{tr.sectionTitle}</h2>
-                <p className="section-subtitle">{tr.sectionSubtitle}</p>
+                <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+                    <h2 className="section-title">{tr.sectionTitle}</h2>
+                    <p className="section-subtitle" style={{ maxWidth: '700px', margin: '0 auto' }}>{tr.sectionSubtitle}</p>
+                </div>
 
                 <div className="services-grid">
                     {servicesData.map((service, index) => (
