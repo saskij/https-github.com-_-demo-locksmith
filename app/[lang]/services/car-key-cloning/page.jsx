@@ -13,7 +13,7 @@ export const metadata = {
 export default async function CarKeyCloningPage({ params }) {
     const { lang } = await params;
     const tr = t(lang).pages.carKeyCloning;
-    const serviceImage = img('/images/car-key-cloning.png');
+    const serviceImage = img('/images/expert-auto-key-cloning-service.jpg');
 
     return (
         <>

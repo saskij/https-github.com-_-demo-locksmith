@@ -39,8 +39,15 @@ export default function Header({ lang: propLang }) {
     }, [pathname]);
 
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-        document.body.style.overflow = !isMenuOpen ? 'hidden' : '';
+        const nextState = !isMenuOpen;
+        setIsMenuOpen(nextState);
+        if (nextState) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.height = '100vh';
+        } else {
+            document.body.style.overflow = '';
+            document.body.style.height = '';
+        }
     };
 
     return (
@@ -118,7 +125,7 @@ export default function Header({ lang: propLang }) {
                                 const subMenu = document.getElementById('mobile-services-submenu');
                                 const icon = document.getElementById('mobile-services-icon');
                                 if (subMenu.style.maxHeight === '0px' || !subMenu.style.maxHeight) {
-                                    subMenu.style.maxHeight = '500px';
+                                    subMenu.style.maxHeight = '2000px';
                                     subMenu.style.opacity = '1';
                                     subMenu.style.marginTop = '10px';
                                     icon.style.transform = 'rotate(180deg)';

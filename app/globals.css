@@ -301,7 +301,9 @@ ul {
   top: 90px;
   left: 0;
   right: 0;
-  height: calc(100vh - 90px);
+  bottom: 0;
+  height: auto;
+  min-height: calc(100vh - 90px);
   background: rgba(10, 14, 23, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -317,6 +319,7 @@ ul {
   z-index: 10005; /* Well above the logo which is around 1002 */
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-menu.active {

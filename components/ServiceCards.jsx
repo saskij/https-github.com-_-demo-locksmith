@@ -26,13 +26,13 @@ export const servicesData = [
         id: 'car-key-cutting',
         title: 'Car Key Cutting',
         path: '/services/car-key-cutting',
-        image: img('/images/card4.png?v=4'),
+        image: img('/images/high-precision-automotive-key-cutting.jpg'),
     },
     {
         id: 'car-key-cloning',
         title: 'Car Key Cloning',
         path: '/services/car-key-cloning',
-        image: img('/images/car-key-cloning.png?v=2'),
+        image: img('/images/expert-auto-key-cloning-service.jpg'),
     },
     {
         id: 'car-key-repair',

@@ -15,12 +15,12 @@ export async function generateMetadata({ params }) {
         description: 'Locked out? We\'re already on the way. Fast mobile locksmith service across the Boise metro area. Available daily from 7 AM to 11 PM. Licensed & insured.',
         icons: {
             icon: [
-                { url: `${process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith' : ''}/favicon-16.png`, sizes: '16x16', type: 'image/png' },
-                { url: `${process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith' : ''}/favicon-32.png`, sizes: '32x32', type: 'image/png' },
-                { url: `${process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith' : ''}/favicon.ico` },
+                { url: `${(process.env.NODE_ENV === 'production' && process.env.VERCEL !== '1') ? '/https-github.com-_-demo-locksmith' : ''}/favicon-16.png`, sizes: '16x16', type: 'image/png' },
+                { url: `${(process.env.NODE_ENV === 'production' && process.env.VERCEL !== '1') ? '/https-github.com-_-demo-locksmith' : ''}/favicon-32.png`, sizes: '32x32', type: 'image/png' },
+                { url: `${(process.env.NODE_ENV === 'production' && process.env.VERCEL !== '1') ? '/https-github.com-_-demo-locksmith' : ''}/favicon.ico` },
             ],
             apple: [
-                { url: `${process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith' : ''}/apple-touch-icon.png`, sizes: '180x180', type: 'image/png' },
+                { url: `${(process.env.NODE_ENV === 'production' && process.env.VERCEL !== '1') ? '/https-github.com-_-demo-locksmith' : ''}/apple-touch-icon.png`, sizes: '180x180', type: 'image/png' },
             ],
         },
         openGraph: {
@@ -42,7 +42,7 @@ export default async function RootLayout({ children, params }) {
                 <link
                     rel="preload"
                     as="image"
-                    href={`${process.env.NODE_ENV === 'production' ? '/https-github.com-_-demo-locksmith' : ''}/images/hero-homepage.jpg`}
+                    href={`${(process.env.NODE_ENV === 'production' && process.env.VERCEL !== '1') ? '/https-github.com-_-demo-locksmith' : ''}/images/hero-homepage.jpg`}
                     fetchPriority="high"
                 />
             </head>

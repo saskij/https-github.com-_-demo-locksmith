@@ -141,7 +141,7 @@ export default function ServicePageLayout({ tr, serviceImage, lang }) {
                     display: grid;
                     grid-template-columns: 1fr;
                     gap: 40px;
-                    align-items: center;
+                    align-items: start;
                 }
                 
                 .service-image-container {

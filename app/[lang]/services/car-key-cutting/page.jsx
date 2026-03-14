@@ -13,7 +13,7 @@ export const metadata = {
 export default async function CarKeyCuttingPage({ params }) {
     const { lang } = await params;
     const tr = t(lang).pages.carKeyCutting;
-    const serviceImage = img('/images/card4.png');
+    const serviceImage = img('/images/high-precision-automotive-key-cutting.jpg');
 
     return (
         <>
