@@ -8,8 +8,8 @@ export default function ContactSection({ lang = 'en' }) {
     return (
         <section className="contact-section" id="contact" style={{ padding: '80px 0', backgroundColor: '#ffffff' }}>
             <div className="container">
-                <div className="contact-layout" style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '60px', alignItems: 'flex-start' }}>
-                    <div className="contact-info-panel" style={{ flex: '1 1 400px' }}>
+                <div className="contact-layout">
+                    <div className="contact-info-panel">
                         <h2 className="section-title" style={{ textAlign: 'left', margin: '0 0 20px 0' }}>{tr.sectionTitle}</h2>
                         <p className="section-subtitle" style={{ textAlign: 'left', margin: '0 0 40px 0', maxWidth: '100%' }}>{tr.sectionSubtitle}</p>
                         
@@ -29,7 +29,7 @@ export default function ContactSection({ lang = 'en' }) {
                         </div>
                     </div>
 
-                    <div className="contact-form-panel" style={{ flex: '1 1 500px', backgroundColor: '#f8f9fa', padding: '40px', borderRadius: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
+                    <div className="contact-form-panel">
                         <form className="contact-form" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                             <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                                 <label style={{ fontSize: '0.9rem', fontWeight: '600', color: 'var(--navy)' }}>{tr.form.name}</label>
@@ -56,14 +56,65 @@ export default function ContactSection({ lang = 'en' }) {
                             </button>
                         </form>
                     </div>
+
+                    <div className="contact-map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d371458.1251392652!2d-116.63469145952011!3d43.43572851173822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54aeff1660bdc79b%3A0x67ebd504d602a8b9!2sAda%20County%2C%20ID!5e0!3m2!1sen!2sus!4v1709400000000!5m2!1sen!2sus"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Emergency Locksmith Boise Service Area - Boise, Meridian, Nampa, Caldwell, Eagle, Kuna"
+                        ></iframe>
+                    </div>
                 </div>
             </div>
 
             <style jsx>{`
+                .contact-layout {
+                    display: grid;
+                    grid-template-columns: 1fr 1.2fr;
+                    grid-template-areas: 
+                        "info form"
+                        "map form";
+                    gap: 60px;
+                    align-items: flex-start;
+                }
+                .contact-info-panel { grid-area: info; }
+                .contact-form-panel { 
+                    grid-area: form;
+                    background-color: #f8f9fa;
+                    padding: 40px;
+                    borderRadius: 24px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+                }
+                .contact-map-container { 
+                    grid-area: map;
+                    width: 100%;
+                    height: 380px;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+                    border: 1px solid rgba(0,0,0,0.05);
+                }
+
+                @media (max-width: 991px) {
+                    .contact-layout {
+                        grid-template-columns: 1fr;
+                        grid-template-areas: 
+                            "info"
+                            "form"
+                            "map";
+                        gap: 40px;
+                    }
+                    .contact-form-panel { padding: 30px 20px; }
+                    .contact-map-container { height: 320px; }
+                }
+
                 @media (max-width: 768px) {
                     .contact-section { padding: 60px 0 !important; }
-                    .contact-section > .container > div { gap: 40px !important; }
-                    div[style*="flex: 1 1 500px"] { padding: 30px 20px !important; }
                 }
             `}</style>
         </section>
