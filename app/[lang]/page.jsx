@@ -18,7 +18,7 @@ export default async function Home({ params }) {
     return (
         <main>
             {/* 1️⃣ HERO SECTION */}
-            <HeroSection lang={lang} />
+            <HeroSection lang={lang} isHomepage={true} />
 
             {/* 2️⃣ PROFESSIONAL LOCKSMITH SERVICES */}
             <ServiceCards lang={lang} isHomepage={true} />

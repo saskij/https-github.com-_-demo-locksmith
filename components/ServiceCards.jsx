@@ -87,7 +87,21 @@ export default function ServiceCards({ lang = 'en', isHomepage = false }) {
             <div className="container" style={{ maxWidth: '1200px' }}>
                 <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                     <h2 className="section-title">{tr.sectionTitle}</h2>
-                    <p className="section-subtitle" style={{ maxWidth: '700px', margin: '0 auto' }}>{tr.sectionSubtitle}</p>
+                    <p className="section-subtitle" style={{ maxWidth: '800px', margin: '0 auto 20px auto' }}>{tr.sectionSubtitle}</p>
+                    {!isHomepage && (
+                        <div className="mobile-only" style={{ maxWidth: '600px', margin: '0 auto 40px auto', padding: '0 20px' }}>
+                            <p style={{ fontSize: '1rem', color: 'var(--gray-text)', lineHeight: '1.6', marginBottom: '15px' }}>
+                                {lang === 'es' 
+                                    ? 'Perder o dañar la llave de su auto puede suceder en el peor momento. Nuestros técnicos cerrajeros automotrices móviles brindan servicios rápidos en el lugar.' 
+                                    : 'Losing or damaging your car key can happen at the worst possible time. Our mobile automotive locksmith technicians provide fast on-site services.'}
+                            </p>
+                            <p style={{ fontSize: '1rem', color: 'var(--navy)', fontWeight: '600', lineHeight: '1.6' }}>
+                                {lang === 'es'
+                                    ? '¿Necesita asistencia inmediata? Siempre estamos de guardia y listos para enviar a un técnico a su ubicación.'
+                                    : 'Need immediate assistance? We are always on call and ready to dispatch a technician to your location.'}
+                            </p>
+                        </div>
+                    )}
                 </div>
 
                 <div className="services-grid">
