@@ -13,7 +13,7 @@ export const metadata = {
 export default async function KeyFobReplacementPage({ params }) {
     const { lang } = await params;
     const tr = t(lang).pages.keyFobReplacement;
-    const serviceImage = img('/images/card8.png');
+    const serviceImage = img('/images/complete-auto-remote-solutions.jpg');
 
     return (
         <>

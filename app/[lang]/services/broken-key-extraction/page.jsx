@@ -13,7 +13,7 @@ export const metadata = {
 export default async function BrokenKeyExtractionPage({ params }) {
     const { lang } = await params;
     const tr = t(lang).pages.brokenKeyExtraction;
-    const serviceImage = img('/images/card11.png');
+    const serviceImage = img('/images/emergency-broken-key-removal.jpg');
 
     return (
         <>

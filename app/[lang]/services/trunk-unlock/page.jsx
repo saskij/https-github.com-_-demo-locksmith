@@ -13,7 +13,7 @@ export const metadata = {
 export default async function TrunkUnlockPage({ params }) {
     const { lang } = await params;
     const tr = t(lang).pages.trunkUnlock;
-    const serviceImage = img('/images/card10.png');
+    const serviceImage = img('/images/safe-and-rapid-trunk-opening.jpg');
 
     return (
         <>

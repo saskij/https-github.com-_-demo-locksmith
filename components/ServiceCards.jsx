@@ -44,13 +44,13 @@ export const servicesData = [
         id: 'customized-car-keys',
         title: 'Customized Car Keys',
         path: '/services/customized-car-keys',
-        image: img('/images/card7.png?v=3'),
+        image: img('/images/custom-automotive-key-solutions.jpg'),
     },
     {
         id: 'key-fob-replacement',
         title: 'Key Fob Replacement',
         path: '/services/key-fob-replacement',
-        image: img('/images/card8.png?v=2'),
+        image: img('/images/complete-auto-remote-solutions.jpg'),
     },
     {
         id: 'car-lockout',
@@ -62,13 +62,13 @@ export const servicesData = [
         id: 'trunk-unlock',
         title: 'Trunk Unlock Service',
         path: '/services/trunk-unlock',
-        image: img('/images/card10.png?v=3'),
+        image: img('/images/safe-and-rapid-trunk-opening.jpg'),
     },
     {
         id: 'broken-key-extraction',
         title: 'Broken Key Extraction',
         path: '/services/broken-key-extraction',
-        image: img('/images/card12.1.png?v=2'),
+        image: img('/images/emergency-broken-key-removal.jpg'),
     },
     {
         id: 'ignition-repair',

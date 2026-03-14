@@ -13,7 +13,7 @@ export const metadata = {
 export default async function CustomizedCarKeysPage({ params }) {
     const { lang } = await params;
     const tr = t(lang).pages.customizedCarKeys;
-    const serviceImage = img('/images/card7.png');
+    const serviceImage = img('/images/custom-automotive-key-solutions.jpg');
 
     return (
         <>
