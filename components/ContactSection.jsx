@@ -1,12 +1,53 @@
 "use client";
-import React from 'react';
+import Script from 'next/script';
 import { t } from '../lib/translations';
 
 export default function ContactSection({ lang = 'en' }) {
     const tr = t(lang).contactSection;
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": ["LocalBusiness", "Locksmith"],
+        "name": "Car Key Masters Boise",
+        "image": "https://www.carkeymastersboise.com/images/hero-homepage.jpg",
+        "@id": "https://www.carkeymastersboise.com",
+        "url": "https://www.carkeymastersboise.com",
+        "telephone": "+12086868099",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Boise",
+            "addressRegion": "ID",
+            "postalCode": "83702",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 43.6150,
+            "longitude": -116.2023
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "opens": "07:00",
+            "closes": "23:00"
+        }
+    };
+
     return (
         <section className="contact-section" id="contact" style={{ padding: '80px 0', backgroundColor: '#ffffff' }}>
+            <Script
+                id="schema-local-business"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <div className="container">
                 <div className="contact-layout">
                     <div className="contact-info-panel">

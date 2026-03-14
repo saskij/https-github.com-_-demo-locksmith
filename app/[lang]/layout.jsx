@@ -8,14 +8,28 @@ export async function generateStaticParams() {
     return [{ lang: 'en' }, { lang: 'es' }];
 }
 
+import translations from '../../lib/translations';
+
 export async function generateMetadata({ params }) {
     const { lang } = await params;
+    const t = translations[lang] || translations.en;
+    
+    // Fallback for metadata if not explicitly defined in translations for a specific page
+    // but here we use it for the layout (homepage)
+    const title = t.metadata?.title || 'Emergency Locksmith Boise | 7 AM – 11 PM Lockout Service';
+    const description = t.metadata?.description || "Locked out? We're already on the way. Fast mobile locksmith service across the Boise metro area. Available daily from 7 AM to 11 PM. Licensed & insured.";
+
     return {
         metadataBase: new URL('https://www.carkeymastersboise.com'),
-        title: 'Emergency Locksmith Boise | 7 AM – 11 PM Lockout Service',
-        description: 'Locked out? We\'re already on the way. Fast mobile locksmith service across the Boise metro area. Available daily from 7 AM to 11 PM. Licensed & insured.',
+        title: title,
+        description: description,
         alternates: {
             canonical: `/${lang}`,
+            languages: {
+                'en': '/en',
+                'es': '/es',
+                'x-default': '/en',
+            },
         },
         icons: {
             icon: [
@@ -28,8 +42,8 @@ export async function generateMetadata({ params }) {
             ],
         },
         openGraph: {
-            title: 'Emergency Locksmith Boise | 7 AM – 11 PM Lockout Service',
-            description: 'Locked out? We\'re already on the way. Fast mobile locksmith service across the Boise metro area. Available daily from 7 AM to 11 PM.',
+            title: title,
+            description: description,
             type: 'website',
         }
     };
@@ -38,26 +52,13 @@ export async function generateMetadata({ params }) {
 export default async function RootLayout({ children, params }) {
     const { lang } = await params;
     return (
-        <html lang={lang} className="scroll-smooth">
-            <head>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-                <link
-                    rel="preload"
-                    as="image"
-                    href={`${(process.env.NODE_ENV === 'production' && process.env.VERCEL !== '1') ? '/https-github.com-_-demo-locksmith' : ''}/images/hero-homepage.jpg`}
-                    fetchPriority="high"
-                />
-            </head>
-            <body>
-                <Header lang={lang} />
-                <main>{children}</main>
-                <Footer lang={lang} />
-                <StickyBar lang={lang} />
-                <AOSInit />
-            </body>
-        </html>
+        <>
+            <Header lang={lang} />
+            <main>{children}</main>
+            <Footer lang={lang} />
+            <StickyBar lang={lang} />
+            <AOSInit />
+        </>
     );
 }
 

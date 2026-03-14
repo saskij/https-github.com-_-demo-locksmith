@@ -114,6 +114,9 @@ export default function ServiceCards({ lang = 'en', isHomepage = false }) {
                                             <img 
                                                 src={service.image} 
                                                 alt={service.title} 
+                                                width={400}
+                                                height={250}
+                                                loading="lazy"
                                             />
                                         </div>
                                     ) : (

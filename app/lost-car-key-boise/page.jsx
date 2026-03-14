@@ -60,7 +60,7 @@ export default function LostCarKeyBoise() {
                 />
                 
                 <section className="container" style={{ padding: '80px 20px', maxWidth: '1000px', margin: '0 auto' }}>
-                    <h1 className="section-title" style={{ textAlign: 'left', marginBottom: '32px' }}>Lost Car Key Boise</h1>
+                    <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '32px' }}>Lost Car Key Boise</h2>
                     
                     <div style={{ fontSize: '1.1rem', color: 'var(--text-dark)', lineHeight: '1.8' }}>
                         <p style={{ marginBottom: '24px' }}>
