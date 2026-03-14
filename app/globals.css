@@ -540,8 +540,9 @@ ul {
 
 @media (min-width: 768px) {
   .service-card__image-wrapper {
-    height: 140px !important; /* Fixed height to ensure consistent 80-110px icon space */
+    height: 120px !important; /* Reduced from 140px for tighter layout */
     padding-bottom: 0 !important;
+    margin-bottom: 14px !important; /* icon -> title spacing */
   }
 }
 
@@ -564,18 +565,19 @@ ul {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 5% !important; /* Minimal padding for maximum icon size */
+  padding: 0 !important; /* Removed padding to maximize icon size */
   box-sizing: border-box !important;
 }
 
 .service-card img {
-  max-width: 95% !important;
-  max-height: 95% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
   width: auto !important;
   height: auto !important;
   object-fit: contain !important;
   margin: auto !important;
   display: block !important;
+  transform: scale(1.15) !important; /* Compels icon to fill internal SVG whitespace */
 }
 
 @media (max-width: 767px) {
@@ -600,7 +602,7 @@ ul {
 
 @media (min-width: 768px) {
   .service-card__body {
-    padding: 12px 16px; /* Reduced from 24px 20px */
+    padding: 10px 15px !important; /* Tighter padding */
     align-items: center; /* Centered content for desktop */
     text-align: center;
   }
@@ -619,8 +621,7 @@ ul {
 @media (min-width: 768px) {
   .service-card__title {
     font-size: 1rem; 
-    margin-bottom: 10px; 
-    min-height: 2.2em; /* Ensure 2 lines of space for alignment consistency */
+    margin-bottom: 8px !important; /* title -> Learn More spacing */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -694,8 +695,8 @@ ul {
   justify-content: center; /* Center link for desktop */
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: auto; /* Push link to bottom for alignment */
-  padding-top: 8px; 
+  margin-top: 0 !important; /* title -> Learn More spacing refinement */
+  padding-top: 0 !important;
   position: relative;
   z-index: 2;
 }
