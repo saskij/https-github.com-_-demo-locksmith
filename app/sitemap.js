@@ -1,9 +1,9 @@
 export const dynamic = 'force-static';
 
 export default function sitemap() {
-    const baseUrl = 'https://carkeymastersboise.com'; // Replace with actual domain later
+    const baseUrl = 'https://www.carkeymastersboise.com';
 
-    const staticPages = [
+    const staticPaths = [
         '',
         '/services',
         '/service-areas',
@@ -20,6 +20,17 @@ export default function sitemap() {
         '/services/lock-installation',
         '/services/broken-key-extraction',
         '/services/commercial-locksmith',
+        '/services/car-key-replacement',
+        '/services/car-key-copy',
+        '/services/car-key-programming',
+        '/services/car-key-cutting',
+        '/services/car-key-cloning',
+        '/services/car-key-repair',
+        '/services/customized-car-keys',
+        '/services/key-fob-replacement',
+        '/services/trunk-unlock',
+        '/services/semi-truck-lockout',
+        '/services/ignition-repair'
     ];
 
     const cities = [
@@ -31,7 +42,7 @@ export default function sitemap() {
         '/service-areas/kuna-locksmith',
     ];
 
-    const seoPages = [
+    const seoLandingPages = [
         '/car-key-replacement-boise',
         '/car-key-programming-boise',
         '/emergency-locksmith-boise',
@@ -39,12 +50,23 @@ export default function sitemap() {
         '/lost-car-key-boise',
     ];
 
-    const allRoutes = [...staticPages, ...services, ...cities, ...seoPages];
+    const baseRoutes = [...staticPaths, ...services, ...cities, ...seoLandingPages];
+    
+    // Generate localized versions for each route
+    const allRoutes = [];
+    baseRoutes.forEach(route => {
+        allRoutes.push(route); // Non-prefixed (fallback/default)
+        allRoutes.push(`/en${route}`);
+        allRoutes.push(`/es${route}`);
+    });
 
-    return allRoutes.map((route) => ({
+    // Remove duplicates (e.g., if any route was already prefixed or empty)
+    const uniqueRoutes = [...new Set(allRoutes)];
+
+    return uniqueRoutes.map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date().toISOString(),
-        changeFrequency: route === '' ? 'weekly' : 'monthly',
-        priority: route === '' ? 1 : 0.8,
+        changeFrequency: route === '' || route === '/en' || route === '/es' ? 'weekly' : 'monthly',
+        priority: route === '' || route === '/en' || route === '/es' ? 1 : 0.8,
     }));
 }

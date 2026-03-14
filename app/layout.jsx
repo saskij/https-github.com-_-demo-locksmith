@@ -1,8 +1,12 @@
 import './globals.css';
 
 export const metadata = {
+    metadataBase: new URL('https://www.carkeymastersboise.com'),
     title: 'Emergency Locksmith Boise | 7 AM – 11 PM Lockout Service',
     description: 'Locked out? We\'re already on the way. Fast mobile locksmith service across the Boise metro area. Available daily from 7 AM to 11 PM. Licensed & insured.',
+    alternates: {
+        canonical: '/',
+    },
     icons: {
         icon: [
             { url: `${(process.env.NODE_ENV === 'production' && process.env.VERCEL !== '1') ? '/https-github.com-_-demo-locksmith' : ''}/favicon-16.png`, sizes: '16x16', type: 'image/png' },
