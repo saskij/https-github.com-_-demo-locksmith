@@ -35,6 +35,20 @@ export default async function BoiseCityPage({ params }) {
 
             <ServiceCards lang={lang} />
             <TrustSection lang={lang} />
+            
+            <section style={{ padding: '60px 0', background: 'var(--white)', borderTop: '1px solid #eee' }}>
+                <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+                    <h2 className="section-title" style={{ fontSize: '1.5rem', marginBottom: '24px' }}>Discover More in Boise</h2>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px' }}>
+                        <a href="/car-key-replacement-boise" style={{ color: 'var(--orange)', fontWeight: '600' }}>Car Key Replacement Boise</a>
+                        <a href="/car-key-programming-boise" style={{ color: 'var(--orange)', fontWeight: '600' }}>Car Key Programming Boise</a>
+                        <a href="/emergency-locksmith-boise" style={{ color: 'var(--orange)', fontWeight: '600' }}>Emergency Locksmith Boise</a>
+                        <a href="/mobile-locksmith-boise" style={{ color: 'var(--orange)', fontWeight: '600' }}>Mobile Locksmith Boise</a>
+                        <a href="/lost-car-key-boise" style={{ color: 'var(--orange)', fontWeight: '600' }}>Lost Car Key Boise</a>
+                    </div>
+                </div>
+            </section>
+
             <CallToAction lang={lang} />
         </>
     );

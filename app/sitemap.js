@@ -31,7 +31,15 @@ export default function sitemap() {
         '/service-areas/kuna-locksmith',
     ];
 
-    const allRoutes = [...staticPages, ...services, ...cities];
+    const seoPages = [
+        '/car-key-replacement-boise',
+        '/car-key-programming-boise',
+        '/emergency-locksmith-boise',
+        '/mobile-locksmith-boise',
+        '/lost-car-key-boise',
+    ];
+
+    const allRoutes = [...staticPages, ...services, ...cities, ...seoPages];
 
     return allRoutes.map((route) => ({
         url: `${baseUrl}${route}`,
