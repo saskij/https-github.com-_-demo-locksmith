@@ -91,8 +91,8 @@ export default function HeroSection({
                     {/* --- MOBILE VERSION (Simplified & Conversion Focused) --- */}
                     <div className="mobile-only">
                         <span className="hero__small-text">{tr.mobileSmallText}</span>
-                        <h1 className="hero__title">{tr.mobileHeadline}</h1>
-                        <p className="hero__subtitle">{tr.mobileSubheadline}</p>
+                        <h1 className="hero__title">{resolvedHeadline}</h1>
+                        <p className="hero__subtitle">{resolvedSubheadline}</p>
 
                         <div className="hero__actions">
                             <a href="tel:+12086868099" className="btn btn--primary btn--lg" style={{ fontSize: '1.1rem', padding: '16px 24px', display: 'inline-flex', alignItems: 'center', gap: '10px', borderRadius: '12px', fontWeight: '700' }}>
