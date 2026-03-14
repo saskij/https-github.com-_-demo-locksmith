@@ -494,7 +494,7 @@ ul {
   .services-grid {
     grid-template-columns: repeat(6, 1fr);
     gap: 24px;
-    align-items: stretch; 
+    align-items: start; /* Prevents neighboring cards from stretching in height */
     margin-top: 40px;
   }
 }
@@ -508,6 +508,8 @@ ul {
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
   display: flex;
   flex-direction: column;
+  height: auto !important; /* Allow height to be determined by content */
+  min-height: 0 !important;
 }
 
 @media (min-width: 768px) {
@@ -538,7 +540,8 @@ ul {
 
 @media (min-width: 768px) {
   .service-card__image-wrapper {
-    padding-bottom: 50%; /* Reduced from 75% for 4:3 ratio to be more compact */
+    height: 140px !important; /* Fixed height to ensure consistent 80-110px icon space */
+    padding-bottom: 0 !important;
   }
 }
 
@@ -557,11 +560,22 @@ ul {
   transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+.service-card__image-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 5% !important; /* Minimal padding for maximum icon size */
+  box-sizing: border-box !important;
+}
+
 .service-card img {
-  max-width: none !important;
-  width: 80%; /* Reduced for desktop balance */
-  height: 80%;
-  object-fit: contain;
+  max-width: 95% !important;
+  max-height: 95% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin: auto !important;
+  display: block !important;
 }
 
 @media (max-width: 767px) {
@@ -596,7 +610,7 @@ ul {
   font-size: 0.65rem;
   font-weight: 800;
   color: var(--navy);
-  margin-bottom: 2px;
+  margin-bottom: 0; /* Handled by container flex gap or margin-bottom on element */
   font-family: var(--font-heading);
   letter-spacing: -0.1px;
   line-height: 1.1;
@@ -604,43 +618,43 @@ ul {
 
 @media (min-width: 768px) {
   .service-card__title {
-    font-size: 1rem; /* Slightly reduced from 1.15rem */
-    margin-bottom: 8px; /* Reduced from 12px */
+    font-size: 1rem; 
+    margin-bottom: 10px; 
+    min-height: 2.2em; /* Ensure 2 lines of space for alignment consistency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
 
 @media (min-width: 1024px) {
   .service-card {
-    height: 240px; /* Reduced from 320px */
     position: relative;
     overflow: hidden;
     background: #fff;
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+    padding-bottom: 20px;
   }
 
   .service-card__body {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: static; /* Remove absolute positioning */
     background: #fff;
     padding: 20px;
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  /* Initially hide description but take up space in the transform if needed, 
-     or just hide it and slide it up */
-  .service-card__desc {
-    margin: 0;
-    font-size: 0.82rem;
-    color: #666;
-    line-height: 1.4;
+  /* Description slides DOWN below the title */
+  .service-card__desc-wrapper {
+    max-height: 0;
     opacity: 0;
-    height: 0;
-    transition: all 0.4s ease;
-    transform: translateY(20px);
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, margin-top 0.35s ease;
+    margin-top: 0;
   }
 
   .service-card:hover {
@@ -649,18 +663,28 @@ ul {
     z-index: 10;
   }
 
-  .service-card:hover .service-card__desc {
+  .service-card:hover .service-card__desc-wrapper {
+    max-height: 300px; /* Sufficient height for description */
     opacity: 1;
-    height: auto;
-    margin-top: 10px;
-    transform: translateY(0);
+    margin-top: 15px;
   }
 
-  /* Ensure the body slides up to accommodate the description */
-  .service-card:hover .service-card__body {
-     /* No need to transform body if we just expand desc height, 
-        but we want the title to stay or move? 
-        Let's make the whole body slide up slightly if needed. */
+  .service-card__desc {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.5;
+    transform: translateY(-10px); /* Subtle slide down effect */
+    transition: transform 0.35s ease;
+  }
+
+  .service-card:hover .service-card__desc {
+    transform: translateY(0);
+  }
+  
+  .service-card__actions {
+    margin-top: 5px;
+    margin-bottom: 0;
   }
 }
 
@@ -719,7 +743,7 @@ ul {
   }
 
   .service-card {
-    height: 110px !important;
+    height: 180px !important; /* Increased from 110px */
     display: flex !important;
     flex-direction: column !important;
     background: #fff !important;
@@ -731,7 +755,7 @@ ul {
   }
 
   .service-card__image-wrapper {
-    height: 65% !important; /* Optimized to accommodate 48px icon and centering */
+    height: 70% !important; /* Slightly more space for the icon */
     padding-bottom: 0 !important;
     background: #fff !important;
     display: flex !important;
@@ -742,9 +766,9 @@ ul {
   }
 
   .service-card img {
-    height: 48px !important; /* ~50% reduction from original */
+    height: 90px !important; /* Doubled from 48px */
     width: auto !important;
-    max-width: 85% !important;
+    max-width: 90% !important;
     object-fit: contain !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -752,9 +776,9 @@ ul {
 
   /* Dark title section at bottom */
   .service-card__body {
-    height: 35% !important; /* Compact title section */
+    height: 30% !important; 
     padding: 2px 6px !important;
-    background: #1a1a1a !important; /* Dark black/charcoal background */
+    background: #1a1a1a !important; 
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;

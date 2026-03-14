@@ -96,19 +96,10 @@ export default function ServiceCards({ lang = 'en', isHomepage = false }) {
                             <div className="service-card" data-aos="fade-up" data-aos-delay={index * 50}>
                                 <div className="service-card__image-wrapper">
                                     {!service.iconPos ? (
-                                        <div className="service-card__image-container" style={{ width: '100%', height: '100%', background: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <div className="service-card__image-container">
                                             <img 
                                                 src={service.image} 
                                                 alt={service.title} 
-                                                style={{ 
-                                                    width: '100%', 
-                                                    height: '100%', 
-                                                    objectFit: 'contain',
-                                                    display: 'block',
-                                                    border: 'none',
-                                                    padding: '0',
-                                                    margin: '0'
-                                                }} 
                                             />
                                         </div>
                                     ) : (
@@ -128,12 +119,14 @@ export default function ServiceCards({ lang = 'en', isHomepage = false }) {
                                 </div>
                                 <div className="service-card__body">
                                     <h3 className="service-card__title">{tr.cards[index].title}</h3>
-                                    <p className="service-card__desc">{tr.cards[index].desc}</p>
                                     <div className="service-card__actions">
                                         <span className="service-card__link">
                                             {lang === 'es' ? 'Saber Más' : 'Learn More'}
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                                         </span>
+                                    </div>
+                                    <div className="service-card__desc-wrapper">
+                                        <p className="service-card__desc">{tr.cards[index].desc}</p>
                                     </div>
                                 </div>
                             </div>
